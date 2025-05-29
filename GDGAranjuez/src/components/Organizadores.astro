@@ -1,0 +1,77 @@
+---
+const organizadores = [
+  {
+    nombre: "Ángeles Vázquez Parra",
+    cargo: "GDG Organizer",
+    foto: "/organizadores/huron.jpeg",
+    redes: {
+      twitter: "https://twitter.com/avazpar",
+      linkedin: "https://www.linkedin.com/in/angeles-vazquez-parra/"
+    }
+  },
+  {
+    nombre: "Juanje Cilla Ugarte",
+    cargo: "Hiberus, Senior Android Engineer",
+    foto: "/organizadores/huron2.jpg",
+    redes: {
+      linkedin: "https://www.linkedin.com/in/juan-jes%C3%BAs-cilla-ugarte-00a72a107/"
+    }
+  },
+  {
+    nombre: "Saul Diaz",
+    cargo: "GDG Organizer",
+    foto: "/organizadores/huron.jpeg",
+    redes: {
+      twitter: "https://twitter.com/avazpar",
+      linkedin: "https://www.linkedin.com/in/angeles-vazquez-parra/"
+    }
+  },
+  {
+    nombre: "Patricia Tarazaga",
+    cargo: "GDG Organizer",
+    foto: "/organizadores/huron2.jpg",
+    redes: {
+      twitter: "https://twitter.com/avazpar",
+      linkedin: "https://www.linkedin.com/in/angeles-vazquez-parra/"
+    }
+  },
+  {
+    nombre: "Daniel Brinzei",
+    cargo: "GDG Organizer",
+    foto: "/organizadores/huron.jpeg",
+    redes: {
+      twitter: "https://twitter.com/avazpar",
+      linkedin: "https://www.linkedin.com/in/angeles-vazquez-parra/"
+    }
+  },
+];
+---
+
+<section id="organizadores" class="py-12">
+  <h2 class="text-3xl font-bold text-center mb-8">Organizadores</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {organizadores.map((org) => (
+      <div class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
+        <img
+          src={org.foto}
+          alt={org.nombre}
+          class="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+        />
+        <h3 class="text-l font-semibold">{org.nombre}</h3>
+        <p class="text-gray-500 mb-2">{org.cargo}</p>
+        <div class="flex justify-center space-x-4">
+          {org.redes?.twitter && (
+            <a href={org.redes.twitter} target="_blank" rel="noopener noreferrer">
+              <img src="/icons/twitter-black.png" alt="Logotipo de Twitter - X" class="w-5 h-5" />
+            </a>
+          )}
+          {org.redes?.linkedin && (
+            <a href={org.redes.linkedin} target="_blank" rel="noopener noreferrer">
+              <img src="/icons/linkedin.png" alt="LinkedIn - logo" class="w-5 h-5" />
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
