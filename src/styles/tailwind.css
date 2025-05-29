@@ -1,3 +1,6 @@
+/* tailwind.css */
+/* postcss.config.cjs se encarga de compilar esto */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
