@@ -1,9 +1,15 @@
 ---
-const { children } = Astro.slots;
-import Header from "../components/Header.astro";
-import Footer from "../components/footer.astro";
-import style from '../style/global.css';
+import Layout from "../layouts/Layout.astro"
 ---
+
+<style>
+
+    body {
+
+background-color: antiquewhite;
+    }
+    </style> 
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,17 +23,18 @@ import style from '../style/global.css';
   <body>
     <div class="wrapper">
       <header>
+        <h1>DevFestMadrid</h1>
       </header>
 
       <main>
+        <slot />
       </main>
 
       <footer>
-       <div class="social-icons">
-<a href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="social-icons">
+       <a href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
   <img src="/icons/linkedin.svg" alt="LinkedIn" width="24" height="24" />
 </a>
-     
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <img src="/icons/facebook.svg" alt="Facebook" width="24" height="24" />
           </a>
@@ -82,13 +89,24 @@ import style from '../style/global.css';
     border-top: 4px solid #000;
   }
 
-  footer a {
-    color: #66ccff;
-    text-decoration: none;
-    margin: 0 0.5rem;
+  .social-icons {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
   }
 
-  footer a:hover {
-    text-decoration: underline;
+  .social-icons img {
+    filter: brightness(0) invert(1); /* cambia íconos oscuros a blanco */
+    transition: transform 0.2s ease;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+
+  footer p {
+    margin: 0;
   }
 </style>
+
