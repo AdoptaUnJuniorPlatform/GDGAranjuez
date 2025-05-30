@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.astro",
-    "lint:fix": "eslint . --ext .js,.ts,.astro --fix"
+    "lint:fix": "eslint . --ext .js,.ts,.astro --fix",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
@@ -22,6 +23,7 @@
     "eslint-plugin-prettier": "^5.4.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
   }

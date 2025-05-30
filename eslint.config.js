@@ -15,20 +15,20 @@ export default [
         parser: parserTs,
         extraFileExtensions: [".astro"],
         ecmaVersion: "latest",
-        sourceType: "module"
-      }
+        sourceType: "module",
+      },
     },
     plugins: {
       astro: eslintPluginAstro,
       tailwindcss: pluginTailwindcss,
-      prettier: prettierPlugin
+      prettier: prettierPlugin,
     },
     rules: {
       ...eslintPluginAstro.configs.recommended.rules,
       ...pluginTailwindcss.configs.recommended.rules,
       ...prettierConfig.rules,
-      "prettier/prettier": "error"
-    }
+      "prettier/prettier": "error",
+    },
   },
 
   {
@@ -36,18 +36,18 @@ export default [
     languageOptions: {
       parser: parserTs,
       ecmaVersion: "latest",
-      sourceType: "module"
+      sourceType: "module",
     },
     plugins: {
       "@typescript-eslint": pluginTs,
       tailwindcss: pluginTailwindcss,
-      prettier: prettierPlugin
+      prettier: prettierPlugin,
     },
     rules: {
       ...pluginTs.configs.recommended.rules,
       ...pluginTailwindcss.configs.recommended.rules,
       ...prettierConfig.rules,
-      "prettier/prettier": "error"
-    }
-  }
+      "prettier/prettier": "error",
+    },
+  },
 ];
