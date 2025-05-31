@@ -1,0 +1,81 @@
+---
+import Card from '../components/Card.astro';
+
+const organizadores = [
+  /* Lista de organizadores con nombre, cargo, foto, y link a redes */
+  {
+    nombre: 'Ángeles Vázquez Parra',
+    cargo: 'GDG Organizer\nEventbrite',
+    foto: '/organizadores/huron.jpeg',
+    redes: {
+      twitter: 'https://twitter.com/avazpar',
+      linkedin: 'https://www.linkedin.com/in/angeles-vazquez-parra/',
+    },
+  },
+  {
+    nombre: 'Juanje Cilla Ugarte',
+    cargo: 'GDG Organizer\nHiberus',
+    foto: '/organizadores/huron2.jpg',
+    redes: {
+      linkedin:
+        'https://www.linkedin.com/in/juan-jes%C3%BAs-cilla-ugarte-00a72a107/',
+    },
+  },
+  {
+    nombre: 'Saul Diaz',
+    cargo: 'GDG Organizer\nEventbrite',
+    foto: '/organizadores/huron.jpeg',
+    redes: {
+      twitter:
+        'https://x.com/i/flow/login?redirect_after_login=%2FSefford',
+      linkedin: 'https://www.linkedin.com/in/sefford/',
+    },
+  },
+  {
+    nombre: 'Patricia Tarazaga',
+    cargo: 'GDG Organizer',
+    foto: '/organizadores/huron2.jpg',
+    redes: {
+      linkedin: 'https://www.linkedin.com/in/patricia-tarazaga/',
+    },
+  },
+  {
+    nombre: 'Daniel Brinzei',
+    cargo: 'GDG Organizer',
+    foto: '/organizadores/huron.jpeg',
+  },
+];
+---
+
+<!-- Sección principal de Organizadores, centrada y responsive, padding vertical -->
+<section id="organizadores" class="py-12">
+  {/* Título principal centrado con margen inferior */}
+  <h2 class="text-3xl font-bold text-center mb-2">
+    Organizadores
+    <br />
+    <h3 class="text2xl font-bold text-center mb-6">
+      (〃￣︶￣)人(￣︶￣〃)
+    </h3>
+  </h2>
+
+  <!-- 
+    Contenedor en Flexbox que:
+    - Coloca las cards en filas (`flex-wrap`)
+    - Las centra (`justify-center`)
+    - Deja espacio entre ellas (`gap-8`)
+    - Permite que el último elemento impar quede centrado
+  -->
+  <div class="flex flex-wrap justify-center gap-8">
+    {
+      organizadores.map((org) => (
+        // Render de cada tarjeta con sus props
+        <Card
+          nombre={org.nombre}
+          cargo={org.cargo}
+          foto={org.foto}
+          redes={org.redes}
+        />
+      ))
+    }
+  </div>
+</section>
