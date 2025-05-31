@@ -87,7 +87,7 @@ Este proyecto lo hemos desarrolldo un equipo formado por integrantes de Adopta u
 - Glòria Monzó
 - Belén Suarez
 
-💚 ¡Gracias por vuestra colaboración, esfuerzo y energía!
+💚 ¡Hecho con colaboración, esfuerzo y energía!
 
 ---
 
@@ -159,6 +159,7 @@ git push origin nombre-de-tu-rama
 ```
 
 #### 🔁 6. Creamos la Pull Request (PR)
+
 - Añadiendo comentarios sobre qué hemos modificado/añadido/eliminado y la razón.
 - Si corresponde, podemos agregar fotos de como quedaría en la web.
 
@@ -179,6 +180,7 @@ git merge dev
 ```
 
 #### 🧹 8. Opcional: Borrar ramas que ya no usemos
+
 - Normalmente, al mergear una PR borramos la rama si ya no la estamos usando, pero por si teníamos alguna por ahí suelta...
 
 ```
