@@ -1,0 +1,58 @@
+---
+const agenda = [
+  {
+    hora: "10:00",
+    titulo: "Apertura y bienvenida",
+    ponente: "Equipo GDG Madrid",
+    perfil: "",
+  },
+  {
+    hora: "10:30",
+    titulo: "Novedades en inteligencia artificial",
+    ponente: "María López",
+    perfil: "",
+  },
+  {
+    hora: "11:30",
+    titulo: "Desarrollo web con Astro",
+    ponente: "Carlos García",
+    perfil: "",
+  },
+  {
+    hora: "13:00",
+    titulo: "Lunch & networking",
+    ponente: "",
+    perfil: "",
+  },
+  {
+    hora: "14:30",
+    titulo: "Serverless con Firebase",
+    ponente: "Lucía Torres",
+    perfil: "",
+  },
+  {
+    hora: "16:00",
+    titulo: "Panel: Futuro de la tecnología en España",
+    ponente: "Varios ponentes",
+    perfil: "",
+  },
+  {
+    hora: "17:30",
+    titulo: "Cierre y sorteos",
+    ponente: "Equipo GDG Madrid",
+    perfil: "",
+  },
+];
+---
+
+<section>
+  <h2>Agenda 2025</h2>
+  <ul>
+    {agenda.map((item) => (
+      <li style="margin-bottom: 1em;">
+        <strong>{item.hora}</strong> – <em>{item.titulo}</em><br />
+        {item.ponente && <span>Ponente: {item.ponente}</span>}
+      </li>
+    ))}
+  </ul>
+</section>
