@@ -1,0 +1,36 @@
+<nav class="sticky top-0 z-50 bg-white shadow-md rounded-lg mb-8 text-base px-6 py-4">
+  <div class="flex flex-wrap items-center justify-between">
+    <!-- Logo y botón hamburguesa -->
+    <div class="flex items-center justify-between w-full lg:w-auto">
+      <a href="/" class="text-2xl font-bold text-blue-600">DevFest 2025</a>
+      <button id="menu-toggle" class="lg:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6 ml-4" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú -->
+    <ul id="menu"
+      class="hidden w-full flex-col mt-4 space-y-3 font-medium text-gray-700 text-lg
+             lg:flex lg:flex-row lg:space-y-0 lg:space-x-6 lg:mt-0 lg:w-auto lg:ml-auto lg:items-center">
+      <li><a href="#comunidad" class="hover:text-blue-600 transition">Home</a></li>
+      <li><a href="#comunidad" class="hover:text-blue-600 transition">Organizadores</a></li>
+      <li><a href="#comunidad" class="hover:text-blue-600 transition">Devfest</a></li>
+      <li><a href="#comunidad" class="hover:text-blue-600 transition">Agenda</a></li>
+      <li><a href="#comunidad" class="hover:text-blue-600 transition">Patrocinadores</a></li>
+      <li><a href="https://devfest-2024-aranjuez.vercel.app/" class="hover:text-blue-600 transition">Edición 2024</a></li>
+      <li><a href="#comunidad" class="hover:text-blue-600 transition">☀</a></li>
+    </ul>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</nav>
