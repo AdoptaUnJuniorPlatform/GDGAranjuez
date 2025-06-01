@@ -21,5 +21,51 @@ const { title = "GDG Aranjuez "} = Astro.props;
 	<body class="font-['Google_Sans'] bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen">
 		<Navbar/>
 		<slot />
+    <footer>
+		<footer class="footer">
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <img src="/iconos/facebook.svg" alt="Facebook" />
+    </a>
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <img src="/iconos/instagram.svg" alt="Instagram" />
+    </a>
+    <a href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
+      <img src="/iconos/linkedin.svg"alt="LinkedIn" />
+    </a>
+  </div>
+  <p>&copy; 2025 Todos los derechos reservados.</p>
+
+  <style>
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: cadetblue;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0;
+    }
+  </style>
+</footer>
+
+	</footer>
 	</body>
 </html>
