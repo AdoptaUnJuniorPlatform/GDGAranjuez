@@ -7,7 +7,8 @@ const {
   fondo = 'bg-purple-100',
   texto = 'text-gray-500',
   sombra = 'shadow-md hover:shadow-xl',
-} = estilos;
+  // destructuring en una línea, usa ?? (nullish coalescing) para que si estilos es undefined o null, lo reemplace por {} automáticamente.
+} = Astro.props.estilos ?? {};
 ---
 
 <!-- Componente Card visual, individual para cada persona:
