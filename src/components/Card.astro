@@ -12,13 +12,13 @@ const {
 ---
 
 <!-- Componente Card visual, individual para cada persona:
-  - padding interno `p-6` y texto centrado
+  - padding interno `p-5` y texto centrado
   - `shadow-md` y `hover:shadow-xl`: sombra suave al inicio, más intensa al hacer hover
   - `transition-transform` + `hover:-translate-y-1`: anima la card al hacer hover, se mueve hacia arriba
   - `max-w-xs w-full`: ancho máximo limitado, pero adaptable, para mantener consistencia visual 
 -->
 <div
-  class={`rounded-xl p-6 text-center transition-transform hover:-translate-y-1 ${sombra} ${fondo} max-w-xs w-full`}
+  class={`rounded-xl p-5 text-center transition-transform hover:-translate-y-1 ${sombra} ${fondo} max-w-3xs w-full`}
 >
   {/* Foto del organizador, redondeada y centrada */}
   <img
