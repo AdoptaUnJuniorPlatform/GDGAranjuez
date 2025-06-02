@@ -1,0 +1,85 @@
+---
+// src/components/Ponentes.astro
+import Card from './Card.astro';
+
+const ponentes = [
+  {
+    nombre: 'Dramas',
+    cargo: 'Dramática de la casa',
+    foto: '/ponentes/planta1.jpg',
+    redes: {
+      twitter: 'https://twitter.com/anagarcia',
+      linkedin: 'https://linkedin.com/in/anagarcia',
+    },
+  },
+  {
+    nombre: 'Antonia',
+    cargo: 'CEO de Supervivencia',
+    foto: '/ponentes/planta1.jpg',
+    redes: {
+      linkedin: 'https://linkedin.com/in/anagarcia',
+    },
+  },
+  {
+    nombre: 'Paca',
+    cargo: 'Desarrolladora en mi balcón',
+    foto: '/ponentes/planta2.jpg',
+    redes: {
+      twitter: 'https://twitter.com/anagarcia',
+    },
+  },
+  {
+    nombre: 'Kofi',
+    cargo: 'Freeloader',
+    foto: '/ponentes/dog.jpg',
+    redes: {
+      twitter: 'https://twitter.com/anagarcia',
+      linkedin: 'https://linkedin.com/in/anagarcia',
+    },
+  },
+  {
+    nombre: 'Sinra',
+    cargo: 'Freeloader',
+    foto: '/ponentes/dog.jpg',
+    redes: {
+      twitter: 'https://twitter.com/anagarcia',
+    },
+  },
+  {
+    nombre: 'Mooncake',
+    cargo: 'Trotamundos',
+    foto: '/ponentes/cat.jpg',
+    redes: {
+      linkedin: 'https://linkedin.com/in/anagarcia',
+    },
+  },
+];
+
+const estilosPonentes = {
+  fondo: 'bg-orange-100',
+  texto: 'text-gray-700',
+  sombra: 'shadow-lg hover:shadow-2xl',
+};
+---
+
+<section id="ponentes" class="py-12">
+  <h2 class="text-3xl font-bold text-center mb-8">
+    Ponentes
+    <br />
+    🗣️🤓
+  </h2>
+
+  <div class="flex flex-wrap justify-center gap-8">
+    {
+      ponentes.map((pon) => (
+        <Card
+          nombre={pon.nombre}
+          cargo={pon.cargo}
+          foto={pon.foto}
+          redes={pon.redes}
+          estilos={estilosPonentes}
+        />
+      ))
+    }
+  </div>
+</section>
