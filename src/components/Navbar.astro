@@ -1,14 +1,18 @@
 <!-- Añadido en nav class, la clase dark: -->
 <nav
-  class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md rounded-lg mb-8 text-base px-6 py-4"
+  class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md rounded-lg mb-8 text-base px-6 py-4"
 >
   <div class="flex flex-wrap items-center justify-between">
     <!-- Logo y botón hamburguesa -->
     <div class="flex items-center justify-between w-full lg:w-auto">
-      <a href="/" class="text-2xl font-bold text-blue-600">DevFest 2025</a>
+      <a
+        href="/"
+        class="text-2xl font-bold text-blue-600 dark:text-blue-300"
+        >DevFest 2025</a
+      >
       <button
         id="menu-toggle"
-        class="lg:hidden text-gray-700 focus:outline-none"
+        class="lg:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
       >
         <svg
           class="w-6 h-6 ml-4"
@@ -67,7 +71,7 @@
           id="theme-toggle"
           class="hover:text-yellow-500 transition text-xl"
         >
-          ☀
+          ☀️
         </button>
       </li>
     </ul>

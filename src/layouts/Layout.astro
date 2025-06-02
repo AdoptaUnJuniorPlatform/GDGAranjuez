@@ -16,10 +16,21 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
     </style>
+    <script>
+      (function () {
+        const theme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia(
+          '(prefers-color-scheme: dark)'
+        ).matches;
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
 
   <body
-    class="font-['Google_Sans'] bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen"
+    class="font-['Google_Sans'] bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen transition-colors duration-300"
   >
     <Navbar />
     <slot />
