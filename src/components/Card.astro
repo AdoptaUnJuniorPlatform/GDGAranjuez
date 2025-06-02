@@ -1,17 +1,24 @@
 ---
 // Props que recibe la card
-const { nombre, cargo, foto, redes } = Astro.props;
+const { nombre, cargo, foto, redes, estilos } = Astro.props;
+
+// Estilos por defecto
+const {
+  fondo = 'bg-purple-100',
+  texto = 'text-gray-500',
+  sombra = 'shadow-md hover:shadow-xl',
+  // destructuring en una línea, usa ?? (nullish coalescing) para que si estilos es undefined o null, lo reemplace por {} automáticamente.
+} = Astro.props.estilos ?? {};
 ---
 
-<!-- Componente Card visual, individual para cada Organizador:
-  - fondo naranjita (podemos cambiarlo, pero me pareció buena opción)
-  - padding interno `p-6` y texto centrado
+<!-- Componente Card visual, individual para cada persona:
+  - padding interno `p-5` y texto centrado
   - `shadow-md` y `hover:shadow-xl`: sombra suave al inicio, más intensa al hacer hover
   - `transition-transform` + `hover:-translate-y-1`: anima la card al hacer hover, se mueve hacia arriba
   - `max-w-xs w-full`: ancho máximo limitado, pero adaptable, para mantener consistencia visual 
 -->
 <div
-  class="bg-purple-100 shadow-md rounded-xl p-6 text-center transition-transform hover:-translate-y-1 hover:shadow-xl max-w-xs w-full"
+  class={`rounded-xl p-5 text-center transition-transform hover:-translate-y-1 ${sombra} ${fondo} max-w-3xs w-full`}
 >
   {/* Foto del organizador, redondeada y centrada */}
   <img
@@ -27,7 +34,7 @@ const { nombre, cargo, foto, redes } = Astro.props;
     /* La clase whitespace-pre-line de Tailwind le dice al navegador que 
 	los saltos de línea \n se deben interpretar como saltos reales (<br />) */
   }
-  <p class="text-gray-500 mb-2 whitespace-pre-line">{cargo}</p>
+  <p class={`${texto} mb-2 whitespace-pre-line`}>{cargo}</p>
 
   {
     /* Enlaces a redes sociales, las que corresponda

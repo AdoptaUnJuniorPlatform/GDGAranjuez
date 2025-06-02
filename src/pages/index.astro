@@ -1,7 +1,4 @@
 ---
-//import Navbar from "../components/Navbar.astro";
-import Organizadores from '../components/Organizadores.astro';
-import Layout from '../layouts/Layout.astro';
 import Agenda from '../components/agenda.astro';
 import Charlas from '@/components/Charlas.astro';
 import CharlasSection from '@/components/CharlasSection.astro';
@@ -17,15 +14,19 @@ import PostsSection from '@/components/PostsSection.astro';
       >
         <span class="text-sm font-medium">4 de Octubre 2025</span>
       </div>
-      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+      <h1
+        class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+      >
         ¡Vuelve el
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
+        >
           DevFest!
         </span> 🚀
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-        Este 4 de octubre, te invitamos a uno de los mayores eventos de tecnología del año en
-        Aranjuez.
+        Este 4 de octubre, te invitamos a uno de los mayores eventos de
+        tecnología del año en Aranjuez.
       </p>
 
       <!-- CTA Button -->
@@ -47,19 +48,26 @@ import PostsSection from '@/components/PostsSection.astro';
     </section>
 
     <!-- Detalles Evento -->
-    <section id="comunidad" class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100">
+    <section
+      id="comunidad"
+      class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100"
+    >
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">Comunidad vibrante</h2>
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            Comunidad vibrante
+          </h2>
           <p class="text-gray-600 mb-6">
-            Durante una jornada completa (de 09:30 a 17:30), reuniremos a desarrolladores,
-            profesionales y entusiastas para sumergirse en aprendizaje práctico, colaboración e
-            inspiración.
+            Durante una jornada completa (de 09:30 a 17:30), reuniremos a
+            desarrolladores, profesionales y entusiastas para sumergirse en
+            aprendizaje práctico, colaboración e inspiración.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-blue-500 mr-2">✓</span>
-              <span class="text-gray-700">Charlas técnicas de primer nivel</span>
+              <span class="text-gray-700"
+                >Charlas técnicas de primer nivel</span
+              >
             </li>
             <li class="flex items-start">
               <span class="text-blue-500 mr-2">✓</span>
@@ -67,7 +75,9 @@ import PostsSection from '@/components/PostsSection.astro';
             </li>
             <li class="flex items-start">
               <span class="text-blue-500 mr-2">✓</span>
-              <span class="text-gray-700">Networking con profesionales</span>
+              <span class="text-gray-700"
+                >Networking con profesionales</span
+              >
             </li>
           </ul>
         </div>
@@ -84,8 +94,12 @@ import PostsSection from '@/components/PostsSection.astro';
 
     <!-- Seccion de Organizadores -->
     <Organizadores />
+
     <!-- Seccion Charlas -->
-    <CharlasSection/>
+    <CharlasSection />
+
+    <!-- Seccion de Ponentes -->
+    <Ponentes />
 
     <!-- Countdown -->
     <section
@@ -102,15 +116,15 @@ import PostsSection from '@/components/PostsSection.astro';
           <div class="text-xs text-gray-500">HORAS</div>
         </div>
       </div>
-    </section>
       <!-- Agenda del evento -->
-    <section class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100">
-    <Agenda />
+      <section
+        class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100"
+      >
+        <Agenda />
+      </section>
     </section>
       <!-- Blog -->
     <PostsSection />
   </main>
-  <footer>
-    
-  </footer>
+  <footer></footer>
 </Layout>
