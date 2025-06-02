@@ -1,4 +1,4 @@
-// Añadido en nav class, la clase dark:
+<!-- Añadido en nav class, la clase dark: -->
 <nav
   class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md rounded-lg mb-8 text-base px-6 py-4"
 >
@@ -73,7 +73,8 @@
     </ul>
   </div>
 
-  <script type="module" src="/scripts/themeToggle.js">
+  <!-- script menú hamburguesa -->
+  <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
@@ -83,4 +84,7 @@
       });
     }
   </script>
+
+  <!-- 😎 script toggle modo claro/oscuro -->
+  <script src="/src/scripts/themeToggle.js" defer></script>
 </nav>
