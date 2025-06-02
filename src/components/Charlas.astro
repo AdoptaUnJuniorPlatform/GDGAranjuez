@@ -1,10 +1,16 @@
 ---
 const { titulo, descripcion, ponente, foto } = Astro.props;
-const altTexto = 'Foto';
+const altTexto = `Foto de ${ponente}`;
 ---
 
-<article class="max-w-sm bg-white rounded-2xl shadow-md p-6 text-center">
-  <img src={foto} alt={altTexto} class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+<article
+  class="max-w-sm bg-white rounded-2xl shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+>
+  <img
+    src={foto}
+    alt={altTexto}
+    class="w-24 h-24 rounded-full mx-auto mb-4 object-cover transition-transform duration-300 hover:scale-105"
+  />
   <h3 class="text-xl font-semibold mb-2">{titulo}</h3>
   <p class="text-sm text-gray-600 mb-4 whitespace-pre-line">{descripcion}</p>
   <p class="text-sm font-medium text-gray-800">👤 {ponente}</p>
