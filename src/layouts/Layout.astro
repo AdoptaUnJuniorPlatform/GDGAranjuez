@@ -23,14 +23,15 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
           '(prefers-color-scheme: dark)'
         ).matches;
         if (theme === 'dark' || (!theme && prefersDark)) {
-          document.documentElement.classList.add('dark');
+          document.body.classList.add('dark');
         }
       })();
     </script>
   </head>
 
   <body
-    class="font-['Google_Sans'] bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen transition-colors duration-300"
+    class="font-['Google_Sans'] bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen transition-colors duration-300
+  	dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800 dark:text-white"
   >
     <Navbar />
     <slot />
@@ -91,6 +92,7 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
         </style>
       </footer>
     </footer>
+    <script type="module" src="/src/scripts/themeToggle.js"></script>
   </body>
   <footer></footer>
 </html>
