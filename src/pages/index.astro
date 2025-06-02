@@ -1,10 +1,8 @@
 ---
-//import Navbar from "../components/Navbar.astro";
-import CharlasSection from '@/components/CharlasSection.astro';
-import Ponentes from '@/components/Ponentes.astro';
 import Agenda from '../components/agenda.astro';
-import Organizadores from '../components/Organizadores.astro';
-import Layout from '../layouts/Layout.astro';
+import Charlas from '@/components/Charlas.astro';
+import CharlasSection from '@/components/CharlasSection.astro';
+import PostsSection from '@/components/PostsSection.astro';
 ---
 
 <Layout title="GDG Aranjuez | DevFest 2025">
@@ -118,7 +116,6 @@ import Layout from '../layouts/Layout.astro';
           <div class="text-xs text-gray-500">HORAS</div>
         </div>
       </div>
-
       <!-- Agenda del evento -->
       <section
         class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100"
@@ -126,6 +123,8 @@ import Layout from '../layouts/Layout.astro';
         <Agenda />
       </section>
     </section>
+      <!-- Blog -->
+    <PostsSection />
   </main>
   <footer></footer>
 </Layout>
