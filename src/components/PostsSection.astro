@@ -1,7 +1,7 @@
 ---
-import PostCard from './PostCard.astro';
-import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import PostCard from './PostCard.astro';
 
 type Post = CollectionEntry<'posts'>;
 
@@ -11,7 +11,7 @@ const posts: Post[] = (await getCollection('posts'))
   .slice(0, 3);
 ---
 
-<section id="blog" class="py-12 bg-white rounded-2xl shadow-md border border-gray-100">
+<section id="blog" class="py-12 rounded-2xl shadow-md border border-purple-200">
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-gray-800 mb-2">
