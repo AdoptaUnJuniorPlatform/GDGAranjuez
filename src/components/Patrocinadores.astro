@@ -1,0 +1,106 @@
+---
+const sponsors = {
+  Gold: [
+    {
+      name: "Ayuntamiento Aranjuez",
+      logo: "/patrocinadores/pngwing.com.png",
+      links: {
+        website: "https://www.aranjuez.es/",
+      }
+    },
+    {
+      name: "Google",
+      logo: "/patrocinadores/image-gdg-aranjuez.jpg",
+      links: {
+        website: "https://gdg.community.dev/gdg-aranjuez/",
+      }
+    }
+  ],
+  Platinum: [
+    {
+      name: "Adopta Un Junior",
+      logo: "/patrocinadores/image-adopta-un-junior.jpg",
+      links: {
+        website: "https://adoptaunjunior.es/",
+      }
+    }
+  ],
+  Silver: [
+ {
+      name: "",
+      logo: "",
+      links: {
+        website: "",
+      }
+    }
+
+
+
+  ],
+  Media: [
+
+ {
+      name: "",
+      logo: "",
+      links: {
+        website: "",
+      }
+    }
+
+
+  ]
+};
+---
+
+<section id="sponsors" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">Patrocinadores</h2>
+
+    <div class="flex flex-wrap gap-10 mb-14">
+      {
+        Object.entries(sponsors)
+          .filter(([_, list]) => list.length > 0)
+          .map(([category, list]) => (
+            <div class="flex-1 min-w-[250px]">
+              <h3 class="text-2xl font-semibold mb-6 capitalize text-blue-600">
+                {category === 'Media' ? 'Media Partners' : `${category} Sponsors`}
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {
+                  list.map((sponsor) => (
+                    <div class="w-full max-w-4xl bg-white shadow-md rounded-lg p-6 mx-auto text-center">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        class="h-20 mx-auto mb-4 object-contain"
+                        loading="lazy"
+                      />
+                      <h4 class="text-xl font-bold mb-2">{sponsor.name}</h4>
+                      <div class="flex justify-center gap-4 flex-wrap">
+                        {sponsor.links.website && (
+                          <a
+                            href={sponsor.links.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-black hover:underline"
+                          >
+                            Sitio web
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          ))
+      }
+    </div>
+
+    <div class="mt-16 text-center text-lg text-gray-700">
+      <p>
+        Gracias a todos nuestros patrocinadores por hacer posible DevFest Madrid 2025. ¡Su apoyo impulsa a la comunidad tecnológica!
+      </p>
+    </div>
+  </div>
+</section>
