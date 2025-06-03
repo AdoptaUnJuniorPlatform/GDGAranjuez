@@ -1,11 +1,11 @@
 ---
 import CharlasSection from '@/components/CharlasSection.astro';
+import ColaboradorSection from '@/components/ColaboradorSection.astro';
 import Organizadores from '@/components/Organizadores.astro';
 import Ponentes from '@/components/Ponentes.astro';
 import PostsSection from '@/components/PostsSection.astro';
 import Layout from '@/layouts/Layout.astro';
 import Agenda from '../components/agenda.astro';
-import ColaboradorSection from '@/components/ColaboradorSection.astro';
 ---
 
 <Layout title="GDG Aranjuez | DevFest 2025">
@@ -53,7 +53,7 @@ import ColaboradorSection from '@/components/ColaboradorSection.astro';
     <!-- Detalles Evento -->
     <section
       id="comunidad"
-      class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100"
+      class="rounded-2xl shadow-md p-8 mb-16 border border-purple-400"
     >
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
@@ -104,8 +104,8 @@ import ColaboradorSection from '@/components/ColaboradorSection.astro';
     <!-- Seccion de Ponentes -->
     <Ponentes />
 
-      <!-- Seccion de Colaboradores -->
-      <ColaboradorSection/>
+    <!-- Seccion de Colaboradores -->
+    <ColaboradorSection />
 
     <!-- Countdown -->
     <section
@@ -125,7 +125,7 @@ import ColaboradorSection from '@/components/ColaboradorSection.astro';
 
       <!-- Agenda del evento -->
       <section
-        class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100"
+        class="bg-white rounded-2xl shadow-md p-8 mb-16 border border-purple-200"
       >
         <Agenda />
       </section>
