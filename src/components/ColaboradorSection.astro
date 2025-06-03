@@ -1,0 +1,53 @@
+---
+import Colaborador from './Colaborador.astro';
+
+const colaboradores = [
+  {
+    nombre: 'Ana López',
+    rol: 'Diseño de branding y redes',
+    foto: 'https://randomuser.me/api/portraits/women/12.jpg',
+    redes: {
+      twitter: 'https://twitter.com/ana_lopez',
+      linkedin: 'https://www.linkedin.com/in/ana-lopez/',
+    },
+  },
+  {
+    nombre: 'Luis Fernández',
+    rol: 'Soporte técnico en streaming',
+    foto: 'https://randomuser.me/api/portraits/men/45.jpg',
+    redes: {
+      github: 'https://github.com/luisfdev',
+      linkedin: 'https://www.linkedin.com/in/luisfernandez/',
+    },
+  },
+  {
+    nombre: 'Carla Méndez',
+    rol: 'Moderación de comunidad',
+    foto: 'https://randomuser.me/api/portraits/women/60.jpg',
+    redes: {
+      twitter: 'https://twitter.com/carlicode',
+    },
+  },
+];
+---
+
+<section id="colaboradores" class="py-12">
+  <h2 class="text-3xl font-bold text-center mb-2">
+    Colaboradores
+    <br />
+    <h3 class="text-2xl font-bold text-center mb-6">🤝✨</h3>
+  </h2>
+
+  <div class="flex flex-wrap justify-center gap-8">
+    {
+      colaboradores.map((colab) => (
+        <Colaborador
+          nombre={colab.nombre}
+          rol={colab.rol}
+          foto={colab.foto}
+          redes={colab.redes}
+        />
+      ))
+    }
+  </div>
+</section>

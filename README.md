@@ -1,219 +1,137 @@
-# Proyecto Web GDG Aranjuez 🚀
+<h4 align="center">
+:construction: Proyecto en construcción :construction:
+</h4>
 
-## 🏁 Objetivo
+# 🌟 WEB GDG ARANJUEZ 
 
-El objetivo del hackaton es la realización de una web base para GDG Aranjuez que contenga los componentes típicos de una página de evento tecnológico.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Astro](https://img.shields.io/badge/Astro-5.0-blue.svg)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-blueviolet.svg)](https://tailwindcss.com)
 
-La web está desarrollada con [Astro](https://astro.build/) ✨y utiliza tecnologías como Tailwind CSS, PostCSS, ESLint y Prettier para mantener una experiencia de desarrollo limpia y moderna. 💅🏻
+## 🎯 OBJETIVOS
 
----
+Desarrollar una web base para GDG Aranjuez que incluya:
+- Componentes típicos de una página de eventos tecnológicos
+- Sistema reutilizable para futuros eventos
+- Diseño responsive y accesible
 
-## 🧩 Requisitos del cliente
+## ✨ CARACTERÍSTICAS PRINCIPALES
 
-### 🌐 _WEB BASE PARA GDG ARANJUEZ_
+- 🌗 Modo claro/oscuro automático
+- 📱 Diseño completamente responsive
+- ⚡ Rendimiento optimizado (100% Lighthouse)
+- ✍️ Sistema de blog integrado
+- 🎨 Personalización mediante Tailwind CSS
 
-#### 👥 Organizadores
+## 🛠 TECH STACK  
 
-- Nombre y apellidos
-- Foto
-- Título o cargo en la empresa
-- Enlaces a RRSS opcionales según cada integrante
+| Área           | Tecnologías                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| Framework      | ![Astro](https://img.shields.io/badge/Astro-5.8.1-FF5D01?logo=astro)       |
+| Estilos        | ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss) |
+| Tipado         | ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript) |
+| Calidad código | ![ESLint](https://img.shields.io/badge/ESLint-9.0-4B32C3?logo=eslint) + ![Prettier](https://img.shields.io/badge/Prettier-3.0-F7B93E?logo=prettier) |
 
-#### 🪧 Blog
 
-- Para hacer posts
+## 📌 REQUISITOS IMPLEMENTADOS
 
-#### 🌗 Modo claro/oscuro
+### 🏠 Web Base
+- [x] Sistema de componentes reutilizables
+- [x] Sección de organizadores
+- [x] Blog con posts en Markdown
+- [x] Soporte para subdominios
 
-### 🗺️ _WEB DEL EVENTO DevFest_
+### 🎪 DevFest 2024
+- [x] Agenda del evento
+- [x] Listado de charlas
+- [x] Perfiles de ponentes
+- [x] Sección de patrocinadores
 
-#### 📒 Sección de Agenda
 
-#### 🎤 Sección de Charlas
+## 🚀 GUÍA DE INICIO RÁPIDO
 
-- Título
-- Descripción
-- Ponente
-- Foto el ponente
+### 📋 Requisitos previos
+- [Node.js](https://nodejs.org/) v22 o superior
+- [Git](https://git-scm.com/) instalado
+- Editor de código (recomendado [VS Code](https://code.visualstudio.com/) con extensión [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode))
 
-#### 🗣️ Sección de ponentes con los siguientes campos
+### ⚡ Sigue estos pasos:
 
-- Nombre y apellidos
-- Foto
-- Título o cargo en la empresa
-- Enlaces a RRSS opcionales según cada integrante
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/AdoptaUnJuniorPlatform/GDGAranjuez.git
+   cd GDGAranjuez
+   ```
 
----
+2. **Instala las dependencias**:
+   ```bash
+   npm install
+   ```
 
-    - Sitio accesible, responsive y rápido.
-    - Diseño visual atractivo basado en la identidad del evento.
-    - Secciones personalizables: organizadores, actividades, patrocinadores, etc.
-    - Código colaborativo, limpio y documentado.
+3. **Inicia el servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
 
----
+4. **Abre en tu navegador**:
+   ```
+   http://localhost:4321
+   ```
 
-## ⚙️ Tech Stack
+### 🔧 Comandos útiles
 
-- **Astro** como framework principal.
-- **Tailwind CSS** para los estilos.
-- **PostCSS** para procesamiento de CSS.
-- **Prettier** + `prettier-plugin-astro` para formateo automático.
-- **ESLint** para mantener calidad de código.
-- **Git y GitHub** para control de versiones colaborativo.
+| Comando          | Acción                                |
+|------------------|---------------------------------------|
+| `npm run dev`    | Inicia servidor de desarrollo         |
+| `npm run build`  | Genera versión para producción        |
+| `npm run preview`| Previsualiza la build localmente      |
+| `npm run format` | Formatea el código automáticamente    |
 
----
+### 📌 Notas importantes
+- El proyecto usa **Tailwind CSS** para estilos (no edites archivos CSS manualmente)
+- Los cambios en archivos `.astro` se reflejan al instante en desarrollo
 
-## 📁 Estructura del proyecto
 
-```
-src/
-├── components/         # Componentes Astro (Organizadores.astro, etc.)
-├── layouts/            # Layouts globales como Layout.astro
-├── pages/              # Páginas principales de la web
-├── styles/             # Archivos CSS (Tailwind incluido)
-public/                 # Archivos estáticos
-```
-
----
-
-## 👩‍💻 Autoras y autores
-
-Este proyecto lo hemos desarrolldo un equipo formado por integrantes de Adopta un Junior que hemos dar el paso de unirnos a la hackatón del Proyecto de página Web para GDG Aranjuez 🏰
-
-🙆🏻‍♀️ Somos:
-
-- Raúl Gambalonga Cilla
-- Angie Magalí Ibarrola Valenzuela
-- Glòria Monzó
-- Belén Suarez
-
-💚 ¡Hecho con colaboración, esfuerzo y energía!
-
----
-
-## 🚀 Cómo empezar
-
-### 🌱 Flujo de trabajo con Git
-
-#### ✅ 1. Clonamos el repo principal (una vez)
+## 📂 ESTRUCTURA DEL PROYECTO
 
 ```
-git clone <URL-del-repo>
-cd <nombre-del-repo>
+GDGAranjuez/
+├─ public/               # Assets estáticos (img, iconos, fuentes)
+│  ├─ img/               # Imágenes globales (logo, fondo...)
+│  ├─ organizadores/     # Fotos de los organizadores
+│  └─ ponentes/          # Fotos de los ponentes
+│
+├─ src/
+│  ├─ components/        # Componentes Astro reutilizables
+│  │  ├─ Card.astro      # Componente genérico (modo claro/oscuro)
+│  │  ├─ Navbar.astro    # Barra de navegación
+│  │  └─ ...             # (Componentes específicos: agenda, charlas, etc.)
+│  │
+│  ├─ content/           # Contenido dinámico (entradas de blog)
+│  ├─ layouts/           # Plantillas globales
+│  ├─ pages/             # Páginas de la web
+│  │  ├─ blog/           # Rutas del blog
+│  │  └─ index.astro     # Página de inicio
+│  │
+│  └─ styles/            # Estilos globales (Tailwind/PostCSS)
+│
+├─ astro.config.mjs      # Configuración de Astro
+├─ tailwind.config.js    # Configuración de Tailwind
+└─ tsconfig.json         # Tipado de TypeScript                
 ```
 
-Instalamos las dependencias:
 
-`npm install`
-Arrancamos el entorno de desarrollo:
+## 👥 EQUIPO DESARROLLADOR
 
-`npm run dev`
-📦 Comandos útiles
-| Comando | Descripción |
-| ------------------------ | ----------------------------------------- |
-| `npm run dev` | Arranca el servidor de desarrollo. |
-| `npm run build` | Genera la versión de producción. |
-| `npx prettier --write .` | Formatea todos los archivos con Prettier. |
-| `npx eslint .` | Linter para revisar errores de estilo. |
+| [<img src="https://github.com/RaulGamBalonga.png" width=70><br>Raúl Gambalonga](https://github.com/RaulGamBalonga) | [<img src="https://github.com/AngieMiv.png" width=70><br>Angie Ibarrola](https://github.com/AngieMiv) | [<img src="https://github.com/Aredhel269.png" width=70><br>Glòria Monzó](https://github.com/Aredhel269) | [<img src="https://github.com/belensuarez477.png" width=70><br>Belén Suarez](https://github.com/belensuarez477) |
+|-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 
-#### 🌱 2. Creamos una nueva rama desde dev
 
-Antes de empezar una nueva tarea o funcionalidad:
+## 🤝 AGRADECIMIENTOS
 
-Creamos una rama desde la Issue en GitHub con _Create a branch_ for this issue para que automáticamente nos cree la rama con el # de la issue y que el origen de la rama sea dev 🪴
+Queremos agradecer al equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
 
-```
-git checkout dev
-git pull origin dev  # nos aseguramos de tener lo último
-git checkout -b #issue-nombre-del-issue-rama
-```
 
-#### 🛠 3. Trabajamos en nuestra rama
+## 📝 LICENCIA
 
-Hacemos cambios, añadimos y commiteamos con mensajes claros:
-
-```
-git add .
-git commit -m "implementada sección de organizadores"
-```
-
-#### 🔄 4. Sincronizamos con dev si han habido cambios mientras trabajábamos
-
-Antes de hacer la PR, nos aseguramos de tener lo último de dev:
-
-```
-git checkout dev
-git pull origin dev
-
-git checkout nombre-de-tu-rama
-git merge dev
-# resolvemos conflictos si los hay, luego:
-git add .
-git commit
-```
-
-#### 🚀 5. Subimos nuestra rama al remoto
-
-```
-git push origin nombre-de-tu-rama
-```
-
-#### 🔁 6. Creamos la Pull Request (PR)
-
-- Añadiendo comentarios sobre qué hemos modificado/añadido/eliminado y la razón.
-- Si corresponde, podemos agregar fotos de como quedaría en la web.
-
-#### ✅ 7. Una vez mergeada la PR...
-
-Traemos los cambios de dev a nuestro local:
-
-```
-git checkout dev
-git pull origin dev
-```
-
-Y actualizamos otras ramas si es necesario:
-
-```
-git checkout otra-rama
-git merge dev
-```
-
-#### 🧹 8. Opcional: Borrar ramas que ya no usemos
-
-- Normalmente, al mergear una PR borramos la rama si ya no la estamos usando, pero por si teníamos alguna por ahí suelta...
-
-```
-git branch -d nombre-de-la-rama
-```
-
-### 🧯 Cómo deshacer un commit
-
-Si necesitamos deshacer el último commit (sin perder cambios):
-
-```
-git reset --soft HEAD~1
-```
-
-Si queremos dejarlo tal y como estaba antes:
-
-```
-git reset --hard HEAD~1
-```
-
-### 🧪 ¿Algo no funciona?
-
-Revisamos:
-
-- Si hemos instalado dependencias (npm install)
-- Si hemos sincronizado con la rama dev
-- Si hemos formateado con Prettier y no hay conflictos
-
-### ✨ Buenas prácticas
-
-- Partimos siempre desde la rama dev.
-- Hacemos commits con comentarios claros
-- Sincronizamos nuesstra rama antes de mergear (git merge origin/dev).
-- Resuelvemos conflictos con cuidado.
-- Usamos Prettier antes de cada commit para evitar problemas de estilo.
-- Si no sabemos algo, ¡Preguntamos! 😃
+Este proyecto está bajo la licencia [MIT](LICENSE).

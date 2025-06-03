@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import PostCard from './PostCard.astro';
+
+type Post = CollectionEntry<'posts'>;
+
+const posts: Post[] = (await getCollection('posts'))
+  .filter((post: Post) => post.data.date) // Filtrar posts sin fecha
+  .sort((a: Post, b: Post) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
+---
+
+<section id="blog" class="py-12 rounded-2xl shadow-md border border-purple-200">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">
+        Últimas entradas al <span class="text-purple-600">blog</span>
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Descubre las últimas novedades, tutoriales y reflexiones de nuestro equipo
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {posts.map((post: Post) => (
+        <PostCard
+          url={`/blog/${post.slug}`}
+          title={post.data.title}
+          excerpt={post.data.excerpt}
+          date={post.data.date}
+          author={post.data.author}
+          authorImage={post.data.authorImage}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a 
+        href="/blog" 
+        class="inline-block px-6 py-3 border border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition-colors"
+      >
+        Ver todos los posts
+      </a>
+    </div>
+  </div>
+</section>
