@@ -11,7 +11,7 @@
 ## 🎯 Objetivos
 
 Desarrollar una web base para GDG Aranjuez que incluya:
-- Componentes típicos de eventos tecnológicos
+- Componentes típicos de una página de eventos tecnológicos
 - Sistema reutilizable para futuros eventos
 - Diseño responsive y accesible
 
@@ -49,42 +49,74 @@ Desarrollar una web base para GDG Aranjuez que incluya:
 
 
 ## 🚀 Guía de inicio rápido
+### 📋 Requisitos previos
+- [Node.js](https://nodejs.org/) v22 o superior
+- [Git](https://git-scm.com/) instalado
+- Editor de código (recomendado [VS Code](https://code.visualstudio.com/) con extensión [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode))
 
-```
-# 1. Clonar repositorio
-git clone https://github.com/gdgaranjuez/web.git
-cd web
+### ⚡ Sigue estos pasos:
 
-# 2. Instalar dependencias
-npm install
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/AdoptaUnJuniorPlatform/GDGAranjuez.git
+   cd GDGAranjuez
+   ```
 
-# 3. Iniciar servidor de desarrollo
-npm run dev
-```
+2. **Instala las dependencias**:
+   ```bash
+   npm install
+   ```
 
-Visita [http://localhost:4321](http://localhost:4321) en tu navegador.
+3. **Inicia el servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
 
+4. **Abre en tu navegador**:
+   ```
+   http://localhost:4321
+   ```
+
+### 🔧 Comandos útiles
+
+| Comando          | Acción                                |
+|------------------|---------------------------------------|
+| `npm run dev`    | Inicia servidor de desarrollo         |
+| `npm run build`  | Genera versión para producción        |
+| `npm run preview`| Previsualiza la build localmente      |
+| `npm run format` | Formatea el código automáticamente    |
 
 ### 📌 Notas importantes
 - El proyecto usa **Tailwind CSS** para estilos (no edites archivos CSS manualmente)
 - Los cambios en archivos `.astro` se reflejan al instante en desarrollo
-- Configura tu editor con:
-  - [Extensión Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
-  - Prettier para formato automático
 
 
 ## 📂 Estructura del proyecto
 
 ```
 GDGAranjuez/
-├── src/
-│   ├── components/   # Componentes reutilizables
-│   ├── content/      # Contenido en Markdown
-│   ├── layouts/      # Plantillas base
-│   ├── pages/        # Rutas de la web
-│   └── styles/       # Configuración de estilos
-├── public/           # Assets estáticos
-└── astro.config.mjs  # Configuración de Astro
+├─ public/               # Assets estáticos (img, iconos, fuentes)
+│  ├─ img/               # Imágenes globales (logo, fondo...)
+│  ├─ organizadores/     # Fotos de los organizadores
+│  └─ ponentes/          # Fotos de los ponentes
+│
+├─ src/
+│  ├─ components/        # Componentes Astro reutilizables
+│  │  ├─ Card.astro      # Componente genérico (modo claro/oscuro)
+│  │  ├─ Navbar.astro    # Barra de navegación
+│  │  └─ ...             # (Componentes específicos: agenda, charlas, etc.)
+│  │
+│  ├─ content/           # Contenido dinámico (entradas de blog)
+│  ├─ layouts/           # Plantillas globales
+│  ├─ pages/             # Páginas de la web
+│  │  ├─ blog/           # Rutas del blog
+│  │  └─ index.astro     # Página de inicio
+│  │
+│  └─ styles/            # Estilos globales (Tailwind/PostCSS)
+│
+├─ astro.config.mjs      # Configuración de Astro
+├─ tailwind.config.js    # Configuración de Tailwind
+└─ tsconfig.json         # Tipado de TypeScript                
 ```
 
 
@@ -96,7 +128,7 @@ GDGAranjuez/
 
 ## 🤝 Agradecimientos
 
-Agradecemos al equipo de [Adopta un Junior](https://adoptaunjunior.org) por darnos esta oportunidad.
+Queremos agradecer al equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
 
 
 ## 📝 Licencia
