@@ -18,7 +18,7 @@ import Agenda from '../components/agenda.astro';
         <span class="text-lg font-medium">4 de Octubre 2025</span>
       </div>
       <h1
-        class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-indigo-200 mb-6 leading-tight"
+        class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-indigo-100 mb-6 leading-tight"
       >
         ¡Vuelve el
         <span
@@ -28,7 +28,7 @@ import Agenda from '../components/agenda.astro';
         </span> 🚀
       </h1>
       <p
-        class="text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto mb-8"
+        class="text-xl text-gray-600 dark:text-gray-50 max-w-2xl mx-auto mb-8"
       >
         Este 4 de octubre, te invitamos a uno de los mayores eventos de
         tecnología del año en Aranjuez.
@@ -38,14 +38,17 @@ import Agenda from '../components/agenda.astro';
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="#comunidad"
-          class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg hover:from-purple-600 hover:to-blue-600 dark:hover:from-purple-600 dark:hover:to-blue-600 transition-all duration-300"
+          class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg
+		  hover:shadow-lg hover:from-purple-600 hover:to-blue-600
+		  dark:hover:from-purple-600 dark:hover:to-blue-600
+		  transition-all duration-300"
         >
           ¡Quiero participar!
         </a>
         <a
           href="https://devfest-2024-aranjuez.vercel.app/"
           target="_blank"
-          class="px-8 py-3 border-2 border-gray-300 text-gray-700 dark:text-gray-200 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300"
+          class="px-8 py-3 border-2 border-blue-600 text-gray-700 dark:text-gray-200 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-300"
         >
           Ver edición 2024
         </a>
@@ -55,16 +58,17 @@ import Agenda from '../components/agenda.astro';
     <!-- Detalles Evento -->
     <section
       id="comunidad"
-      class="bg-white dark:bg-indigo-700 rounded-2xl shadow-md dark:shadow-purple-700 p-8 mb-16 border border-gray-100 dark:border-pink-300"
+      class="bg-white dark:bg-blue-900 rounded-2xl shadow-md dark:shadow-orange-400
+	  p-8 mb-16 border border-gray-100 dark:border-pink-300"
     >
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2
-            class="text-2xl font-bold text-gray-800 dark:text-pink-300 mb-4"
+            class="text-2xl font-bold text-gray-800 dark:text-orange-400 mb-4"
           >
             Comunidad vibrante
           </h2>
-          <p class="text-gray-600 dark:text-gray-900 mb-6">
+          <p class="text-gray-600 dark:text-gray-200 mb-6">
             Durante una jornada completa (de 09:30 a 17:30), reuniremos a
             desarrolladores, profesionales y entusiastas para sumergirse en
             aprendizaje práctico, colaboración e inspiración.
@@ -72,19 +76,19 @@ import Agenda from '../components/agenda.astro';
           <ul class="space-y-3">
             <li class="flex items-start">
               <span class="text-blue-500 dark:text-pink-500 mr-2">✓</span>
-              <span class="text-gray-700 dark:text-gray-800"
+              <span class="text-gray-00 dark:text-gray-300"
                 >Charlas técnicas de primer nivel</span
               >
             </li>
             <li class="flex items-start">
               <span class="text-blue-500 dark:text-pink-500 mr-2">✓</span>
-              <span class="text-gray-700 dark:text-gray-800"
+              <span class="text-gray-700 dark:text-gray-300"
                 >Talleres prácticos</span
               >
             </li>
             <li class="flex items-start">
               <span class="text-blue-500 dark:text-pink-500 mr-2">✓</span>
-              <span class="text-gray-700 dark:text-gray-800"
+              <span class="text-gray-700 dark:text-gray-300"
                 >Networking con profesionales</span
               >
             </li>
@@ -120,28 +124,28 @@ import Agenda from '../components/agenda.astro';
       <h3 class="text-sm font-semibold text-gray-500 mb-2">FALTAN</h3>
       <div class="flex justify-center gap-4">
         <div
-          class="bg-white dark:bg-pink-300 p-4 rounded-lg shadow-sm min-w-[70px]"
+          class="bg-white dark:bg-pink-200 p-4 rounded-lg shadow-sm min-w-[70px]"
         >
           <div class="text-3xl font-bold text-blue-600 dark:text-blue-800">
             87
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-700">DÍAS</div>
+          <div class="text-xs text-gray-500 dark:text-gray-800">DÍAS</div>
         </div>
         <div
-          class="bg-white dark:bg-pink-300 p-4 rounded-lg shadow-sm min-w-[70px]"
+          class="bg-white dark:bg-pink-200 p-4 rounded-lg shadow-sm min-w-[70px]"
         >
           <div
             class="text-3xl font-bold text-purple-600 dark:text-purple-800"
           >
             12
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-700">HORAS</div>
+          <div class="text-xs text-gray-500 dark:text-gray-800">HORAS</div>
         </div>
       </div>
 
       <!-- Agenda del evento -->
       <section
-        class="bg-white dark:bg-purple-700 rounded-2xl shadow-md p-8 mb-16 border border-gray-100 dark:border-blue-500"
+        class="bg-white dark:bg-gray-900 dark:text-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100 dark:border-blue-800"
       >
         <Agenda />
       </section>
