@@ -1,6 +1,9 @@
 <head>
   <!-- Fuente tech opcional -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+    rel="stylesheet"
+  />
   <style>
     .nav-link {
       position: relative;
@@ -8,7 +11,7 @@
     }
 
     .nav-link::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 0%;
       height: 2px;
@@ -30,37 +33,95 @@
   </style>
 </head>
 
-<nav class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl mb-8 text-base px-6 py-4 font-[Orbitron]">
+<nav
+  class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl mb-8 text-base px-6 py-4 font-[Orbitron]"
+>
   <div class="flex flex-wrap items-center justify-between">
     <!-- Logo y botón hamburguesa -->
     <div class="flex items-center justify-between w-full lg:w-auto">
-      <a href="/" class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 drop-shadow">
+      <a
+        href="/"
+        class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 drop-shadow"
+      >
         DevFest 2025
       </a>
-      <button id="menu-toggle" class="lg:hidden text-gray-700 focus:outline-none">
-        <svg class="w-6 h-6 ml-4" fill="none" stroke="currentColor" stroke-width="2"
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round"
+      <button
+        id="menu-toggle"
+        class="lg:hidden text-gray-700 focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6 ml-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
 
     <!-- Menú -->
-    <ul id="menu"
+    <ul
+      id="menu"
       class="hidden w-full flex-col mt-4 space-y-3 font-medium text-gray-700 text-lg
-             lg:flex lg:flex-row lg:space-y-0 lg:space-x-6 lg:mt-0 lg:w-auto lg:ml-auto lg:items-center">
-      <li><a href="#comunidad" class="nav-link hover:text-blue-700 transition">Home</a></li>
-      <li><a href="#comunidad" class="nav-link hover:text-blue-700 transition">Organizadores</a></li>
-      <li><a href="#comunidad" class="nav-link hover:text-blue-700 transition">Devfest</a></li>
-      <li><a href="#comunidad" class="nav-link hover:text-blue-700 transition">Agenda</a></li>
-      <li><a href="#comunidad" class="nav-link hover:text-blue-700 transition">Patrocinadores</a></li>
-      <li><a href="/blog" class="nav-link hover:text-blue-700 transition">Blog</a></li>
-      <li><a href="https://devfest-2024-aranjuez.vercel.app/" class="nav-link hover:text-blue-700 transition">Edición 2024</a></li>
-      <li><a href="#comunidad" class="text-2xl hover:text-yellow-500 transition">☀</a></li>
+             lg:flex lg:flex-row lg:space-y-0 lg:space-x-6 lg:mt-0 lg:w-auto lg:ml-auto lg:items-center"
+    >
+      <li>
+        <a
+          href="#comunidad"
+          class="nav-link hover:text-blue-700 transition">Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="#comunidad"
+          class="nav-link hover:text-blue-700 transition">Organizadores</a
+        >
+      </li>
+      <li>
+        <a
+          href="#comunidad"
+          class="nav-link hover:text-blue-700 transition">Devfest</a
+        >
+      </li>
+      <li>
+        <a
+          href="#comunidad"
+          class="nav-link hover:text-blue-700 transition">Agenda</a
+        >
+      </li>
+      <li>
+        <a
+          href="#comunidad"
+          class="nav-link hover:text-blue-700 transition">Patrocinadores</a
+        >
+      </li>
+      <li>
+        <a href="/blog" class="nav-link hover:text-blue-700 transition"
+          >Blog</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://devfest-2024-aranjuez.vercel.app/"
+          class="nav-link hover:text-blue-700 transition">Edición 2024</a
+        >
+      </li>
+      <li>
+        <button
+          id="theme-toggle"
+          class="hover:text-yellow-500 transition text-xl">☀️</button
+        >
+      </li>
     </ul>
   </div>
 
+  <!-- script menú hamburguesa -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
