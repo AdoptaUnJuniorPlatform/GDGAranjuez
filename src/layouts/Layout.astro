@@ -39,64 +39,17 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
   >
     <Navbar />
     <slot />
-    <footer>
-      <footer class="footer">
-        <div class="social-icons">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <img src="/iconos/facebook.svg" alt="Facebook" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <img src="/iconos/instagram.svg" alt="Instagram" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <img src="/iconos/linkedin.svg" alt="LinkedIn" />
-          </a>
-        </div>
-        <p>&copy; 2025 Todos los derechos reservados.</p>
-
-        <style>
-          .footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: cadetblue;
-            padding: 20px;
-            text-align: center;
-          }
-
-          .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 10px;
-          }
-
-          .social-icons img {
-            width: 24px;
-            height: 24px;
-          }
-
-          footer p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 0;
-          }
-        </style>
-      </footer>
-    </footer>
-    <script type="module" src="/themeToggle.js"></script>
-  </body>
-  <footer></footer>
-</html>
+   <footer class="flex flex-col items-center justify-center bg-cadetblue p-5 text-center">
+  <div class="flex gap-5 mb-2">
+    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+      <img src="/iconos/facebook.svg" alt="Facebook" class="w-6 h-6" />
+    </a>
+    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+      <img src="/iconos/instagram.svg" alt="Instagram" class="w-6 h-6" />
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+      <img src="/iconos/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
+    </a>
+  </div>
+  <p class="text-sm text-gray-700">&copy; 2025 Todos los derechos de autor reservados.</p>
+</footer>
