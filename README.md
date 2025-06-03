@@ -2,20 +2,20 @@
 :construction: Proyecto en construcción :construction:
 </h4>
 
-# 🌟 Web GDG Aranjuez 
+# 🌟 WEB GDG ARANJUEZ 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Astro](https://img.shields.io/badge/Astro-5.0-blue.svg)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-blueviolet.svg)](https://tailwindcss.com)
 
-## 🎯 Objetivos
+## 🎯 OBJETIVOS
 
 Desarrollar una web base para GDG Aranjuez que incluya:
 - Componentes típicos de una página de eventos tecnológicos
 - Sistema reutilizable para futuros eventos
 - Diseño responsive y accesible
 
-## ✨ Características principales
+## ✨ CARACTERÍSTICAS PRINCIPALES
 
 - 🌗 Modo claro/oscuro automático
 - 📱 Diseño completamente responsive
@@ -23,7 +23,7 @@ Desarrollar una web base para GDG Aranjuez que incluya:
 - ✍️ Sistema de blog integrado
 - 🎨 Personalización mediante Tailwind CSS
 
-## 🛠 Tech Stack  
+## 🛠 TECH STACK  
 
 | Área           | Tecnologías                                                                 |
 |----------------|-----------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ Desarrollar una web base para GDG Aranjuez que incluya:
 | Calidad código | ![ESLint](https://img.shields.io/badge/ESLint-9.0-4B32C3?logo=eslint) + ![Prettier](https://img.shields.io/badge/Prettier-3.0-F7B93E?logo=prettier) |
 
 
-## 📌 Requisitos implementados
+## 📌 REQUISITOS IMPLEMENTADOS
 
 ### 🏠 Web Base
 - [x] Sistema de componentes reutilizables
@@ -48,7 +48,8 @@ Desarrollar una web base para GDG Aranjuez que incluya:
 - [x] Sección de patrocinadores
 
 
-## 🚀 Guía de inicio rápido
+## 🚀 GUÍA DE INICIO RÁPIDO
+
 ### 📋 Requisitos previos
 - [Node.js](https://nodejs.org/) v22 o superior
 - [Git](https://git-scm.com/) instalado
@@ -91,7 +92,7 @@ Desarrollar una web base para GDG Aranjuez que incluya:
 - Los cambios en archivos `.astro` se reflejan al instante en desarrollo
 
 
-## 📂 Estructura del proyecto
+## 📂 ESTRUCTURA DEL PROYECTO
 
 ```
 GDGAranjuez/
@@ -120,18 +121,17 @@ GDGAranjuez/
 ```
 
 
-## 👥 Equipo desarrollador
+## 👥 EQUIPO DESARROLLADOR
 
 | [<img src="https://github.com/RaulGamBalonga.png" width=70><br>Raúl Gambalonga](https://github.com/RaulGamBalonga) | [<img src="https://github.com/AngieMiv.png" width=70><br>Angie Ibarrola](https://github.com/AngieMiv) | [<img src="https://github.com/Aredhel269.png" width=70><br>Glòria Monzó](https://github.com/Aredhel269) | [<img src="https://github.com/belensuarez477.png" width=70><br>Belén Suarez](https://github.com/belensuarez477) |
 |-------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 
 
-## 🤝 Agradecimientos
+## 🤝 AGRADECIMIENTOS
 
 Queremos agradecer al equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
 
 
-## 📝 Licencia
+## 📝 LICENCIA
 
 Este proyecto está bajo la licencia [MIT](LICENSE).
----
