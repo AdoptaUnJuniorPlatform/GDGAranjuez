@@ -2,7 +2,9 @@
 // src/layouts/Layout.astro
 import '@styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 const { title = 'GDG Aranjuez ' } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -33,64 +35,6 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
   >
     <Navbar />
     <slot />
-    <footer>
-      <footer class="footer">
-        <div class="social-icons">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <img src="/iconos/facebook.svg" alt="Facebook" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <img src="/iconos/instagram.svg" alt="Instagram" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <img src="/iconos/linkedin.svg" alt="LinkedIn" />
-          </a>
-        </div>
-        <p>&copy; 2025 Todos los derechos reservados.</p>
+  <script type="module" src="/themeToggle.js"></script> 
 
-        <style>
-          .footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: cadetblue;
-            padding: 20px;
-            text-align: center;
-          }
-
-          .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 10px;
-          }
-
-          .social-icons img {
-            width: 24px;
-            height: 24px;
-          }
-
-          footer p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 0;
-          }
-        </style>
-      </footer>
-    </footer>
-    <script type="module" src="/themeToggle.js"></script>
-  </body>
-  <footer></footer>
-</html>
+  <Footer />
