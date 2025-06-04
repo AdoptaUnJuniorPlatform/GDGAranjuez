@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
 
 type Post = CollectionEntry<'posts'>;
 
@@ -21,39 +21,47 @@ const { data, body } = post;
   <article class="max-w-2xl mx-auto px-6 py-16">
     <header class="mb-12">
       <div class="flex items-center mb-6">
-        <img 
-          src={data.authorImage} 
-          alt={`Foto de ${data.author}`} 
+        <img
+          src={data.authorImage}
+          alt={`Foto de ${data.author}`}
           class="w-12 h-12 rounded-full mr-4"
           width="48"
           height="48"
         />
         <div>
-          <p class="font-medium text-gray-900 dark:text-white">{data.author}</p>
+          <p class="font-medium text-gray-900 dark:text-white">
+            {data.author}
+          </p>
           <p class="text-sm text-gray-500">
-            {new Date(data.date).toLocaleDateString('es-ES', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
+            {
+              new Date(data.date).toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })
+            }
           </p>
         </div>
       </div>
-      
-      <h1 class="text-4xl font-bold text-gray-900 mb-4 dark:text-white">{data.title}</h1>
-      
-      {data.tags && data.tags.length > 0 && (
-        <div class="flex flex-wrap gap-2 mb-6">
-          {data.tags.map((tag: string) => (
-            <span class="text-xs px-3 py-1 bg-purple-100 text-purple-800 rounded-full dark:bg-purple-900 dark:text-purple-200">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+
+      <h1 class="text-4xl font-bold text-gray-900 mb-4 dark:text-white">
+        {data.title}
+      </h1>
+
+      {
+        data.tags && data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-6">
+            {data.tags.map((tag: string) => (
+              <span class="text-xs px-3 py-1 bg-purple-100 text-purple-800 rounded-full dark:bg-purple-800 dark:text-purple-100">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
     </header>
 
-    <div class="prose dark:prose-invert max-w-none">
+    <div class="prose dark:text-gray-200 max-w-none">
       {body}
     </div>
   </article>
