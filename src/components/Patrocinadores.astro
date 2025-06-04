@@ -2,14 +2,14 @@
 const sponsors = {
   Gold: [
     {
-      name: "Ayuntamiento Aranjuez",
+      name: "Ayuntamiento Aranjuez.",
       logo: "/patrocinadores/firma-escudo-viejo-01.webp",
       links: {
         website: "https://www.aranjuez.es/",
       }
     },
     {
-      name: "Google",
+      name: "Google Developer. ",
       logo: "/patrocinadores/image-gdg-aranjuez.jpg",
       links: {
         website: "https://gdg.community.dev/gdg-aranjuez/",
@@ -18,7 +18,7 @@ const sponsors = {
   ],
   Platinum: [
     {
-      name: "Adopta Un Junior",
+      name: "Adopta Un Junior.",
       logo: "/patrocinadores/image-adopta-un-junior.jpg",
       links: {
         website: "https://adoptaunjunior.es/",
@@ -30,56 +30,61 @@ const sponsors = {
 };
 ---
 
-<section id="sponsors" class="py-16 bg-gray-50">
+<section id="sponsors" class="py-16">
   <div class="mx-auto max-w-6xl px-4">
     <h2 class="text-4xl font-bold text-center mb-12">Patrocinadores</h2>
 
     <!-- Contenedor principal con fondo y bordes redondeados -->
     <div class="bg-gray-100 rounded-2xl shadow-md p-6">
-      <!-- Cada categoría en sección vertical -->
-      {Object.entries(sponsors)
-        .filter(([_, list]) => list.length > 0)
-        .map(([category, list]) => (
-          <div class="mb-8">
-            <!-- Título de la categoría -->
+      <!-- Tarjetas de cada categoría -->
+      <div class="space-y-6">
+        {Object.entries(sponsors).map(([category, list]) => (
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h3 class="text-2xl font-semibold mb-4 capitalize text-black">
               {category === 'Media' ? 'Media Partners' : category}
             </h3>
-            <!-- Lista de sponsors en flex wrap, responsiva y con max-width para evitar desborde -->
-            <div class="flex flex-wrap gap-4 justify-center">
-              {list.map((sponsor) => (
-                <div class="w-full max-w-[250px] bg-white shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    class="h-20 mx-auto mb-4 object-contain"
-                    loading="lazy"
-                  />
-                  <h4 class="text-xl font-bold mb-2">{sponsor.name}</h4>
-                  <div class="flex justify-center gap-4 flex-wrap">
-                    {sponsor.links?.website && (
-                      <a
-                        href={sponsor.links.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-black hover:underline"
-                      >
-                        Sitio web
-                      </a>
-                    )}
+
+            {list.length > 0 ? (
+              <div class="flex flex-wrap gap-4 justify-center">
+                {list.map((sponsor) => (
+                  <div
+                    class="w-full max-w-[250px] bg-white shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105"
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      class="h-20 mx-auto mb-4 object-contain"
+                      loading="lazy"
+                    />
+                    <h4 class="text-xl font-bold mb-2">{sponsor.name}</h4>
+                    <div class="flex justify-center gap-4 flex-wrap">
+                      {sponsor.links?.website && (
+                        <a
+                          href={sponsor.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-black hover:underline"
+                        >
+                          Sitio web
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <p class="text-center italic text-gray-500">Próximamente.</p>
+            )}
           </div>
         ))}
-    </div>
+      </div>
 
-    <!-- Pie de página -->
-    <div class="mt-16 text-center text-lg text-white-700">
-      <p>
-        Gracias a todos nuestros patrocinadores por hacer posible DevFest Madrid 2025. ¡Su apoyo impulsa a la comunidad tecnológica!
-      </p>
+      <!-- Pie de página -->
+      <div class="mt-16 text-center text-lg text-gray-700">
+        <p>
+          Gracias a todos nuestros patrocinadores por hacer posible DevFest Madrid 2025. ¡Su apoyo impulsa a la comunidad tecnológica!
+        </p>
+      </div>
     </div>
   </div>
 </section>
