@@ -1,39 +1,48 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PostCard from '../components/PostCard.astro';
-import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import PostCard from '../components/PostCard.astro';
+import Layout from '../layouts/Layout.astro';
 
 type Post = CollectionEntry<'posts'>;
 
 const posts = (await getCollection('posts'))
-  .filter((post: Post) => post.data.date) 
-  .sort((a:  Post, b: Post)  => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  .filter((post: Post) => post.data.date)
+  .sort(
+    (a: Post, b: Post) =>
+      new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
 ---
 
 <Layout title="Blog">
-  <section class="py-16 bg-white rounded-2xl shadow-md border border-gray-100 max-w-4xl mx-auto px-6">
+  <section
+    class="py-16 bg-white dark:bg-indigo-800 rounded-2xl shadow-md
+  border border-gray-100 dark:border-indigo-700 max-w-4xl mx-auto px-6"
+  >
     <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-200 mb-4">
         Blog
       </h1>
-      <p class="text-gray-600 max-w-2xl mx-auto mb-12">
-        Espacio para tutoriales, reflexiones, notícias y novedades de nuestra comunidad.
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
+        Espacio para tutoriales, reflexiones, notícias y novedades de
+        nuestra comunidad.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {posts.map((post: Post) => (
-        <PostCard
-          url={`/blog/${post.slug}`}
-          title={post.data.title}
-          excerpt={post.data.excerpt}
-          date={post.data.date}
-          author={post.data.author}
-          authorImage={post.data.authorImage}
-          tags={post.data.tags}
-        />
-      ))}
+      {
+        posts.map((post: Post) => (
+          <PostCard
+            url={`/blog/${post.slug}`}
+            title={post.data.title}
+            excerpt={post.data.excerpt}
+            date={post.data.date}
+            author={post.data.author}
+            authorImage={post.data.authorImage}
+            tags={post.data.tags}
+          />
+        ))
+      }
     </div>
   </section>
 </Layout>
