@@ -2,7 +2,9 @@
 // src/layouts/Layout.astro
 import '@styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 const { title = 'GDG Aranjuez ' } = Astro.props;
+
 ---
 
 <!doctype html>
@@ -39,17 +41,6 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
   >
     <Navbar />
     <slot />
-   <footer class="flex flex-col items-center justify-center bg-cadetblue p-5 text-center">
-  <div class="flex gap-5 mb-2">
-    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-      <img src="/iconos/facebook.svg" alt="Facebook" class="w-6 h-6" />
-    </a>
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-      <img src="/iconos/instagram.svg" alt="Instagram" class="w-6 h-6" />
-    </a>
-    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-      <img src="/iconos/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
-    </a>
-  </div>
-  <p class="text-sm text-gray-700">&copy; 2025 Todos los derechos de autor reservados.</p>
-</footer>
+  <script type="module" src="/themeToggle.js"></script> 
+
+  <Footer />
