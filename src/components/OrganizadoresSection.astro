@@ -48,16 +48,18 @@ const organizadores = [
 ---
 
 <!-- Sección principal de Organizadores, centrada y responsive, padding vertical -->
-<section id="organizadores" class="py-12 scroll-mt-24">
+<section 
+  id="organizadores" 
+  class="py-12 scroll-mt-24">
   {/* Título principal centrado con margen inferior */}
-  <h2 class="text-3xl dark:text-gray-100 font-bold text-center mb-8">Organizadores</h2>
+  <h2 
+    class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8">
+    Organizadores
+  </h2>
 
   <!-- 
-    Contenedor en Flexbox que:
-    - Coloca las cards en filas (`flex-wrap`)
-    - Las centra (`justify-center`)
-    - Deja espacio entre ellas (`gap-8`)
-    - Permite que el último elemento impar quede centrado
+    Contenedor en Flexbox para cada organizador
   -->
   <div class="flex flex-wrap justify-center gap-8">
     {

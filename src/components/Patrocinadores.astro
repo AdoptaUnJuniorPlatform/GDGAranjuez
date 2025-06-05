@@ -32,7 +32,10 @@ const sponsors = {
 
 <section id="sponsors" class="py-16">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-3xl font-bold text-center mb-6">Patrocinadores</h2>
+    <h2 class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8">
+    Patrocinadores
+  </h2>
 
     <!-- Contenedor principal -->
     <div class="rounded-2xl">
@@ -40,8 +43,8 @@ const sponsors = {
       <div class="space-y-6">
         {
           Object.entries(sponsors).map(([category, list]) => (
-            <div class="bg-indigo-50 rounded-xl p-6">
-              <h3 class="text-2xl font-semibold mb-4 capitalize text-black">
+            <div class="bg-indigo-100 dark:bg-indigo-900/40 rounded-xl p-6">
+              <h3 class="text-2xl font-semibold mb-4 capitalize text-black  dark:text-indigo-50 ">
                 {category === 'Media' ? 'Media Partners' : category}
               </h3>
 
