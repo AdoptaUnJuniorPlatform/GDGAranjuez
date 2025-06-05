@@ -1,7 +1,7 @@
 ---
 import CharlasSection from '@/components/CharlasSection.astro';
 import ColaboradorSection from '@/components/ColaboradorSection.astro';
-import Organizadores from '@/components/Organizadores.astro';
+import Organizadores from '@/components/OrganizadoresSection.astro';
 import Ponentes from '@/components/Ponentes.astro';
 import PostsSection from '@/components/PostsSection.astro';
 import Layout from '@/layouts/Layout.astro';
@@ -11,6 +11,7 @@ import Patrocinadores from '../components/Patrocinadores.astro';
 
 <Layout title="GDG Aranjuez | DevFest 2025">
   <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+
     <!-- Hero Section -->
     <section class="text-center mb-16 animate-fade-in">
       <div
@@ -60,7 +61,7 @@ import Patrocinadores from '../components/Patrocinadores.astro';
     <section
       id="comunidad"
       class="bg-white dark:bg-blue-900 rounded-2xl shadow-md dark:shadow-orange-400
-	  p-8 mb-16 border border-gray-100 dark:border-pink-300"
+	    p-8 mb-16 border border-gray-100 dark:border-pink-300"
     >
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
@@ -96,6 +97,7 @@ import Patrocinadores from '../components/Patrocinadores.astro';
           </ul>
         </div>
         <div class="bg-gray-100 rounded-xl overflow-hidden aspect-video">
+
           <!-- Placeholder para imagen/video -->
           <div
             class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100"
@@ -122,38 +124,41 @@ import Patrocinadores from '../components/Patrocinadores.astro';
 
     <!-- Countdown -->
     <section
-      class="text-center py-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-2xl mb-16"
+      class="text-center py-8 
+      bg-gradient-to-r from-blue-600/10 to-purple-600/10
+      dark:bg-gradient-to-r dark:from-blue-600/10 dark:to-purple-600/10
+      rounded-2xl mb-6"
     >
-      <h3 class="text-sm font-semibold text-gray-500 mb-2">FALTAN</h3>
+      <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-200 mb-2">
+        FALTAN
+      </h3>
       <div class="flex justify-center gap-4 mb-5">
         <div
           class="bg-white dark:bg-blue-900 p-4 rounded-lg shadow-sm min-w-[70px]"
         >
           <div
-            class="text-3xl font-bold text-blue-600 dark:text-purple-300"
+            class="text-3xl font-bold text-blue-600 dark:text-purple-200"
           >
             87
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-300">DÍAS</div>
+          <div class="text-xs text-gray-500 dark:text-gray-200">DÍAS</div>
         </div>
         <div
           class="bg-white dark:bg-blue-900 p-4 rounded-lg shadow-sm min-w-[70px]"
         >
           <div
-            class="text-3xl font-bold text-purple-600 dark:text-blue-300"
+            class="text-3xl font-bold text-purple-600 dark:text-blue-200"
           >
             12
           </div>
-          <div class="text-xs text-gray-500 dark:text-gray-300">HORAS</div>
+          <div class="text-xs text-gray-500 dark:text-gray-200">HORAS</div>
         </div>
       </div>
+      </section>
 
       <!-- Agenda del evento -->
-      <section
-        class="bg-white dark:bg-gray-900 dark:text-white rounded-2xl shadow-md p-8 mb-16 border border-gray-100 dark:border-blue-800"
-      >
-        <Agenda />
-      </section>
+      <Agenda />
+
     </section>
 
     <!-- Blog -->

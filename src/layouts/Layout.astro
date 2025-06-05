@@ -30,13 +30,17 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
 
   <body
     class="bg-gradient-to-br from-gray-50 to-blue-50
-	dark:bg-gradient-to-br dark:from-blue-950 dark:to-gray-900
+	  dark:bg-gradient-to-br dark:from-indigo-950 dark:to-gray-900
   	min-h-screen transition-colors duration-300 font-['Google_Sans']"
   >
     <Navbar />
+
     <slot />
-    <script type="module" src="/themeToggle.js"></script>
 
     <Footer />
+
+    <script type="module" src="/themeToggle.js"></script>
+
   </body>
+
 </html>

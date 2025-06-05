@@ -20,14 +20,19 @@ const posts: Post[] = (await getCollection('posts'))
 >
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-300 mb-5">
-        Últimas entradas al <span
-          class="text-purple-600 dark:text-purple-500">blog</span
-        >
+      <h2
+        class="text-3xl font-bold text-gray-800 
+        dark:text-gray-300 mb-5"
+      >
+        Últimas entradas al 
+        <span
+          class="text-purple-600
+          dark:text-purple-300">
+          blog
+        </span>
       </h2>
-      <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-        Descubre las últimas novedades, tutoriales y reflexiones de nuestro
-        equipo
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Descubre las últimas novedades, tutoriales y reflexiones de nuestro equipo
       </p>
     </div>
 
@@ -53,8 +58,8 @@ const posts: Post[] = (await getCollection('posts'))
       <a
         href="/blog"
         class="inline-block px-6 py-3 border border-purple-600 dark:border-purple-400
-		text-purple-600 dark: dark:text-purple-300 rounded-lg
-		hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors"
+	    	text-purple-600 dark: dark:text-purple-300 rounded-lg
+	    	hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors"
       >
         Ver todos los posts
       </a>
