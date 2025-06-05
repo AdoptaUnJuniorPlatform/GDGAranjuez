@@ -1,10 +1,10 @@
 ---
 // src/layouts/Layout.astro
 import '@styles/global.css';
-import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-const { title = 'GDG Aranjuez ' } = Astro.props;
+import Navbar from '../components/Navbar.astro';
 
+const { title = 'GDG Aranjuez ' } = Astro.props;
 ---
 
 <!doctype html>
@@ -35,6 +35,8 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
   >
     <Navbar />
     <slot />
-  <script type="module" src="/themeToggle.js"></script> 
+    <script type="module" src="/themeToggle.js"></script>
 
-  <Footer />
+    <Footer />
+  </body>
+</html>
