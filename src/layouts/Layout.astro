@@ -3,6 +3,7 @@
 import '@styles/global.css';
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
+
 const { title = 'GDG Aranjuez ' } = Astro.props;
 ---
 
@@ -36,6 +37,6 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
     <slot />
     <script type="module" src="/themeToggle.js"></script>
 
-    <Footer /></body
-  >
+    <Footer />
+  </body>
 </html>
