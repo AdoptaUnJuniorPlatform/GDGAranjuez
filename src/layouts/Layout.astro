@@ -1,6 +1,7 @@
 ---
 // src/layouts/Layout.astro
 import '@styles/global.css';
+import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
 const { title = 'GDG Aranjuez ' } = Astro.props;
 ---
@@ -10,7 +11,7 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/gdg-favicon.jpg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <style>
@@ -33,64 +34,8 @@ const { title = 'GDG Aranjuez ' } = Astro.props;
   >
     <Navbar />
     <slot />
-    <footer>
-      <footer class="footer">
-        <div class="social-icons">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <img src="/iconos/facebook.svg" alt="Facebook" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <img src="/iconos/instagram.svg" alt="Instagram" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <img src="/iconos/linkedin.svg" alt="LinkedIn" />
-          </a>
-        </div>
-        <p>&copy; 2025 Todos los derechos reservados.</p>
-
-        <style>
-          .footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: cadetblue;
-            padding: 20px;
-            text-align: center;
-          }
-
-          .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 10px;
-          }
-
-          .social-icons img {
-            width: 24px;
-            height: 24px;
-          }
-
-          footer p {
-            font-size: 0.9rem;
-            color: #555;
-            margin: 0;
-          }
-        </style>
-      </footer>
-    </footer>
     <script type="module" src="/themeToggle.js"></script>
-  </body>
-  <footer></footer>
+
+    <Footer /></body
+  >
 </html>
