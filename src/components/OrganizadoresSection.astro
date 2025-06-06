@@ -1,5 +1,5 @@
 ---
-import Card from '../components/Card.astro';
+import Organizador from "./Organizador.astro";
 
 const organizadores = [
   /* Lista de organizadores con nombre, cargo, foto, y link a redes */
@@ -48,22 +48,24 @@ const organizadores = [
 ---
 
 <!-- Sección principal de Organizadores, centrada y responsive, padding vertical -->
-<section id="organizadores" class="py-12 scroll-mt-24">
+<section 
+  id="organizadores" 
+  class="p-10 scroll-mt-24">
   {/* Título principal centrado con margen inferior */}
-  <h2 class="text-3xl font-bold text-center mb-8">Organizadores</h2>
+  <h2 
+    class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8">
+    Organizadores
+  </h2>
 
   <!-- 
-    Contenedor en Flexbox que:
-    - Coloca las cards en filas (`flex-wrap`)
-    - Las centra (`justify-center`)
-    - Deja espacio entre ellas (`gap-8`)
-    - Permite que el último elemento impar quede centrado
+    Contenedor en Flexbox para cada organizador
   -->
   <div class="flex flex-wrap justify-center gap-8">
     {
       organizadores.map((org) => (
         // Render de cada tarjeta con sus props
-        <Card
+        <Organizador
           nombre={org.nombre}
           cargo={org.cargo}
           foto={org.foto}

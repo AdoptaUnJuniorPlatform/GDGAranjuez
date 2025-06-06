@@ -1,7 +1,5 @@
 ---
-// src/components/Ponentes.astro
-import Card from './Card.astro';
-
+import Ponente from "./Ponente.astro";
 const ponentes = [
   {
     nombre: 'Dramas',
@@ -56,21 +54,20 @@ const ponentes = [
 ];
 
 const estilosPonentes = {
-  fondo: 'bg-orange-100',
-  texto: 'text-gray-700',
   sombra: 'shadow-lg hover:shadow-2xl',
 };
 ---
 
-<section id="ponentes" class="py-12 scroll-mt-24">
-  <h2 class="text-3xl font-bold text-center mb-8">
+<section id="ponentes" class="p-10 scroll-mt-24">
+  <h2 class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8">
     Ponentes
   </h2>
 
   <div class="flex flex-wrap justify-center gap-8">
     {
       ponentes.map((pon) => (
-        <Card
+        <Ponente
           nombre={pon.nombre}
           cargo={pon.cargo}
           foto={pon.foto}

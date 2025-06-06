@@ -45,19 +45,24 @@ const agenda = [
 ];
 ---
 
-<section id="agenda" class='scroll-mt-24'>
-  <h2 class="text-3xl font-bold dark:text-blue-300 text-center mb-5 ">
+<section
+  id="agenda"
+  class="bg-white dark:bg-gray-900 dark:text-white
+  rounded-2xl shadow-md p-10 mb-16 border border-gray-100
+  dark:border-blue-800 text-center"
+>
+  <h2
+    class="text-3xl font-bold font-mono dark:text-blue-300 text-center mb-5"
+  >
     Agenda 2025
   </h2>
   <ul>
     {
       agenda.map((item) => (
-        <li style="margin-bottom: 1em;">
-          <strong>{item.hora}</strong> –{' '}
-          <>
-            <em>{item.titulo}</em>
-            <br />
-          </>
+        <li class="mb-6 text-lg">
+          <strong class="font-mono">{item.hora}</strong> –{' '}
+          <em class="underline">{item.titulo}</em>
+          <br />
           {item.ponente && <span>Ponente: {item.ponente}</span>}
         </li>
       ))

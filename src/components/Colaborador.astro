@@ -3,27 +3,57 @@ const { nombre, rol, foto, redes } = Astro.props;
 ---
 
 <article
-  class="max-w-sm bg-white rounded-2xl shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+  class="max-w-sm bg-gray-200 dark:bg-gray-600/50 rounded-2xl shadow-md p-6 text-center
+  transition-all duration-300 transform hover:-translate-y-2 hover:shadow-l"
 >
   <img
     src={foto}
     alt={`Foto de ${nombre}`}
     class="w-24 h-24 rounded-full mx-auto mb-4 object-cover transition-all duration-300 hover:scale-105"
   />
-  <h3 class="text-xl font-semibold mb-1">{nombre}</h3>
-  <p class="text-sm text-gray-600 mb-4">{rol}</p>
+  <h3
+    class="text-lg text-gray-950 dark:text-violet-50
+    font-semibold underline"
+  >
+    {nombre}
+  </h3>
+  <p class="text-sm text-gray-700 dark:text-violet-100 mb-4">{rol}</p>
 
-  <div class="flex justify-center gap-4 opacity-80 hover:opacity-100 transition-opacity duration-300">
-    {redes?.twitter && (
-      <a href={redes.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-        <img src="/icons/twitter-black.png" alt="Twitter" class="w-5 h-5 hover:scale-110 transition-transform duration-300" />
-      </a>
-    )}
-    {redes?.linkedin && (
-      <a href={redes.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <img src="/icons/linkedin.png" alt="LinkedIn" class="w-5 h-5 hover:scale-110 transition-transform duration-300" />
-      </a>
-    )}
+  <div
+    class="flex justify-center gap-4 opacity-80 hover:opacity-100 transition-opacity duration-300"
+  >
+    {
+      redes?.twitter && (
+        <a
+          href={redes.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter"
+        >
+          <img
+            src="/icons/twitter-black.png"
+            alt={`Twitter de ${nombre}`}
+            class="w-5 h-5 hover:scale-110 transition-transform duration-300"
+          />
+        </a>
+      )
+    }
+    {
+      redes?.linkedin && (
+        <a
+          href={redes.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="/icons/linkedin.png"
+            alt={`LinkedIn de ${nombre}`}
+            class="w-5 h-5 hover:scale-110 transition-transform duration-300"
+          />
+        </a>
+      )
+    }
     <!-- {redes?.github && (
       <a href={redes.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <img src="/icons/github.svg" alt="GitHub" class="w-5 h-5 hover:scale-110 transition-transform duration-300" />
