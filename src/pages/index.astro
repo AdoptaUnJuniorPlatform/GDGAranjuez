@@ -11,7 +11,6 @@ import Patrocinadores from '../components/Patrocinadores.astro';
 
 <Layout title="GDG Aranjuez | DevFest 2025">
   <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
-
     <!-- Hero Section -->
     <section class="text-center mb-16">
       <div
@@ -25,19 +24,18 @@ import Patrocinadores from '../components/Patrocinadores.astro';
       >
         ¡Vuelve el
         <span
-          class="text-transparent bg-clip-text 
+          class="text-transparent bg-clip-text
           bg-gradient-to-r from-blue-700 to-purple-700
           dark:bg-gradient-to-r dark:from-blue-300 dark:to-purple-300"
         >
           DevFest Aranjuez!
-        </span> 
+        </span>
 
         <img
           src="/public/icons/cohete.png"
           alt="Icono cohete"
           class="inline-block w-12 h-12 ml-2 align-middle"
         />
-
       </h1>
       <p
         class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
@@ -60,9 +58,9 @@ import Patrocinadores from '../components/Patrocinadores.astro';
         <a
           href="https://devfest-2024-aranjuez.vercel.app/"
           target="_blank"
-          class="px-8 py-3 border-2 border-blue-600 
-          text-gray-700 dark:text-gray-200 font-medium rounded-lg 
-          hover:bg-gray-100 dark:hover:bg-gray-600 
+          class="px-8 py-3 border-2 border-blue-600
+          text-gray-700 dark:text-gray-200 font-medium rounded-lg
+          hover:bg-gray-100 dark:hover:bg-gray-600
           transition-all duration-300 hover:shadow-lg"
         >
           Ver edición 2024
@@ -73,7 +71,7 @@ import Patrocinadores from '../components/Patrocinadores.astro';
     <!-- Detalles Evento -->
     <section
       id="comunidad"
-      class="bg-white dark:bg-indigo-950 rounded-2xl 
+      class="bg-white dark:bg-indigo-950 rounded-2xl
       shadow-md shadow-indigo-200 dark:shadow-indigo-800
 	    p-8 mb-16"
     >
@@ -91,19 +89,22 @@ import Patrocinadores from '../components/Patrocinadores.astro';
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
-              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span>
+              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span
+              >
               <span class="text-gray-700 dark:text-gray-300"
                 >Charlas técnicas de primer nivel</span
               >
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span>
+              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span
+              >
               <span class="text-gray-700 dark:text-gray-300"
                 >Talleres prácticos</span
               >
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span>
+              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span
+              >
               <span class="text-gray-700 dark:text-gray-300"
                 >Networking con profesionales</span
               >
@@ -116,7 +117,10 @@ import Patrocinadores from '../components/Patrocinadores.astro';
           <div
             class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100"
           >
-            <span class="text-gray-400">Imagen del evento</span>
+            <img
+              src="/img/DevFest2024.jpg"
+              alt="Foto DevFest primera edición 2024"
+            />
           </div>
         </div>
       </div>
@@ -139,12 +143,14 @@ import Patrocinadores from '../components/Patrocinadores.astro';
 
     <!-- Countdown -->
     <section
-      class="text-center text-mono py-8 
+      class="text-center text-mono py-8
       bg-blue-600/10
       dark:bg-indigo-400/10
       rounded-2xl mb-6"
     >
-      <h3 class="text-2xl font-semibold text-gray-500 dark:text-gray-200 mb-2">
+      <h3
+        class="text-2xl font-semibold text-gray-500 dark:text-gray-200 mb-2"
+      >
         FALTAN
       </h3>
       <div class="flex justify-center gap-4 mb-5">
@@ -169,14 +175,12 @@ import Patrocinadores from '../components/Patrocinadores.astro';
           <div class="text-xs text-gray-500 dark:text-gray-200">HORAS</div>
         </div>
       </div>
-      </section>
-
-      <!-- Agenda del evento -->
-      <Agenda />
-
     </section>
 
-    <!-- Blog -->
-    <PostsSection />
+    <!-- Agenda del evento -->
+    <Agenda />
   </main>
+
+  <!-- Blog -->
+  <PostsSection />
 </Layout>
