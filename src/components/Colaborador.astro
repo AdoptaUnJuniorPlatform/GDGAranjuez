@@ -1,4 +1,5 @@
 ---
+import Socials from './Socials.astro';
 const { nombre, rol, foto, redes } = Astro.props;
 ---
 
@@ -21,45 +22,5 @@ const { nombre, rol, foto, redes } = Astro.props;
     >{rol}</p
   >
 
-  <div
-    class="flex justify-center gap-4 opacity-80 hover:opacity-100 transition-opacity duration-300"
-  >
-    {
-      redes?.twitter && (
-        <a
-          href={redes.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-        >
-          <img
-            src="/icons/twitter-black.png"
-            alt={`Twitter de ${nombre}`}
-            class="w-5 h-5 hover:scale-110 transition-transform duration-300"
-          />
-        </a>
-      )
-    }
-    {
-      redes?.linkedin && (
-        <a
-          href={redes.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <img
-            src="/icons/linkedin.png"
-            alt={`LinkedIn de ${nombre}`}
-            class="w-5 h-5 hover:scale-110 transition-transform duration-300"
-          />
-        </a>
-      )
-    }
-    <!-- {redes?.github && (
-      <a href={redes.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-        <img src="/icons/github.svg" alt="GitHub" class="w-5 h-5 hover:scale-110 transition-transform duration-300" />
-      </a>
-    )} -->
-  </div>
+  <Socials nombre={nombre} {...redes} />
 </article>
