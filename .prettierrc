@@ -4,5 +4,7 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "printWidth": 75
+  "printWidth": 65,
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "strict"
 }
