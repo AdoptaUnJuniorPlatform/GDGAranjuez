@@ -1,0 +1,78 @@
+<section
+  id="countdown"
+  class="text-center text-mono py-8
+  bg-blue-600/10
+  dark:bg-indigo-400/10
+  rounded-2xl mb-6"
+>
+  <h3 class="text-2xl font-semibold text-gray-500 dark:text-gray-200 mb-2">
+    FALTAN
+  </h3>
+  <div class="flex justify-center gap-4 mb-5" id="countdown-container">
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm min-w-[70px]"
+    >
+      <div
+        class="text-3xl font-bold text-blue-600 dark:text-purple-300"
+        id="days"
+      >
+        --
+      </div>
+      <div class="text-xs text-gray-500 dark:text-gray-200">DÍAS</div>
+    </div>
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm min-w-[70px]"
+    >
+      <div
+        class="text-3xl font-bold text-purple-600 dark:text-blue-300"
+        id="hours"
+      >
+        --
+      </div>
+      <div class="text-xs text-gray-500 dark:text-gray-200">HORAS</div>
+    </div>
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm min-w-[70px]"
+    >
+      <div
+        class="text-3xl font-bold text-blue-600 dark:text-purple-300"
+        id="minutes"
+      >
+        --
+      </div>
+      <div class="text-xs text-gray-500 dark:text-gray-200">MINUTOS</div>
+    </div>
+  </div>
+
+  <script>
+    const eventDate = new Date('2025-10-04T10:00:00');
+    const eventEndDate = new Date('2025-10-04T18:00:00'); // Asumiendo que el evento termina a las 18:00
+    const eventDateTime = eventDate.getTime();
+    const eventEndDateTime = eventEndDate.getTime();
+
+    const countdown: NodeJS.Timeout = setInterval(() => {
+      const now: number = new Date().getTime();
+      const distance: number = eventDateTime - now;
+
+      const days: number = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours: number = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes: number = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+
+      document.getElementById('days')!.innerText = days.toString();
+      document.getElementById('hours')!.innerText = hours.toString();
+      document.getElementById('minutes')!.innerText = minutes.toString();
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById('countdown-container')!.innerHTML =
+          "<div class='bg-green-100 dark:bg-green-900 p-4 rounded-lg'>" +
+          "<p class='text-xl font-bold text-green-600 dark:text-green-300'>¡El evento ha terminado!</p></div>";
+      }
+    }, 1000);
+  </script>
+</section>
+
