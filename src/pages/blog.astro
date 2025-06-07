@@ -10,7 +10,8 @@ const posts = (await getCollection('posts'))
   .filter((post: Post) => post.data.date)
   .sort(
     (a: Post, b: Post) =>
-      new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+      new Date(b.data.date).getTime() -
+      new Date(a.data.date).getTime()
   );
 ---
 
@@ -25,13 +26,17 @@ const posts = (await getCollection('posts'))
       >
         Blog
       </h1>
-      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
-        Espacio para tutoriales, reflexiones, notícias y novedades de
-        nuestra comunidad.
+      <p
+        class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12"
+      >
+        Espacio para tutoriales, reflexiones, notícias y
+        novedades de nuestra comunidad.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
       {
         posts.map((post: Post) => (
           <PostCard

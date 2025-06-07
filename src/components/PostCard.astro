@@ -18,11 +18,14 @@ const {
   authorImage,
   tags = [],
 } = Astro.props;
-const formattedDate = new Date(date).toLocaleDateString('es-ES', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const formattedDate = new Date(date).toLocaleDateString(
+  'es-ES',
+  {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+);
 ---
 
 <article
@@ -39,7 +42,9 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
         height="40"
       />
       <div>
-        <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+        <p
+          class="text-sm font-medium text-gray-900 dark:text-gray-100"
+        >
           {author}
         </p>
         <p class="text-xs text-gray-500 dark:text-gray-200">
@@ -48,10 +53,13 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
       </div>
     </div>
 
-    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+    <h3
+      class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2"
+    >
       {title}
     </h3>
-    <p class="text-gray-600 dark:text-gray-200 mb-4">{excerpt}</p>
+    <p class="text-gray-600 dark:text-gray-200 mb-4">{excerpt}</p
+    >
 
     {
       tags.length > 0 && (

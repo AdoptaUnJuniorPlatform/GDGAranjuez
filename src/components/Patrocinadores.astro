@@ -2,14 +2,14 @@
 const sponsors = {
   Gold: [
     {
-      name: 'Ayuntamiento Aranjuez.',
+      name: 'Ayuntamiento Aranjuez',
       logo: '/patrocinadores/firma-escudo-viejo-01.webp',
       links: {
         website: 'https://www.aranjuez.es/',
       },
     },
     {
-      name: 'Google Developer. ',
+      name: 'Google Developer',
       logo: '/patrocinadores/image-gdg-aranjuez.jpg',
       links: {
         website: 'https://gdg.community.dev/gdg-aranjuez/',
@@ -18,7 +18,7 @@ const sponsors = {
   ],
   Platinum: [
     {
-      name: 'Adopta Un Junior.',
+      name: 'Adopta Un Junior',
       logo: '/patrocinadores/image-adopta-un-junior.jpg',
       links: {
         website: 'https://adoptaunjunior.es/',
@@ -32,10 +32,12 @@ const sponsors = {
 
 <section id="sponsors" class="py-16">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-4xl dark:text-sky-100 font-bold font-mono
-    text-center mb-8">
-    Patrocinadores
-  </h2>
+    <h2
+      class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8"
+    >
+      Patrocinadores
+    </h2>
 
     <!-- Contenedor principal -->
     <div class="rounded-2xl">
@@ -45,7 +47,9 @@ const sponsors = {
           Object.entries(sponsors).map(([category, list]) => (
             <div class="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-6">
               <h3 class="text-2xl font-semibold mb-4 capitalize text-black  dark:text-indigo-50 ">
-                {category === 'Media' ? 'Media Partners' : category}
+                {category === 'Media'
+                  ? 'Media Partners'
+                  : category}
               </h3>
 
               {list.length > 0 ? (
@@ -87,11 +91,13 @@ const sponsors = {
       </div>
 
       <!-- Pie de página -->
-      <div class="mt-16 text-center text-lg text-gray-700 dark:text-indigo-200">
+      <div
+        class="mt-16 text-center text-lg text-gray-700 dark:text-indigo-200"
+      >
         <p>
-          Gracias a todos nuestros patrocinadores por hacer posible DevFest
-          2025 - GDG Aranjuez.
-          <br/>
+          Gracias a todos nuestros patrocinadores por hacer
+          posible DevFest 2025 - GDG Aranjuez.
+          <br />
           ¡Su apoyo impulsa a la comunidad tecnológica!
         </p>
       </div>

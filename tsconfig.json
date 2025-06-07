@@ -11,5 +11,10 @@
       "@utils/*": ["./src/utils/*"]
     }
   },
-  "include": ["src/**/*", "astro.config.ts", "astro.config.mjs", "public/themeToggle.js"]
+  "include": [
+    "src/**/*",
+    "astro.config.ts",
+    "astro.config.mjs",
+    "public/themeToggle.js"
+  ]
 }
