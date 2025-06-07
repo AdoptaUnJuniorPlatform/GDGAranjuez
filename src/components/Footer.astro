@@ -1,16 +1,20 @@
 ---
+import Socials from './Socials.astro';
 ---
-<footer class="flex flex-col items-center justify-center bg-white dark:bg-gray-950/40 p-5 text-center text-black dark:text-white">
-  <div class="flex gap-5 mb-2">
-    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-      <img src="/iconos/facebook.svg" alt="Facebook" class="w-6 h-6" />
-    </a>
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-      <img src="/iconos/instagram.svg" alt="Instagram" class="w-6 h-6" />
-    </a>
-    <a href="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all" target="_blank" aria-label="LinkedIn">
-      <img src="/iconos/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
-    </a>
+
+<footer
+  class="flex flex-col items-center justify-center
+  bg-white dark:bg-gray-950/40 p-5 text-center text-black dark:text-white"
+>
+  <div class="mb-3 scale-120">
+    <Socials
+      nombre="GDG Aranjuez"
+      linkedin="https://www.linkedin.com/company/gdg-aranjuez/posts/?feedView=all"
+      twitter="https://x.com/GDGAranjuez"
+    />
   </div>
-  <p class="text-sm text-gray-600 dark:text-gray-200">&copy; 2025 Todos los derechos de autor reservados.</p>
+
+  <p class="text-sm text-gray-600 dark:text-gray-200">
+    &copy; 2025 Todos los derechos de autor reservados.
+  </p>
 </footer>
