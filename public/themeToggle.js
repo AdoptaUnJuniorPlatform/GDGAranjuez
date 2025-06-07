@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Establecer ícono al cargar
-  const isDark = document.documentElement.classList.contains('dark');
+  const isDark =
+    document.documentElement.classList.contains('dark');
   updateIcon(isDark);
 
   toggleBtn.addEventListener('click', () => {
-    const nowDark = document.documentElement.classList.toggle('dark');
+    const nowDark =
+      document.documentElement.classList.toggle('dark');
     updateIcon(nowDark);
     localStorage.setItem('theme', nowDark ? 'dark' : 'light');
   });

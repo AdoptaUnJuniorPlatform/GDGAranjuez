@@ -18,7 +18,9 @@ const { nombre, rol, foto, redes } = Astro.props;
   >
     {nombre}
   </h3>
-  <p class="text-sm text-gray-700 dark:text-violet-100 mb-4">{rol}</p>
+  <p class="text-sm text-gray-700 dark:text-violet-100 mb-4"
+    >{rol}</p
+  >
 
   <Socials nombre={nombre} {...redes} />
 </article>

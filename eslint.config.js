@@ -1,21 +1,21 @@
-import eslintPluginAstro from "eslint-plugin-astro";
-import astroParser from "astro-eslint-parser";
-import pluginTs from "@typescript-eslint/eslint-plugin";
-import parserTs from "@typescript-eslint/parser";
-import pluginTailwindcss from "eslint-plugin-tailwindcss";
-import prettierPlugin from "eslint-plugin-prettier";
-import prettierConfig from "eslint-config-prettier";
+import eslintPluginAstro from 'eslint-plugin-astro';
+import astroParser from 'astro-eslint-parser';
+import pluginTs from '@typescript-eslint/eslint-plugin';
+import parserTs from '@typescript-eslint/parser';
+import pluginTailwindcss from 'eslint-plugin-tailwindcss';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
 export default [
   {
-    files: ["**/*.astro"],
+    files: ['**/*.astro'],
     languageOptions: {
       parser: astroParser,
       parserOptions: {
         parser: parserTs,
-        extraFileExtensions: [".astro"],
-        ecmaVersion: "latest",
-        sourceType: "module",
+        extraFileExtensions: ['.astro'],
+        ecmaVersion: 'latest',
+        sourceType: 'module',
       },
     },
     plugins: {
@@ -27,19 +27,19 @@ export default [
       ...eslintPluginAstro.configs.recommended.rules,
       ...pluginTailwindcss.configs.recommended.rules,
       ...prettierConfig.rules,
-      "prettier/prettier": "error",
+      'prettier/prettier': 'error',
     },
   },
 
   {
-    files: ["**/*.ts", "**/*.js"],
+    files: ['**/*.ts', '**/*.js'],
     languageOptions: {
       parser: parserTs,
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
     },
     plugins: {
-      "@typescript-eslint": pluginTs,
+      '@typescript-eslint': pluginTs,
       tailwindcss: pluginTailwindcss,
       prettier: prettierPlugin,
     },
@@ -47,7 +47,7 @@ export default [
       ...pluginTs.configs.recommended.rules,
       ...pluginTailwindcss.configs.recommended.rules,
       ...prettierConfig.rules,
-      "prettier/prettier": "error",
+      'prettier/prettier': 'error',
     },
   },
 ];

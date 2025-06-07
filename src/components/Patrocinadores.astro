@@ -2,14 +2,14 @@
 const sponsors = {
   Gold: [
     {
-      name: 'Ayuntamiento Aranjuez.',
+      name: 'Ayuntamiento Aranjuez',
       logo: '/patrocinadores/firma-escudo-viejo-01.webp',
       links: {
         website: 'https://www.aranjuez.es/',
       },
     },
     {
-      name: 'Google Developer. ',
+      name: 'Google Developer',
       logo: '/patrocinadores/image-gdg-aranjuez.jpg',
       links: {
         website: 'https://gdg.community.dev/gdg-aranjuez/',
@@ -18,7 +18,7 @@ const sponsors = {
   ],
   Platinum: [
     {
-      name: 'Adopta Un Junior.',
+      name: 'Adopta Un Junior',
       logo: '/patrocinadores/image-adopta-un-junior.jpg',
       links: {
         website: 'https://adoptaunjunior.es/',
@@ -47,7 +47,9 @@ const sponsors = {
           Object.entries(sponsors).map(([category, list]) => (
             <div class="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-6">
               <h3 class="text-2xl font-semibold mb-4 capitalize text-black  dark:text-indigo-50 ">
-                {category === 'Media' ? 'Media Partners' : category}
+                {category === 'Media'
+                  ? 'Media Partners'
+                  : category}
               </h3>
 
               {list.length > 0 ? (

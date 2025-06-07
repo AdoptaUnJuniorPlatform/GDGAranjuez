@@ -7,6 +7,7 @@ import Patrocinadores from '@/components/Patrocinadores.astro';
 import PonentesSection from '@/components/PonentesSection.astro';
 import PostsSection from '@/components/PostsSection.astro';
 import Layout from '@/layouts/Layout.astro';
+import Countdown from '@/components/Countdown.astro';
 ---
 
 <Layout title="GDG Aranjuez | DevFest 2025">
@@ -16,9 +17,11 @@ import Layout from '@/layouts/Layout.astro';
       <div
         class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
       >
-        <span class="text-lg font-medium">4 de Octubre 2025</span>
+        <span class="text-lg font-medium">4 de Octubre 2025</span
+        >
       </div>
-
+      <!-- Countdown -->
+      <Countdown />
       <h1
         class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
       >
@@ -44,12 +47,14 @@ import Layout from '@/layouts/Layout.astro';
       <p
         class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
       >
-        Este 4 de octubre, te invitamos a uno de los mayores eventos de
-        tecnología del año en Aranjuez.
+        Este 4 de octubre, te invitamos a uno de los mayores
+        eventos de tecnología del año en Aranjuez.
       </p>
 
       <!-- CTA Button -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center"
+      >
         <a
           href="#comunidad"
           class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg
@@ -87,27 +92,34 @@ import Layout from '@/layouts/Layout.astro';
             Comunidad vibrante
           </h2>
           <p class="text-gray-600 dark:text-gray-200 mb-6">
-            Durante una jornada completa (de 09:30 a 17:30), reuniremos a
-            desarrolladores, profesionales y entusiastas para sumergirse en
-            aprendizaje práctico, colaboración e inspiración.
+            Durante una jornada completa (de 09:30 a 17:30),
+            reuniremos a desarrolladores, profesionales y
+            entusiastas para sumergirse en aprendizaje práctico,
+            colaboración e inspiración.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
-              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span
+              <span
+                class="text-blue-500 dark:text-indigo-400 mr-2"
+                >✓</span
               >
               <span class="text-gray-700 dark:text-gray-300"
                 >Charlas técnicas de primer nivel</span
               >
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span
+              <span
+                class="text-blue-500 dark:text-indigo-400 mr-2"
+                >✓</span
               >
               <span class="text-gray-700 dark:text-gray-300"
                 >Talleres prácticos</span
               >
             </li>
             <li class="flex items-start">
-              <span class="text-blue-500 dark:text-indigo-400 mr-2">✓</span
+              <span
+                class="text-blue-500 dark:text-indigo-400 mr-2"
+                >✓</span
               >
               <span class="text-gray-700 dark:text-gray-300"
                 >Networking con profesionales</span
@@ -116,7 +128,9 @@ import Layout from '@/layouts/Layout.astro';
           </ul>
         </div>
 
-        <div class="bg-gray-100 rounded-xl overflow-hidden aspect-video">
+        <div
+          class="bg-gray-100 rounded-xl overflow-hidden aspect-video"
+        >
           <!-- Placeholder para imagen/video -->
           <div
             class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100"
@@ -144,42 +158,6 @@ import Layout from '@/layouts/Layout.astro';
 
     <!-- Seccion de Colaboradores -->
     <ColaboradorSection />
-
-    <!-- Countdown -->
-    <section
-      class="text-center text-mono py-8
-      bg-blue-600/10
-      dark:bg-indigo-400/10
-      rounded-2xl mb-6"
-    >
-      <h3
-        class="text-2xl font-semibold text-gray-500 dark:text-gray-200 mb-2"
-      >
-        FALTAN
-      </h3>
-      <div class="flex justify-center gap-4 mb-5">
-        <div
-          class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm min-w-[70px]"
-        >
-          <div
-            class="text-3xl font-bold text-blue-600 dark:text-purple-300"
-          >
-            87
-          </div>
-          <div class="text-xs text-gray-500 dark:text-gray-200">DÍAS</div>
-        </div>
-        <div
-          class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm min-w-[70px]"
-        >
-          <div
-            class="text-3xl font-bold text-purple-600 dark:text-blue-300"
-          >
-            12
-          </div>
-          <div class="text-xs text-gray-500 dark:text-gray-200">HORAS</div>
-        </div>
-      </div>
-    </section>
 
     <!-- Agenda del evento -->
     <Agenda />
