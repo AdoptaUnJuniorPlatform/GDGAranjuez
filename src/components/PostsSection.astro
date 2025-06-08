@@ -17,7 +17,7 @@ const posts: Post[] = (await getCollection('posts'))
 
 <section
   id="blog"
-  class="p-10 m-6 rounded-2xl bg-sky-100 dark:bg-sky-950 scroll-mt-24"
+  class="p-10 m-6 rounded-2xl scroll-mt-24"
 >
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-10">
@@ -42,7 +42,7 @@ const posts: Post[] = (await getCollection('posts'))
     </div>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+      class="flex flex-wrap justify-center gap-8 mb-12"
     >
       {
         posts.map((post: Post) => (
