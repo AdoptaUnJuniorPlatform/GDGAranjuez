@@ -1,166 +1,45 @@
 ---
+import AgendaDevFest from '@/components/AgendaDevFest.astro';
 import CharlasSection from '@/components/CharlasSection.astro';
 import ColaboradorSection from '@/components/ColaboradorSection.astro';
-import Countdown from '@/components/Countdown.astro';
+import DetallesEvento from '@/components/DetallesEvento.astro';
+import HeroSection from '@/components/HeroSection.astro';
 import OrganizadoresSection from '@/components/OrganizadoresSection.astro';
 import Patrocinadores from '@/components/Patrocinadores.astro';
 import PonentesSection from '@/components/PonentesSection.astro';
 import PostsSection from '@/components/PostsSection.astro';
 import Layout from '@/layouts/Layout.astro';
-import Agenda from '@components/Agenda.astro';
 ---
 
 <Layout title="GDG Aranjuez | DevFest 2025">
-  <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+  <main class="max-w-4xl mx-auto px-6 py-12 md:py-12">
     <!-- Hero Section -->
-    <section class="text-center mb-16">
-      <div
-        class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
-      >
-        <span class="text-lg font-medium">4 de Octubre 2025</span
-        >
-      </div>
-      <!-- Countdown -->
-      <Countdown />
-      <h1
-        class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
-      >
-        ¡Vuelve el
-        <span
-          class="text-transparent bg-clip-text
-          bg-gradient-to-r from-blue-700 to-purple-700
-          dark:bg-gradient-to-r dark:from-blue-300 dark:to-purple-300"
-        >
-          DevFest Aranjuez!
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="inline w-14 h-14 dark:fill-white"
-          >
-            <path
-              d="M18,8.5a2.5,2.5,0,0,1-5,0A2.5,2.5,0,0,1,18,8.5Zm-.006,6.866a11.065,11.065,0,0,1-1.163,4.569A7.634,7.634,0,0,1,10,24H9V18.5A3.517,3.517,0,0,0,5.5,15H0V14A7.634,7.634,0,0,1,4.065,7.169,11.065,11.065,0,0,1,8.634,6.006,15.487,15.487,0,0,1,20.972,0h0A3.009,3.009,0,0,1,24,3,15.507,15.507,0,0,1,17.994,15.366ZM2.084,13H4.346A34.361,34.361,0,0,1,6.955,8.237a8.993,8.993,0,0,0-1.993.72A5.519,5.519,0,0,0,2.084,13Zm13.679,4.045A34.361,34.361,0,0,1,11,19.654v2.262a5.519,5.519,0,0,0,4.043-2.878A8.993,8.993,0,0,0,15.763,17.045ZM22,2.972A1,1,0,0,0,21,2c-5.16.147-8.65,2.124-12.018,6.822a29.92,29.92,0,0,0-2.471,4.271,5.5,5.5,0,0,1,4.4,4.4,29.92,29.92,0,0,0,4.271-2.471C19.876,11.65,21.853,8.16,22,2.972ZM6.122,17.879a3.015,3.015,0,0,1,0,4.242c-.907.906-3.622,1.465-4.748,1.664l-1.406.247.247-1.406c.2-1.126.758-3.841,1.664-4.748A3.073,3.073,0,0,1,6.122,17.879ZM5,20a.993.993,0,0,0-.293-.707,1,1,0,0,0-1.414,0A7.318,7.318,0,0,0,2.5,21.5a7.342,7.342,0,0,0,2.208-.794A.993.993,0,0,0,5,20Z"
-            >
-            </path>
-          </svg>
-        </span>
-      </h1>
-      <p
-        class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
-      >
-        Este 4 de octubre, te invitamos a uno de los mayores
-        eventos de tecnología del año en Aranjuez.
-      </p>
-
-      <!-- CTA Button -->
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center"
-      >
-        <a
-          href="#comunidad"
-          class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg
-		  hover:shadow-lg hover:from-purple-700 hover:to-blue-700
-		  dark:hover:from-purple-700 dark:hover:to-blue-700
-		  transition-all duration-300"
-        >
-          ¡Quiero participar!
-        </a>
-        <a
-          href="https://devfest-2024-aranjuez.vercel.app/"
-          target="_blank"
-          class="px-8 py-3 border-2 border-blue-600
-          text-gray-700 dark:text-gray-200 font-medium rounded-lg
-          hover:bg-gray-100 dark:hover:bg-gray-600
-          transition-all duration-300 hover:shadow-lg"
-        >
-          Ver edición 2024
-        </a>
-      </div>
-    </section>
-
+    <HeroSection />
+    
+    
     <!-- Detalles Evento -->
-    <section
-      id="comunidad"
-      class="bg-white dark:bg-indigo-950 rounded-2xl
-      shadow-md shadow-indigo-200 dark:shadow-indigo-800
-	    p-8 mb-16"
-    >
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h2
-            class="text-2xl font-bold font-mono text-gray-800 dark:text-indigo-200 mb-4"
-          >
-            Comunidad vibrante
-          </h2>
-          <p class="text-gray-600 dark:text-gray-200 mb-6">
-            Durante una jornada completa (de 09:30 a 17:30),
-            reuniremos a desarrolladores, profesionales y
-            entusiastas para sumergirse en aprendizaje práctico,
-            colaboración e inspiración.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <span
-                class="text-blue-500 dark:text-indigo-400 mr-2"
-                >✓</span
-              >
-              <span class="text-gray-700 dark:text-gray-300"
-                >Charlas técnicas de primer nivel</span
-              >
-            </li>
-            <li class="flex items-start">
-              <span
-                class="text-blue-500 dark:text-indigo-400 mr-2"
-                >✓</span
-              >
-              <span class="text-gray-700 dark:text-gray-300"
-                >Talleres prácticos</span
-              >
-            </li>
-            <li class="flex items-start">
-              <span
-                class="text-blue-500 dark:text-indigo-400 mr-2"
-                >✓</span
-              >
-              <span class="text-gray-700 dark:text-gray-300"
-                >Networking con profesionales</span
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div
-          class="bg-gray-100 rounded-xl overflow-hidden aspect-video"
-        >
-          <!-- Placeholder para imagen/video -->
-          <div
-            class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100"
-          >
-            <img
-              src="/img/DevFest2024.jpg"
-              alt="Foto DevFest primera edición 2024"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <DetallesEvento />
+   
     <!-- Seccion de Organizadores -->
     <OrganizadoresSection />
-
+    
+    <!-- Agenda del evento -->
+    <AgendaDevFest />
+    
     <!-- Seccion Charlas -->
     <CharlasSection />
+    
 
     <!-- Seccion de Ponentes -->
     <PonentesSection />
-
-    <!-- Seccion de Patrocinadores -->
-    <Patrocinadores />
-
+    
     <!-- Seccion de Colaboradores -->
     <ColaboradorSection />
 
-    <!-- Agenda del evento -->
-    <Agenda />
+    <!-- Seccion de Patrocinadores -->
+    <Patrocinadores />
+    
+    
   </main>
 
   <!-- Blog -->
