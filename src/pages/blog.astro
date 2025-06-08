@@ -17,8 +17,8 @@ const posts = (await getCollection('posts'))
 
 <Layout title="Blog">
   <section
-    class="py-16 bg-sky-100 dark:bg-sky-950 rounded-2xl m-10
-    max-w-4xl px-6"
+  class="py-16 bg-sky-100 dark:bg-sky-950 rounded-2xl m-10 max-w-4xl px-6 mx-auto"
+
   >
     <div class="text-center mb-12">
       <h1
@@ -33,9 +33,9 @@ const posts = (await getCollection('posts'))
         novedades de nuestra comunidad.
       </p>
     </div>
-
+     
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
     >
       {
         posts.map((post: Post) => (
