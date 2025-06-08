@@ -81,15 +81,16 @@
     <li><a href="/#colaboradores" class="nav-link hover:text-blue-700 transition">Colaboradores</a></li>
     <li><a href="/#patrocinadores" class="nav-link hover:text-blue-700 transition">Patrocinadores</a></li>
     <li><a href="/blog" class="nav-link hover:text-blue-700 transition">Blog</a></li>
-    <li><a href="https://devfest-2024-aranjuez.vercel.app/" class="nav-link hover:text-blue-700 transition">Edición 2024</a></li>
+    <li><a href="https://devfest-2024-aranjuez.vercel.app/" target="_blank" class="nav-link hover:text-blue-700 transition">Edición 2024</a></li>
     <li>
       <button id="theme-toggle" class="hover:text-yellow-500 transition text-xl">
-        <img src="/sol.png" alt="Icono cohete" class="inline-block w-6 h-6 ml-2 align-middle" />
+        <img src="/icons/sol.png" alt="Modo claro oscuro" class="inline-block w-6 h-6 ml-2 align-middle" />
       </button>
     </li>
   </ul>
   </div>
 
+</nav>
   <!-- script menú hamburguesa -->
   <script is:inline>
     const toggle = document.getElementById('menu-toggle');
@@ -100,7 +101,7 @@
         menu.classList.toggle('hidden');
       });
 
-      // Cierra menú al hacer clic en cualquier enlace (solo móviles)
+      // mobile
       const links = menu.querySelectorAll('a');
       links.forEach(link => {
         link.addEventListener('click', () => {
@@ -111,4 +112,3 @@
       });
     }
   </script>
-</nav>
