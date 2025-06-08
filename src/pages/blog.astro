@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import PostCard from '../components/PostCard.astro';
-import Layout from '../layouts/Layout.astro';
+import PostCard from '@/components/PostCard.astro';
+import Layout from '@/layouts/Layout.astro';
 
 type Post = CollectionEntry<'posts'>;
 
@@ -34,9 +34,7 @@ const posts = (await getCollection('posts'))
       </p>
     </div>
 
-    <div
-      class="flex flex-wrap justify-center gap-8"
-    >
+    <div class="flex flex-wrap justify-center gap-8">
       {
         posts.map((post: Post) => (
           <PostCard
