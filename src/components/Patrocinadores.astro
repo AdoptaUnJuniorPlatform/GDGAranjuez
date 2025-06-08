@@ -1,0 +1,106 @@
+---
+const sponsors = {
+  Gold: [
+    {
+      name: 'Ayuntamiento Aranjuez',
+      logo: '/patrocinadores/firma-escudo-viejo-01.webp',
+      links: {
+        website: 'https://www.aranjuez.es/',
+      },
+    },
+    {
+      name: 'Google Developer',
+      logo: '/patrocinadores/image-gdg-aranjuez.jpg',
+      links: {
+        website: 'https://gdg.community.dev/gdg-aranjuez/',
+      },
+    },
+  ],
+  Platinum: [
+    {
+      name: 'Adopta Un Junior',
+      logo: '/patrocinadores/image-adopta-un-junior.jpg',
+      links: {
+        website: 'https://adoptaunjunior.es/',
+      },
+    },
+  ],
+  Silver: [],
+  Media: [],
+};
+---
+
+<section id="patrocinadores" class="py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2
+      class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8"
+    >
+      Patrocinadores
+    </h2>
+
+    <!-- Contenedor principal -->
+    <div class="rounded-2xl">
+      <!-- Tarjetas de cada categoría -->
+      <div class="space-y-6">
+        {
+          Object.entries(sponsors).map(([category, list]) => (
+            <div class="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-6">
+              <h3 class="text-2xl font-semibold mb-4 capitalize text-black  dark:text-indigo-50 ">
+                {category === 'Media'
+                  ? 'Media Partners'
+                  : category}
+              </h3>
+
+              {list.length > 0 ? (
+                <div class="flex flex-wrap gap-4 items-center justify-center">
+                  {list.map((sponsor) => (
+                    <div class="w-full max-w-[250px] bg-white dark:bg-blue-100/10 shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        class="h-20 mx-auto mb-4 object-contain"
+                        loading="lazy"
+                      />
+                      <h4 class="text-xl font-bold mb-2 dark:text-gray-50">
+                        {sponsor.name}
+                      </h4>
+                      <div class="flex justify-center gap-4 flex-wrap">
+                        {sponsor.links?.website && (
+                          <a
+                            href={sponsor.links.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-black dark:text-gray-100 hover:underline"
+                          >
+                            Sitio web
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p class="text-center italic text-gray-500 dark:text-gray-300">
+                  Próximamente.
+                </p>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Pie de página -->
+      <div
+        class="mt-16 text-center text-lg text-gray-700 dark:text-indigo-200"
+      >
+        <p>
+          Gracias a todos nuestros patrocinadores por hacer posible DevFest
+          2025 - GDG Aranjuez.
+          <br />
+          ¡Su apoyo impulsa a la comunidad tecnológica!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

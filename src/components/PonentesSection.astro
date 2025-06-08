@@ -1,0 +1,84 @@
+---
+import Ponente from './Ponente.astro';
+const ponentes = [
+  {
+    nombre: 'Lucía Méndez',
+    cargo: 'Ingeniera de Datos en FlowTech',
+    foto: 'https://randomuser.me/api/portraits/women/44.jpg',
+    redes: {
+      twitter: 'https://twitter.com/luciamendez_dev',
+      linkedin: 'https://linkedin.com/in/luciamendez',
+    },
+  },
+  {
+    nombre: 'Álvaro Ruiz',
+    cargo: 'Desarrollador Full Stack en DevSolutions',
+    foto: 'https://randomuser.me/api/portraits/men/22.jpg',
+    redes: {
+      twitter: 'https://twitter.com/alvaroruiz_dev',
+      linkedin: 'https://linkedin.com/in/alvaroruiz',
+    },
+  },
+  {
+    nombre: 'María López',
+    cargo: 'Especialista en UX y Accesibilidad',
+    foto: 'https://randomuser.me/api/portraits/women/68.jpg',
+    redes: {
+      twitter: 'https://twitter.com/marialopezux',
+      linkedin: 'https://linkedin.com/in/marialopez',
+    },
+  },
+  {
+    nombre: 'Julián Torres',
+    cargo: 'Cybersecurity Analyst en SecureNow',
+    foto: 'https://randomuser.me/api/portraits/men/34.jpg',
+    redes: {
+      twitter: 'https://twitter.com/juliantorres_sec',
+      linkedin: 'https://linkedin.com/in/juliantorres',
+    },
+  },
+  {
+    nombre: 'Noelia Sánchez',
+    cargo: 'CTO en Nebula Labs',
+    foto: 'https://randomuser.me/api/portraits/women/52.jpg',
+    redes: {
+      linkedin: 'https://linkedin.com/in/noeliasanchez',
+    },
+  },
+  {
+    nombre: 'David Moreno',
+    cargo: 'AI Researcher en OpenVision',
+    foto: 'https://randomuser.me/api/portraits/men/17.jpg',
+    redes: {
+      twitter: 'https://twitter.com/davidmoreno_ai',
+    },
+  },
+];
+
+const estilosPonentes = {
+  sombra: 'shadow-lg hover:shadow-2xl',
+};
+---
+
+<section id="ponentes" class="p-10 scroll-mt-24">
+  <h2
+    class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8"
+  >
+    Ponentes
+  </h2>
+
+  <div class="flex flex-wrap justify-center gap-8">
+    {
+      ponentes.map((pon) => (
+        <Ponente
+          nombre={pon.nombre}
+          cargo={pon.cargo}
+          foto={pon.foto}
+          redes={pon.redes}
+          estilos={estilosPonentes}
+        />
+      ))
+    }
+  </div>
+</section>

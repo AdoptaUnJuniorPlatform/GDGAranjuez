@@ -1,0 +1,114 @@
+<head>
+  <!-- Fuente tech opcional -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    .nav-link {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -2px;
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .glass-bg {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<nav
+  class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl mb-8 text-base px-6 py-4 font-[Orbitron]"
+>
+  <div class="flex flex-wrap items-center justify-between">
+    <!-- Logo y botón hamburguesa -->
+    <div
+      class="flex items-center justify-between w-full lg:w-auto pl-4"
+    >
+      <a
+        href="/"
+        class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 drop-shadow"
+      >
+        DevFest 2025
+      </a>
+      <button
+        id="menu-toggle"
+        class="lg:hidden text-gray-700 focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6 ml-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú -->
+    <ul
+    id="menu"
+    class="hidden w-full flex-col mt-4 space-y-3 font-medium text-gray-700 text-lg
+           lg:flex lg:flex-row lg:space-y-0 lg:gap-x-6 lg:mt-0 lg:w-fit lg:mx-auto lg:items-center lg:justify-center"
+  >
+    <li><a href="/#" class="nav-link hover:text-blue-700 transition">Home</a></li>
+    <li><a href="/#organizadores" class="nav-link hover:text-blue-700 transition">Organizadores</a></li>
+    <li><a href="/#charlas" class="nav-link hover:text-blue-700 transition">Charlas</a></li>
+    <li><a href="/#agenda" class="nav-link hover:text-blue-700 transition">Agenda</a></li>
+    <li><a href="/#ponentes" class="nav-link hover:text-blue-700 transition">Ponentes</a></li>
+    <li><a href="/#colaboradores" class="nav-link hover:text-blue-700 transition">Colaboradores</a></li>
+    <li><a href="/#patrocinadores" class="nav-link hover:text-blue-700 transition">Patrocinadores</a></li>
+    <li><a href="/blog" class="nav-link hover:text-blue-700 transition">Blog</a></li>
+    <li><a href="https://devfest-2024-aranjuez.vercel.app/" target="_blank" class="nav-link hover:text-blue-700 transition">Edición 2024</a></li>
+    <li>
+      <button id="theme-toggle" class="hover:text-yellow-500 transition text-xl">
+        <img src="/icons/sol.png" alt="Modo claro oscuro" class="inline-block w-6 h-6 ml-2 align-middle" />
+      </button>
+    </li>
+  </ul>
+  </div>
+
+</nav>
+  <!-- script menú hamburguesa -->
+  <script is:inline>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // mobile
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 1024) {
+            menu.classList.add('hidden');
+          }
+        });
+      });
+    }
+  </script>

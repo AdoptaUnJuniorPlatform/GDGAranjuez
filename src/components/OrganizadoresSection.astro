@@ -1,0 +1,78 @@
+---
+import Organizador from './Organizador.astro';
+
+const organizadores = [
+  /* Lista de organizadores con nombre, cargo, foto, y link a redes */
+  {
+    nombre: 'Ángeles Vázquez Parra',
+    cargo: 'GDG Organizer\nEventbrite',
+    foto: '/organizadores/angeles_vazquez_parra.webp',
+    redes: {
+      twitter: 'https://twitter.com/avazpar',
+      linkedin:
+        'https://www.linkedin.com/in/angeles-vazquez-parra/',
+    },
+  },
+  {
+    nombre: 'Juanje Cilla Ugarte',
+    cargo: 'GDG Organizer\nHiberus',
+    foto: '/organizadores/juanje_cilla_ugarte.webp',
+    redes: {
+      linkedin:
+        'https://www.linkedin.com/in/juan-jes%C3%BAs-cilla-ugarte-00a72a107/',
+    },
+  },
+  {
+    nombre: 'Saul Diaz',
+    cargo: 'GDG Organizer\nEventbrite',
+    foto: '/organizadores/saul_diaz.webp',
+    redes: {
+      twitter:
+        'https://x.com/i/flow/login?redirect_after_login=%2FSefford',
+      linkedin: 'https://www.linkedin.com/in/sefford/',
+    },
+  },
+  {
+    nombre: 'Patricia Tarazaga',
+    cargo: 'GDG Organizer',
+    foto: '/organizadores/patricia_tarazaga.webp',
+    redes: {
+      linkedin: 'https://www.linkedin.com/in/patricia-tarazaga/',
+    },
+  },
+  {
+    nombre: 'Daniel Brinzei',
+    cargo: 'GDG Organizer',
+    foto: '/organizadores/daniel_brinzei.jpeg',
+    redes: {
+      linkedin: 'https://www.linkedin.com/in/daniel-brinzei/',
+    },
+  },
+];
+---
+
+<!-- Sección principal de Organizadores, centrada y responsive, padding vertical -->
+<section id="organizadores" class="p-10 scroll-mt-24">
+  {/* Título principal centrado con margen inferior */}
+  <h2
+    class="text-4xl dark:text-sky-100 font-bold font-mono
+    text-center mb-8"
+  >
+    Organizadores
+  </h2>
+
+  <!-- Contenedor en Flexbox para cada organizador -->
+  <div class="flex flex-wrap justify-center gap-8">
+    {
+      organizadores.map((org) => (
+        // Render de cada tarjeta con sus props
+        <Organizador
+          nombre={org.nombre}
+          cargo={org.cargo}
+          foto={org.foto}
+          redes={org.redes}
+        />
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+const agenda = [
+  {
+    hora: '10:00',
+    titulo: 'Apertura y bienvenida',
+    ponente: 'Equipo GDG Madrid',
+    perfil: '',
+  },
+  {
+    hora: '10:30',
+    titulo: 'Novedades en inteligencia artificial',
+    ponente: 'María López',
+    perfil: '',
+  },
+  {
+    hora: '11:30',
+    titulo: 'Desarrollo web con Astro',
+    ponente: 'Carlos García',
+    perfil: '',
+  },
+  {
+    hora: '13:00',
+    titulo: 'Lunch & networking',
+    ponente: '',
+    perfil: '',
+  },
+  {
+    hora: '14:30',
+    titulo: 'Serverless con Firebase',
+    ponente: 'Lucía Torres',
+    perfil: '',
+  },
+  {
+    hora: '16:00',
+    titulo: 'Panel: Futuro de la tecnología en España',
+    ponente: 'Varios ponentes',
+    perfil: '',
+  },
+  {
+    hora: '17:30',
+    titulo: 'Cierre y sorteos',
+    ponente: 'Equipo GDG Madrid',
+    perfil: '',
+  },
+];
+---
+
+<section
+  id="agenda"
+  class="bg-white dark:bg-gray-900 dark:text-white
+  rounded-2xl shadow-md p-10 mb-6 mt-12 border border-gray-100
+  dark:border-blue-800  text-center scroll-mt-24"
+>
+  <h2
+    class="text-3xl font-bold font-mono dark:text-blue-300 text-center mb-5"
+  >
+    Agenda 2025
+  </h2>
+  <ul>
+    {
+      agenda.map((item) => (
+        <li class="mb-6 text-lg">
+          <strong class="font-mono">{item.hora}</strong> –{' '}
+          <em class="underline">{item.titulo}</em>
+          <br />
+          {item.ponente && <span>Ponente: {item.ponente}</span>}
+        </li>
+      ))
+    }
+  </ul>
+</section>

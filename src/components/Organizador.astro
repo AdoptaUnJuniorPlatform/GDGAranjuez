@@ -1,0 +1,34 @@
+---
+import Socials from './Socials.astro';
+const { nombre, cargo, foto, redes } = Astro.props;
+---
+
+<!-- Componente individual para cada persona -->
+<div
+  class="bg-purple-200/50 dark:bg-purple-400/30 rounded-2xl
+  p-5 text-center transition-all duration-300 hover:-translate-y-2
+  shadow-md hover:shadow-xl w-full max-w-55"
+>
+  <img
+    src={foto}
+    alt={`Foto de ${nombre}`}
+    class="w-34 h-34 mx-auto rounded-full mb-4 object-cover transition-all duration-300 hover:scale-105"
+  />
+  <h3
+    class="text-lg text-gray-950 dark:text-violet-50
+    font-semibold underline"
+  >
+    {nombre}
+  </h3>
+
+  {
+    /* La clase whitespace-pre-line de Tailwind le dice al navegador que 
+	  los saltos de línea \n se deben interpretar como saltos reales (<br />) */
+  }
+  <p
+    class="mb-2 text-gray-900 dark:text-violet-100 whitespace-pre-line"
+  >
+    {cargo}
+  </p>
+  <Socials nombre={nombre} {...redes} />
+</div>
