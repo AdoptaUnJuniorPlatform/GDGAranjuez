@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
-import PostCard from '../components/PostCard.astro';
-import Layout from '../layouts/Layout.astro';
+import PostCard from '@/components/PostCard.astro';
+import Layout from '@/layouts/Layout.astro';
 
 type Post = CollectionEntry<'posts'>;
 
@@ -17,8 +17,8 @@ const posts = (await getCollection('posts'))
 
 <Layout title="Blog">
   <section
-    class="py-16 bg-sky-100 dark:bg-sky-950 rounded-2xl m-10
-    max-w-4xl px-6"
+    class="py-16 rounded-2xl m-10
+    max-w-4xl mx-auto px-6"
   >
     <div class="text-center mb-12">
       <h1
@@ -34,9 +34,7 @@ const posts = (await getCollection('posts'))
       </p>
     </div>
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
+    <div class="flex flex-wrap justify-center gap-8">
       {
         posts.map((post: Post) => (
           <PostCard
