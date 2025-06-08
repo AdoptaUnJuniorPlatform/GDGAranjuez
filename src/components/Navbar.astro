@@ -69,98 +69,46 @@
 
     <!-- Menú -->
     <ul
-      id="menu"
-      class="hidden w-full flex-col mt-4 space-y-3 font-medium text-gray-700 text-lg
-             lg:flex lg:flex-row lg:space-y-0 lg:space-x-6 lg:mt-0 lg:w-auto lg:ml-auto lg:items-center flex-1 justify-evenly"
-    >
-      <li>
-        <a
-          href="/#"
-          class="nav-link hover:text-blue-700 transition">Home</a
-        >
-      </li>
-      <li>
-        <a
-          href="/#organizadores"
-          class="nav-link hover:text-blue-700 transition"
-          >Organizadores</a
-        >
-      </li>
-      <li>
-        <li>
-          <a
-            href="/#charlas"
-            class="nav-link hover:text-blue-700 transition"
-            >Charlas</a
-          >
-        </li>
-        <li>
-          <a
-            href="/#agenda"
-            class="nav-link hover:text-blue-700 transition"
-            >Agenda</a
-          >
-        </li>
-        <li>
-          <a
-            href="/#ponentes"
-            class="nav-link hover:text-blue-700 transition"
-            >Ponentes</a
-          >
-        </li>
-        <li>
-          <a
-            href="/#colaboradores"
-            class="nav-link hover:text-blue-700 transition"
-            >Colaboradores</a
-          >
-        </li>
-        <li>
-          <a
-            href="/#patrocinadores"
-            class="nav-link hover:text-blue-700 transition"
-            >Patrocinadores</a
-          >
-        </li>
-        <li>
-          <a
-            href="/blog"
-            class="nav-link hover:text-blue-700 transition"
-            >Blog</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://devfest-2024-aranjuez.vercel.app/"
-            class="nav-link hover:text-blue-700 transition"
-            >Edición 2024</a
-          >
-        </li>
-        <li>
-          <button
-            id="theme-toggle"
-            class="hover:text-yellow-500 transition text-xl"
-          >
-            <img
-              src="icons/sol.png"
-              alt="Modo claro oscuro"
-              class="inline-block w-6 h-6 ml-2 align-middle"
-            />
-          </button>
-        </li>
-      </li>
-    </ul>
-
-    <!-- script menú hamburguesa -->
-    <script>
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('menu');
-
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-        });
-      }
-    </script>
+    id="menu"
+    class="hidden w-full flex-col mt-4 space-y-3 font-medium text-gray-700 text-lg
+           lg:flex lg:flex-row lg:space-y-0 lg:gap-x-6 lg:mt-0 lg:w-fit lg:mx-auto lg:items-center lg:justify-center"
+  >
+    <li><a href="/#" class="nav-link hover:text-blue-700 transition">Home</a></li>
+    <li><a href="/#organizadores" class="nav-link hover:text-blue-700 transition">Organizadores</a></li>
+    <li><a href="/#charlas" class="nav-link hover:text-blue-700 transition">Charlas</a></li>
+    <li><a href="/#agenda" class="nav-link hover:text-blue-700 transition">Agenda</a></li>
+    <li><a href="/#ponentes" class="nav-link hover:text-blue-700 transition">Ponentes</a></li>
+    <li><a href="/#colaboradores" class="nav-link hover:text-blue-700 transition">Colaboradores</a></li>
+    <li><a href="/#patrocinadores" class="nav-link hover:text-blue-700 transition">Patrocinadores</a></li>
+    <li><a href="/blog" class="nav-link hover:text-blue-700 transition">Blog</a></li>
+    <li><a href="https://devfest-2024-aranjuez.vercel.app/" target="_blank" class="nav-link hover:text-blue-700 transition">Edición 2024</a></li>
+    <li>
+      <button id="theme-toggle" class="hover:text-yellow-500 transition text-xl">
+        <img src="/icons/sol.png" alt="Modo claro oscuro" class="inline-block w-6 h-6 ml-2 align-middle" />
+      </button>
+    </li>
+  </ul>
   </div>
+
 </nav>
+  <!-- script menú hamburguesa -->
+  <script is:inline>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+
+      // mobile
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 1024) {
+            menu.classList.add('hidden');
+          }
+        });
+      });
+    }
+  </script>
