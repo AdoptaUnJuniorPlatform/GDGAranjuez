@@ -6,7 +6,7 @@ const organizadores = [
   {
     nombre: 'Ángeles Vázquez Parra',
     cargo: 'GDG Organizer\nEventbrite',
-    foto: '/organizadores/huron.jpeg',
+    foto: '/organizadores/angeles_vazquez_parra.webp',
     redes: {
       twitter: 'https://twitter.com/avazpar',
       linkedin:
@@ -16,7 +16,7 @@ const organizadores = [
   {
     nombre: 'Juanje Cilla Ugarte',
     cargo: 'GDG Organizer\nHiberus',
-    foto: '/organizadores/huron2.jpg',
+    foto: '/organizadores/juanje_cilla_ugarte.webp',
     redes: {
       linkedin:
         'https://www.linkedin.com/in/juan-jes%C3%BAs-cilla-ugarte-00a72a107/',
@@ -25,7 +25,7 @@ const organizadores = [
   {
     nombre: 'Saul Diaz',
     cargo: 'GDG Organizer\nEventbrite',
-    foto: '/organizadores/huron.jpeg',
+    foto: '/organizadores/saul_diaz.webp',
     redes: {
       twitter:
         'https://x.com/i/flow/login?redirect_after_login=%2FSefford',
@@ -35,7 +35,7 @@ const organizadores = [
   {
     nombre: 'Patricia Tarazaga',
     cargo: 'GDG Organizer',
-    foto: '/organizadores/huron2.jpg',
+    foto: '/organizadores/patricia_tarazaga.webp',
     redes: {
       linkedin: 'https://www.linkedin.com/in/patricia-tarazaga/',
     },
@@ -43,7 +43,10 @@ const organizadores = [
   {
     nombre: 'Daniel Brinzei',
     cargo: 'GDG Organizer',
-    foto: '/organizadores/huron.jpeg',
+    foto: '/organizadores/daniel_brinzei.jpeg',
+    redes: {
+      linkedin: 'https://www.linkedin.com/in/daniel-brinzei/',
+    },
   },
 ];
 ---
@@ -58,9 +61,7 @@ const organizadores = [
     Organizadores
   </h2>
 
-  <!-- 
-    Contenedor en Flexbox para cada organizador
-  -->
+  <!-- Contenedor en Flexbox para cada organizador -->
   <div class="flex flex-wrap justify-center gap-8">
     {
       organizadores.map((org) => (
