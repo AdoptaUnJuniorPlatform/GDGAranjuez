@@ -1,4 +1,5 @@
 ---
+import AgendaDevFest from '@/components/AgendaDevFest.astro';
 import CharlasSection from '@/components/CharlasSection.astro';
 import ColaboradorSection from '@/components/ColaboradorSection.astro';
 import Countdown from '@/components/Countdown.astro';
@@ -7,11 +8,10 @@ import Patrocinadores from '@/components/Patrocinadores.astro';
 import PonentesSection from '@/components/PonentesSection.astro';
 import PostsSection from '@/components/PostsSection.astro';
 import Layout from '@/layouts/Layout.astro';
-import Agenda from '@components/Agenda.astro';
 ---
 
 <Layout title="GDG Aranjuez | DevFest 2025">
-  <main class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+  <main class="max-w-4xl mx-auto px-6 py-12 md:py-12">
     <!-- Hero Section -->
     <section class="text-center mb-16">
       <div
@@ -160,7 +160,7 @@ import Agenda from '@components/Agenda.astro';
     <ColaboradorSection />
 
     <!-- Agenda del evento -->
-    <Agenda />
+    <AgendaDevFest />
   </main>
 
   <!-- Blog -->
