@@ -1,6 +1,12 @@
 ---
-const { twitter, linkedin, instagram, github, facebook, nombre } =
-  Astro.props;
+const {
+  twitter,
+  linkedin,
+  instagram,
+  github,
+  facebook,
+  nombre,
+} = Astro.props;
 ---
 
 <div class="flex justify-center gap-4 mt-2">
@@ -11,10 +17,13 @@ const { twitter, linkedin, instagram, github, facebook, nombre } =
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Twitter de ${nombre}`}
-        class="transform transition-transform duration-200 hover:scale-125"
+        class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
-          <svg viewBox="0 0 24 24" class="w-5 h-5 dark:fill-white">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5 dark:fill-white"
+          >
             <path d="m18.9,1.153h3.682l-8.042,9.189,9.46,12.506h-7.405l-5.804-7.583-6.634,7.583H.469l8.6-9.831L0,1.153h7.593l5.241,6.931,6.065-6.931Zm-1.293,19.494h2.039L6.482,3.239h-2.19l13.314,17.408Z" />
           </svg>
         </div>
@@ -28,10 +37,13 @@ const { twitter, linkedin, instagram, github, facebook, nombre } =
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`LinkedIn de ${nombre}`}
-        class="transform transition-transform duration-200 hover:scale-125"
+        class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
-          <svg viewBox="0 0 16 16" class="w-9 h-9 dark:fill-white">
+          <svg
+            viewBox="0 0 16 16"
+            class="w-9 h-9 dark:fill-white"
+          >
             <path d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z" />
           </svg>
         </div>
@@ -45,10 +57,13 @@ const { twitter, linkedin, instagram, github, facebook, nombre } =
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Instagram de ${nombre}`}
-        class="transform transition-transform duration-200 hover:scale-125"
+        class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
-          <svg viewBox="0 0 24 24" class="w-5 h-5 dark:fill-white">
+          <svg
+            viewBox="0 0 24 24"
+            class="w-5 h-5 dark:fill-white"
+          >
             <g>
               <path d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z" />
               <path d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z" />
@@ -66,10 +81,13 @@ const { twitter, linkedin, instagram, github, facebook, nombre } =
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`GitHub de ${nombre}`}
-        class="transform transition-transform duration-200 hover:scale-125"
+        class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
-          <svg viewBox="0 0 98 96" class="w-6 h-6 fill-black dark:fill-white">
+          <svg
+            viewBox="0 0 98 96"
+            class="w-6 h-6 fill-black dark:fill-white"
+          >
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -87,7 +105,7 @@ const { twitter, linkedin, instagram, github, facebook, nombre } =
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Facebook de ${nombre}`}
-        class="transform transition-transform duration-200 hover:scale-125"
+        class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
           <svg viewBox="0 0 24 24" class="dark:fill-white">
