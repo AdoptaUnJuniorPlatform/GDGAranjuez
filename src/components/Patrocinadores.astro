@@ -3,7 +3,7 @@ const sponsors = {
   Gold: [
     {
       name: 'Ayuntamiento Aranjuez',
-      logo: '/patrocinadores/firma-escudo-viejo-01.webp',
+      logo: 'patrocinadores/aranjuez-firma_negro-01.webp',
       links: {
         website: 'https://www.aranjuez.es/',
       },
@@ -61,6 +61,11 @@ const sponsors = {
                         alt={sponsor.name}
                         class="h-20 mx-auto mb-4 object-contain"
                         loading="lazy"
+                        id={
+                          sponsor.name == 'Ayuntamiento Aranjuez'
+                            ? 'aranjuez-logo'
+                            : undefined
+                        }
                       />
                       <h4 class="text-xl font-bold mb-2 dark:text-gray-50">
                         {sponsor.name}
