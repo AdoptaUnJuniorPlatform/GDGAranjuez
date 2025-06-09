@@ -55,7 +55,7 @@ const sponsors = {
               {list.length > 0 ? (
                 <div class="flex flex-wrap gap-4 items-center justify-center">
                   {list.map((sponsor) => (
-                    <div class="w-full max-w-[250px] bg-white dark:bg-blue-100/10 shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
+                    <div class="w-full max-w-[250px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
@@ -87,7 +87,7 @@ const sponsors = {
                   ))}
                 </div>
               ) : (
-                <p class="text-center italic text-gray-500 dark:text-gray-300">
+                <p class="text-lg text-center italic text-gray-700 dark:text-gray-300">
                   Próximamente.
                 </p>
               )}
