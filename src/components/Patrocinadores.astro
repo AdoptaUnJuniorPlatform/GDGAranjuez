@@ -3,7 +3,7 @@ const sponsors = {
   Gold: [
     {
       name: 'Ayuntamiento Aranjuez',
-      logo: '/patrocinadores/firma-escudo-viejo-01.webp',
+      logo: 'patrocinadores/aranjuez-firma_negro-01.webp',
       links: {
         website: 'https://www.aranjuez.es/',
       },
@@ -55,12 +55,17 @@ const sponsors = {
               {list.length > 0 ? (
                 <div class="flex flex-wrap gap-4 items-center justify-center">
                   {list.map((sponsor) => (
-                    <div class="w-full max-w-[250px] bg-white dark:bg-blue-100/10 shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
+                    <div class="w-full max-w-[250px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
                         class="h-20 mx-auto mb-4 object-contain"
                         loading="lazy"
+                        id={
+                          sponsor.name == 'Ayuntamiento Aranjuez'
+                            ? 'aranjuez-logo'
+                            : undefined
+                        }
                       />
                       <h4 class="text-xl font-bold mb-2 dark:text-gray-50">
                         {sponsor.name}
@@ -72,6 +77,7 @@ const sponsors = {
                             target="_blank"
                             rel="noopener noreferrer"
                             class="text-black dark:text-gray-100 hover:underline"
+                            aria-label="{`Sitio web de ${sponsor.name}}`"
                           >
                             Sitio web
                           </a>
@@ -81,7 +87,7 @@ const sponsors = {
                   ))}
                 </div>
               ) : (
-                <p class="text-center italic text-gray-500 dark:text-gray-300">
+                <p class="text-lg text-center italic text-gray-700 dark:text-gray-300">
                   Próximamente.
                 </p>
               )}
