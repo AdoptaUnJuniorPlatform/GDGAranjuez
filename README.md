@@ -91,6 +91,7 @@ GDGAranjuez/
 ├─ .prettierrc           # Configuración de Prettier
 ├─ package.json          # Definición de dependencias y scripts del proyecto
 ├─ package-lock.json     # Bloqueo de versiones exactas de dependencias
+├─ LICENSE               # Este proyecto cuenta con licencia conforme a los términos de la licencia MIT
 └─ README.md             # Documentación principal del proyecto
 ```
 
