@@ -13,6 +13,12 @@
 
 ---
 
+## 🌐 Demo en vivo
+
+Puedes visitar la versión actual desplegada del proyecto en:
+
+➡️ [devfest-gdg-aranjuez.netlify.app/](https://devfest-gdg-aranjuez.netlify.app/)
+
 ## 📖 Contexto
 
 GDG Aranjuez es una comunidad tecnológica asentada en Aranjuez, una localidad histórica en el sur de la Comunidad de Madrid.  
@@ -92,23 +98,21 @@ GDGAranjuez/
 
 ## ✅ Estado Actual - Implementación
 
-| Requisito                                | Estado             | Comentarios                                                          |
-| ---------------------------------------- | ------------------ | -------------------------------------------------------------------- |
-| Uso de Astro                             | ✅ Completado      | Proyecto creado y desplegado con Astro.                              |
-| Componentes reutilizables (claro/oscuro) | ✅ Completado      | Componentes con soporte para temas claro y oscuro.                   |
-| Subdominios para ediciones               | ✅ Parcial         | Incluye enlace a DevFest 2024, futuro soporte para nuevas ediciones. |
-| Sección organizadores                    | ✅ Completado      | Muestra foto, nombre, cargo y redes sociales opcionales.             |
-| Blog (posts)                             | ✅ Completado      | Sección funcional con posts en Markdown.                             |
-| Sección patrocinadores                   | ✅ Completado      | Logos visibles y bien integrados.                                    |
-| Modo oscuro / claro                      | ✅ Completado      | Toggle implementado con `themeToggle.js`.                            |
-| Web evento DevFest                       | ✅ Completado      | Sección dedicada con agenda, charlas y ponentes.                     |
-| Sección agenda                           | ✅ Completado      | Agenda detallada visible.                                            |
-| Sección charlas                          | ✅ Completado      | Incluye título, descripción, ponente y foto.                         |
-| Sección ponentes                         | ✅ Completado      | Datos completos con enlaces sociales.                                |
-| Gestión CMS organizadores                | ❌ No implementado | Pendiente para futuras versiones.                                    |
-| Sección colaboradores y CMS              | ❌ No implementado | Pendiente y recomendada para ampliación del proyecto.                |
-
----
+| Requisito                                | Estado             | Comentarios                                                                                                                                         |
+| ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Uso de Astro                             | ✅ Completado      | Proyecto creado y desplegado con Astro.                                                                                                             |
+| Componentes reutilizables (claro/oscuro) | ✅ Completado      | Componentes con soporte para temas claro y oscuro.                                                                                                  |
+| Subdominios para ediciones               | ✅ Parcial         | Actualmente se enlaza el DevFest 2024 desde la web principal. La gestión dinámica de subdominios y ediciones futuras está pendiente de realización. |
+| Sección organizadores                    | ✅ Completado      | Muestra foto, nombre, cargo y redes sociales opcionales.                                                                                            |
+| Blog (posts)                             | ✅ Completado      | Sección funcional con posts en Markdown.                                                                                                            |
+| Sección patrocinadores                   | ✅ Completado      | Logos visibles y bien integrados.                                                                                                                   |
+| Modo oscuro / claro                      | ✅ Completado      | Toggle implementado con `themeToggle.js`.                                                                                                           |
+| Web evento DevFest                       | ✅ Completado      | Sección dedicada con agenda, charlas y ponentes.                                                                                                    |
+| Sección agenda                           | ✅ Completado      | Agenda detallada visible.                                                                                                                           |
+| Sección charlas                          | ✅ Completado      | Incluye título, descripción, ponente y foto.                                                                                                        |
+| Sección ponentes                         | ✅ Completado      | Datos completos con enlaces sociales.                                                                                                               |
+| Gestión CMS organizadores                | ❌ No implementado | Pendiente para futuras versiones.                                                                                                                   |
+| Sección colaboradores y CMS              | ❌ No implementado | Pendiente y recomendada para ampliación del proyecto.                                                                                               |
 
 ---
 
@@ -124,35 +128,24 @@ GDGAranjuez/
 
 ### 📋 Requisitos previos
 
-- [Node.js](https://nodejs.org/) v22 o superior
-- [Git](https://git-scm.com/) instalado
+- [Node.js](https://nodejs.org/) Recomendado tener Node.js v22+ instalado, que incluye npm.
+- [Git](https://git-scm.com/) instalado.
 - Editor de código (recomendado [VS Code](https://code.visualstudio.com/) con extensión [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode))
 
-### ⚡ Sigue estos pasos:
+### ⚡ Pasos para ejecutar localmente:
 
-1. **Clona el repositorio**:
+```
+git clone https://github.com/AdoptaUnJuniorPlatform/GDGAranjuez.git
+cd GDGAranjuez
+npm install
+npm run dev
+```
 
-   ```bash
-   git clone https://github.com/AdoptaUnJuniorPlatform/GDGAranjuez.git
-   cd GDGAranjuez
-   ```
+Abre en tu navegador:
 
-2. **Instala las dependencias**:
-
-   ```bash
-   npm install
-   ```
-
-3. **Inicia el servidor de desarrollo**:
-
-   ```bash
-   npm run dev
-   ```
-
-4. **Abre en tu navegador**:
-   ```
-   http://localhost:4321
-   ```
+```
+http://localhost:4321
+```
 
 ### 🔧 Comandos útiles
 
