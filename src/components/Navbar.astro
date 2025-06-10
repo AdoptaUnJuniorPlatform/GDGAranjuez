@@ -171,14 +171,16 @@
       menu.classList.toggle('hidden');
     });
 
-    // cerrar menú al hacer click en un enlace (modo mobile)
-    const links = menu.querySelectorAll('a');
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 1024) {
-          menu.classList.add('hidden');
-        }
-      });
-    });
+  // seleccionar enlaces y el botón de modo oscuro
+const links = menu.querySelectorAll('a, #theme-toggle');
+links.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 1024) {
+      menu.classList.add('hidden');
+    }
+  });
+});
   }
 </script>
+
+
