@@ -1,6 +1,3 @@
-<h4 align="center">
-:construction: Proyecto en construcción :construction:
-</h4>
 
 # 🌟 WEB GDG ARANJUEZ
 
@@ -22,7 +19,7 @@ Puedes visitar la versión actual desplegada del proyecto en:
 ## 📖 Contexto
 
 GDG Aranjuez es una comunidad tecnológica asentada en Aranjuez, una localidad histórica en el sur de la Comunidad de Madrid.  
-El año pasado se realizó el primer evento grande, el [DevFest 2024](https://devfest-2024-aranjuez.vercel.app/), y este año vuelve con para realizar un nuevo evento el 4 de Octubre.
+El año pasado se realizó el primer evento grande, el [DevFest 2024](https://devfest-2024-aranjuez.vercel.app/), y este año vuelve para realizar un nuevo evento el 4 de Octubre.
 
 ---
 
@@ -103,7 +100,7 @@ GDGAranjuez/
 | ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Uso de Astro                             | ✅ Completado      | Proyecto creado y desplegado con Astro.                                                                                                             |
 | Componentes reutilizables (claro/oscuro) | ✅ Completado      | Componentes con soporte para temas claro y oscuro.                                                                                                  |
-| Subdominios para ediciones               | ✅ Parcial         | Actualmente se enlaza el DevFest 2024 desde la web principal. La gestión dinámica de subdominios y ediciones futuras está pendiente de realización. |
+| Subdominios para ediciones               | ❎ Parcial         | Actualmente se enlaza el DevFest 2024 desde la web principal. La gestión dinámica de subdominios y ediciones futuras está pendiente de realización. |
 | Sección organizadores                    | ✅ Completado      | Muestra foto, nombre, cargo y redes sociales opcionales.                                                                                            |
 | Blog (posts)                             | ✅ Completado      | Sección funcional con posts en Markdown.                                                                                                            |
 | Sección patrocinadores                   | ✅ Completado      | Logos visibles y bien integrados.                                                                                                                   |
@@ -121,7 +118,7 @@ GDGAranjuez/
 
 - **Gestión dinámica vía CMS:** Integrar un CMS headless para administrar organizadores, colaboradores y patrocinadores de forma dinámica sin tocar código.
 - **Sección colaborativa:** Implementar sección de colaboradores con gestión desde CMS.
-- **Mejoras en SEO y accesibilidad:** Ajustes para optimizar posicionamiento y cumplimiento WCAG.
+- **Mejoras en SEO:** Ajustes para optimizar posicionamiento.
 
 ---
 
@@ -168,7 +165,7 @@ http://localhost:4321
 
 ## 🤝 AGRADECIMIENTOS
 
-Queremos agradecer al equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
+Queremos agradecer a [GDG Aranjuez]() y all equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
 
 ---
 
