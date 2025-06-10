@@ -34,12 +34,13 @@
 </head>
 
 <nav
-  class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl mb-8 text-base px-6 py-4 font-[Orbitron]"
+  class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl text-base
+  w-full mx-auto mb-8 px-6 py-4 font-[Orbitron]"
 >
   <div class="flex flex-wrap items-center justify-between">
     <!-- Logo y botón hamburguesa -->
     <div
-      class="flex items-center justify-between w-full lg:w-auto pl-4"
+      class="flex items-center justify-between w-full xl:w-auto"
     >
       <a
         href="/"
@@ -47,34 +48,36 @@
       >
         DevFest 2025
       </a>
-      <button
-        id="menu-toggle"
-        class="lg:hidden text-gray-700 focus:outline-none"
-        aria-label="Abrir menú de navegación"
-        aria-expanded="false"
-        aria-controls="menu"
-      >
-        <svg
-          class="w-6 h-6 ml-4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+      <div class="flex items-center ml-auto xl:hidden">
+        <button
+          id="menu-toggle"
+          class="xl:hidden text-gray-700 focus:outline-none"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="menu"
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+          <svg
+            class="w-7 h-7 ml-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Menú -->
     <ul
       id="menu"
-      class="hidden w-full flex-col mt-4 space-y-3 font-medium text-gray-700 text-lg
-           lg:flex lg:flex-row lg:space-y-0 lg:gap-x-6 lg:mt-0 lg:w-fit lg:mx-auto lg:items-center lg:justify-center"
+      class="hidden w-full flex-col mt-4 space-y-3 text-lg font-medium text-gray-700
+        xl:flex xl:flex-row xl:flex-nowrap xl:space-y-0 xl:gap-x-6 xl:mt-0 xl:w-fit xl:mx-auto xl:items-center xl:justify-center"
     >
       <li
         ><a
@@ -134,19 +137,20 @@
         ><a
           href="https://devfest-2024-aranjuez.vercel.app/"
           target="_blank"
-          class="nav-link hover:text-blue-700 transition"
+          class="nav-link hover:text-blue-700 transition whitespace-nowrap"
           >Edición 2024</a
         ></li
       >
-      <li>
+      <li class="shrink-0">
         <button
           id="theme-toggle"
-          class="hover:text-yellow-500 transition text-xl"
+          class="cursor-pointer transition-transform duration-300 hover:scale-110 hover:-rotate-12"
+          aria-label="Cambiar modo claro oscuro"
         >
           <img
             src="/icons/sol.png"
             alt="Modo claro oscuro"
-            class="inline-block w-6 h-6 ml-2 align-middle"
+            class="inline-block w-6 h-6 ml-2 align-middle object-contain shrink-0"
           />
         </button>
       </li>
@@ -158,27 +162,25 @@
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
 
-  // para actualizar al hacer click el aria-expanded
-  toggle.addEventListener('click', () => {
-    const isExpanded =
-      toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isExpanded));
-    menu.classList.toggle('hidden');
-  });
-
+  // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
+      const isExpanded =
+        toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
       menu.classList.toggle('hidden');
     });
 
-    // mobile
-    const links = menu.querySelectorAll('a');
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 1024) {
-          menu.classList.add('hidden');
-        }
-      });
-    });
+  // seleccionar enlaces y el botón de modo oscuro
+const links = menu.querySelectorAll('a, #theme-toggle');
+links.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 1024) {
+      menu.classList.add('hidden');
+    }
+  });
+});
   }
 </script>
+
+
