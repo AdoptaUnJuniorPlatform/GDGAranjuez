@@ -165,7 +165,7 @@ http://localhost:4321
 
 ## 🤝 AGRADECIMIENTOS
 
-Queremos agradecer a [GDG Aranjuez]() y all equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
+Queremos agradecer a [GDG Aranjuez](https://gdg.community.dev/gdg-aranjuez/) y all equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
 
 ---
 
