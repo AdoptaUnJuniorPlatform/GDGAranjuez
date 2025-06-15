@@ -1,68 +1,95 @@
 ---
-import Countdown from "./Countdown.astro"
+import Countdown from './Countdown.astro';
 ---
 
 <section class="text-center mb-16">
-    <div
-      class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
+  <div class="flex items-center justify-center">
+    <svg
+      class="dark:fill-white fill-black h-30 sm:h-40 md:h-50"
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+      ><g
+        stroke="none"
+        stroke-width="1"
+        id="surface1"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="m12.90592,18.88502l-8.7224,-5.03581c-0.39107,-0.22605 -0.81821,-0.33346 -1.23954,-0.33346c-0.85842,0 -1.69327,0.44566 -2.1533,1.24256c-0.68583,1.18797 -0.27887,2.70701 0.9091,3.39272l8.7224,5.03581c0.3912,0.22592 0.81821,0.33321 1.23954,0.33321c0.85842,0 1.69327,-0.44554 2.1533,-1.24231c0.68596,-1.18785 0.27887,-2.70689 -0.9091,-3.39272"
+          stroke="null"
+          id="svg_1"></path><path
+          d="m30.30016,13.84921l-8.7224,-5.03606c-0.39107,-0.22579 -0.81821,-0.33308 -1.23954,-0.33308c-0.85842,0 -1.69314,0.44529 -2.1533,1.24218c-0.68583,1.18797 -0.27874,2.70689 0.9091,3.39284l8.7224,5.03593c0.39107,0.22579 0.81821,0.33321 1.23954,0.33321c0.85842,0 1.69314,-0.44529 2.1533,-1.24231c0.68596,-1.18785 0.27887,-2.70676 -0.9091,-3.39272"
+          stroke="null"
+          id="svg_2"></path><path
+          d="m27.47098,18.74936l-4.07086,-2.35048l-4.3061,2.48601c-1.18785,0.68583 -1.59493,2.20499 -0.9091,3.39284c0.46004,0.79677 1.29501,1.24231 2.15343,1.24231c0.42133,0 0.84821,-0.10729 1.23941,-0.33321l7.01148,-4.04791c-0.3917,-0.05875 -0.77194,-0.18974 -1.11826,-0.38956"
+          stroke="null"
+          id="svg_3"></path><path
+          d="m4.52896,13.25087l4.07098,2.35035l4.30598,-2.48613c1.18797,-0.68583 1.59506,-2.20487 0.9091,-3.39284c-0.68583,-1.18785 -2.20474,-1.59506 -3.39284,-0.9091l-7.01123,4.04804c0.39183,0.05888 0.77194,0.18986 1.118,0.38969"
+          stroke="null"
+          id="svg_4"></path></g
+      ></svg
     >
-      <span class="text-lg font-medium">4 de Octubre 2025</span
-      >
-    </div>
-    <!-- Countdown -->
-    <Countdown />
-    <h1
-      class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
-    >
-      ¡Vuelve el
-      <span
-        class="text-transparent bg-clip-text
+  </div>
+
+  <div
+    class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
+  >
+    <span class="text-lg font-medium">4 de Octubre 2025</span>
+  </div>
+
+  <!-- Countdown -->
+  <Countdown />
+
+  <h1
+    class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
+  >
+    ¡Vuelve el
+    <span
+      class="text-transparent bg-clip-text
         bg-gradient-to-r from-blue-700 to-purple-700
         dark:bg-gradient-to-r dark:from-blue-300 dark:to-purple-300"
+    >
+      DevFest GDG Aranjuez!
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="inline w-14 h-14 dark:fill-white"
       >
-        DevFest Aranjuez!
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="inline w-14 h-14 dark:fill-white"
+        <path
+          d="M18,8.5a2.5,2.5,0,0,1-5,0A2.5,2.5,0,0,1,18,8.5Zm-.006,6.866a11.065,11.065,0,0,1-1.163,4.569A7.634,7.634,0,0,1,10,24H9V18.5A3.517,3.517,0,0,0,5.5,15H0V14A7.634,7.634,0,0,1,4.065,7.169,11.065,11.065,0,0,1,8.634,6.006,15.487,15.487,0,0,1,20.972,0h0A3.009,3.009,0,0,1,24,3,15.507,15.507,0,0,1,17.994,15.366ZM2.084,13H4.346A34.361,34.361,0,0,1,6.955,8.237a8.993,8.993,0,0,0-1.993.72A5.519,5.519,0,0,0,2.084,13Zm13.679,4.045A34.361,34.361,0,0,1,11,19.654v2.262a5.519,5.519,0,0,0,4.043-2.878A8.993,8.993,0,0,0,15.763,17.045ZM22,2.972A1,1,0,0,0,21,2c-5.16.147-8.65,2.124-12.018,6.822a29.92,29.92,0,0,0-2.471,4.271,5.5,5.5,0,0,1,4.4,4.4,29.92,29.92,0,0,0,4.271-2.471C19.876,11.65,21.853,8.16,22,2.972ZM6.122,17.879a3.015,3.015,0,0,1,0,4.242c-.907.906-3.622,1.465-4.748,1.664l-1.406.247.247-1.406c.2-1.126.758-3.841,1.664-4.748A3.073,3.073,0,0,1,6.122,17.879ZM5,20a.993.993,0,0,0-.293-.707,1,1,0,0,0-1.414,0A7.318,7.318,0,0,0,2.5,21.5a7.342,7.342,0,0,0,2.208-.794A.993.993,0,0,0,5,20Z"
         >
-          <path
-            d="M18,8.5a2.5,2.5,0,0,1-5,0A2.5,2.5,0,0,1,18,8.5Zm-.006,6.866a11.065,11.065,0,0,1-1.163,4.569A7.634,7.634,0,0,1,10,24H9V18.5A3.517,3.517,0,0,0,5.5,15H0V14A7.634,7.634,0,0,1,4.065,7.169,11.065,11.065,0,0,1,8.634,6.006,15.487,15.487,0,0,1,20.972,0h0A3.009,3.009,0,0,1,24,3,15.507,15.507,0,0,1,17.994,15.366ZM2.084,13H4.346A34.361,34.361,0,0,1,6.955,8.237a8.993,8.993,0,0,0-1.993.72A5.519,5.519,0,0,0,2.084,13Zm13.679,4.045A34.361,34.361,0,0,1,11,19.654v2.262a5.519,5.519,0,0,0,4.043-2.878A8.993,8.993,0,0,0,15.763,17.045ZM22,2.972A1,1,0,0,0,21,2c-5.16.147-8.65,2.124-12.018,6.822a29.92,29.92,0,0,0-2.471,4.271,5.5,5.5,0,0,1,4.4,4.4,29.92,29.92,0,0,0,4.271-2.471C19.876,11.65,21.853,8.16,22,2.972ZM6.122,17.879a3.015,3.015,0,0,1,0,4.242c-.907.906-3.622,1.465-4.748,1.664l-1.406.247.247-1.406c.2-1.126.758-3.841,1.664-4.748A3.073,3.073,0,0,1,6.122,17.879ZM5,20a.993.993,0,0,0-.293-.707,1,1,0,0,0-1.414,0A7.318,7.318,0,0,0,2.5,21.5a7.342,7.342,0,0,0,2.208-.794A.993.993,0,0,0,5,20Z"
-          >
-          </path>
-        </svg>
-      </span>
-    </h1>
-    <p
-      class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
-    >
-      Este 4 de octubre, te invitamos a uno de los mayores
-      eventos de tecnología del año en Aranjuez.
-    </p>
+        </path>
+      </svg>
+    </span>
+  </h1>
 
-    <!-- CTA Button -->
-    <div
-      class="flex flex-col sm:flex-row gap-4 justify-center"
-    >
-      <a
-        href="https://gdg.community.dev/gdg-aranjuez/"
-        target="_blank"
-        class="px-8 py-3 bg-gradient-to-r from-blue-800 to-purple-800 text-white font-medium rounded-lg
+  <p
+    class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
+  >
+    Este 4 de octubre, te invitamos a uno de los mayores eventos
+    de tecnología del año en Aranjuez.
+  </p>
+
+  <!-- CTA Button -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a
+      href="https://gdg.community.dev/gdg-aranjuez/"
+      target="_blank"
+      class="px-8 py-3 bg-gradient-to-r from-blue-800 to-purple-800 text-white font-medium rounded-lg
         hover:shadow-lg hover:from-purple-800 hover:to-blue-700 dark:bg-gradient-to-r
         dark:hover:from-purple-800 dark:hover:to-blue-800
         transition-all duration-300"
-      >
-        ¡Quiero participar!
-      </a>
-      <a
-        href="https://devfest-2024-aranjuez.vercel.app/"
-        target="_blank"
-        class="px-8 py-3 border-2 border-blue-600
+    >
+      ¡Quiero participar!
+    </a>
+    <a
+      href="https://devfest-2024-aranjuez.vercel.app/"
+      target="_blank"
+      class="px-8 py-3 border-2 border-blue-600
         text-gray-700 dark:text-gray-200 font-medium rounded-lg
         hover:bg-gray-100 dark:hover:bg-gray-600
         transition-all duration-300 hover:shadow-lg"
-      >
-        Ver edición 2024
-      </a>
-    </div>
-  </section>
+    >
+      Ver edición 2024
+    </a>
+  </div>
+</section>
