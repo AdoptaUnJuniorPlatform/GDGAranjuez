@@ -44,6 +44,7 @@ const agenda = [
   },
 ];
 ---
+
 <section
   id="agenda"
   class="bg-blue-100 text-gray-900
@@ -52,15 +53,21 @@ const agenda = [
          border border-blue-100 dark:border-slate-500
          max-w-3xl mx-auto scroll-mt-24"
 >
-  <h2 class="text-3xl font-mono font-bold  text-blue-800 dark:text-blue-300 mb-6 text-center">
+  <h2
+    class="text-3xl font-mono font-bold text-blue-800 dark:text-blue-300 mb-6 text-center"
+  >
     Agenda 2025
   </h2>
   <ul class="space-y-6">
     {
       agenda.map((item) => (
-        <li class="grid grid-cols-[80px_1fr] gap-x-6 items-start text-lg
-                   border-b border-gray-400 dark:border-gray-600 pb-4 last:border-b-0">
-          <time class="font-mono text-blue-800 dark:text-blue-300 pl-4">{item.hora}</time>
+        <li
+          class="grid grid-cols-[80px_1fr] gap-x-6 items-start text-lg
+                   border-b border-gray-400 dark:border-gray-600 pb-4 last:border-b-0"
+        >
+          <time class="font-mono text-blue-800 dark:text-blue-300 pl-4">
+            {item.hora}
+          </time>
           <div>
             <div class="font-semibold">{item.titulo}</div>
             {item.ponente && (
