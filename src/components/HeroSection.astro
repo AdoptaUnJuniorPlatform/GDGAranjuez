@@ -8,12 +8,14 @@ import Countdown from './Countdown.astro';
       class="dark:fill-white fill-black h-30 sm:h-40 md:h-50"
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
-      ><g
+    >
+      <g
         stroke="none"
         stroke-width="1"
         id="surface1"
         xmlns="http://www.w3.org/2000/svg"
-        ><path
+      >
+        <path
           d="m12.90592,18.88502l-8.7224,-5.03581c-0.39107,-0.22605 -0.81821,-0.33346 -1.23954,-0.33346c-0.85842,0 -1.69327,0.44566 -2.1533,1.24256c-0.68583,1.18797 -0.27887,2.70701 0.9091,3.39272l8.7224,5.03581c0.3912,0.22592 0.81821,0.33321 1.23954,0.33321c0.85842,0 1.69327,-0.44554 2.1533,-1.24231c0.68596,-1.18785 0.27887,-2.70689 -0.9091,-3.39272"
           stroke="null"
           id="svg_1"></path><path
@@ -26,8 +28,8 @@ import Countdown from './Countdown.astro';
           d="m4.52896,13.25087l4.07098,2.35035l4.30598,-2.48613c1.18797,-0.68583 1.59506,-2.20487 0.9091,-3.39284c-0.68583,-1.18785 -2.20474,-1.59506 -3.39284,-0.9091l-7.01123,4.04804c0.39183,0.05888 0.77194,0.18986 1.118,0.38969"
           stroke="null"
           id="svg_4"></path></g
-      ></svg
-    >
+      >
+    </svg>
   </div>
 
   <div
@@ -69,27 +71,80 @@ import Countdown from './Countdown.astro';
     de tecnología del año en Aranjuez.
   </p>
 
-  <!-- CTA Button -->
-  <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a
-      href="https://gdg.community.dev/gdg-aranjuez/"
-      target="_blank"
-      class="px-8 py-3 bg-gradient-to-r from-blue-800 to-purple-800 text-white font-medium rounded-lg
+  <!-- Buttons div -->
+  <div class="flex justify-center flex-wrap mx-8 my-5">
+    <!-- Entradas Button -->
+    <button
+      id="entradas-button"
+      aria-label="Botón para conseguir entradas"
+      class="group text-4xl md:text-5xl text-white font-semibold m-3 px-9 py-3
+        rounded-full bg-gradient-to-r from-blue-800 to-purple-800
         hover:shadow-lg hover:from-purple-800 hover:to-blue-700 dark:bg-gradient-to-r
         dark:hover:from-purple-800 dark:hover:to-blue-800
-        transition-all duration-300"
+        transition-all duration-300 hover:cursor-pointer
+        flex items-center gap-3"
+      onclick="window.open('https://www.eventbrite.com/o/gdg-aranjuez-83358663463', '_blank')"
     >
-      ¡Quiero participar!
-    </a>
-    <a
-      href="https://devfest-2024-aranjuez.vercel.app/"
-      target="_blank"
-      class="px-8 py-3 border-2 border-blue-600
-        text-gray-700 dark:text-gray-200 font-medium rounded-lg
+      <span>ENTRADAS</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="group-hover:animate-spin w-9 h-9 stroke-white"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M16.9949 4H6.99488C3.16488 4 2.09488 4.92 2.00488 8.5C3.93488 8.5 5.49488 10.07 5.49488 12C5.49488 13.93 3.93488 15.49 2.00488 15.5C2.09488 19.08 3.16488 20 6.99488 20H16.9949C20.9949 20 21.9949 19 21.9949 15V9C21.9949 5 20.9949 4 16.9949 4Z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          d="M8.99316 4V7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          d="M8.99316 16.5V20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          d="M15.025 9.32991L15.645 10.5799C15.705 10.6999 15.825 10.7899 15.955 10.8099L17.335 11.0099C17.675 11.0599 17.815 11.4799 17.565 11.7199L16.565 12.6899C16.465 12.7799 16.425 12.9199 16.445 13.0599L16.685 14.4299C16.745 14.7699 16.385 15.0299 16.085 14.8699L14.855 14.2199C14.735 14.1599 14.585 14.1599 14.465 14.2199L13.235 14.8699C12.925 15.0299 12.575 14.7699 12.635 14.4299L12.875 13.0599C12.895 12.9199 12.855 12.7899 12.755 12.6899L11.765 11.7199C11.515 11.4799 11.655 11.0599 11.995 11.0099L13.375 10.8099C13.515 10.7899 13.625 10.7099 13.685 10.5799L14.295 9.32991C14.435 9.01991 14.875 9.01991 15.025 9.32991Z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+      </svg>
+    </button>
+
+    <!-- Call for Papers Button -->
+    <button
+      id="cfp-button"
+      aria-label="Botón para Call for Papers"
+      class="group text-3xl md:text-4xl text-gray-700 dark:text-gray-200 m-3 px-6 py-2
+        font-medium rounded-full border-2 border-blue-600
         hover:bg-gray-100 dark:hover:bg-gray-600
-        transition-all duration-300 hover:shadow-lg"
+        transition-all duration-300 hover:shadow-lg hover:cursor-pointer
+        flex items-center gap-3 whitespace-nowrap min-w-max"
+      onclick="window.open('https://sessionize.com/devfest-aranjuez-2025/', '_blank')"
     >
-      Ver edición 2024
-    </a>
+      <span class="whitespace-nowrap">Call For Papers</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="group-hover:animate-spin w-9 h-9 stroke-gray-900 dark:stroke-white"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M16 8V8C16.93 8 17.395 8 17.7765 8.10222C18.8117 8.37962 19.6204 9.18827 19.8978 10.2235C20 10.605 20 11.07 20 12V18C20 19.1046 19.1046 20 18 20V20C16.8954 20 16 19.1046 16 18V7.2C16 6.07989 16 5.51984 15.782 5.09202C15.5903 4.71569 15.2843 4.40973 14.908 4.21799C14.4802 4 13.9201 4 12.8 4H7.2C6.07989 4 5.51984 4 5.09202 4.21799C4.71569 4.40973 4.40973 4.71569 4.21799 5.09202C4 5.51984 4 6.07989 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202 19.782C5.51984 20 6.07989 20 7.2 20H18"
+          stroke-width="2"></path>
+        <path
+          d="M12 8H8V12H12V8Z"
+          stroke-width="2"
+          stroke-linejoin="round"></path>
+        <path
+          d="M8 16H12"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+    </button>
   </div>
 </section>
