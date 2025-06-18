@@ -2,11 +2,12 @@
 import Countdown from './Countdown.astro';
 ---
 
-<section class="text-center mb-16">
+<section class="text-center mb-10">
+  <!-- GDG logo -->
   <div class="flex items-center justify-center">
     <svg
-      class="dark:fill-white fill-black h-30 sm:h-40 md:h-50"
-      viewBox="0 0 32 32"
+      class="dark:fill-white fill-black h-25 sm:h-35 md:h-45"
+      viewBox="0 5 32 22"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
@@ -32,15 +33,6 @@ import Countdown from './Countdown.astro';
     </svg>
   </div>
 
-  <div
-    class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
-  >
-    <span class="text-lg font-medium">4 de Octubre 2025</span>
-  </div>
-
-  <!-- Countdown -->
-  <Countdown />
-
   <h1
     class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
   >
@@ -50,7 +42,7 @@ import Countdown from './Countdown.astro';
         bg-gradient-to-r from-blue-700 to-purple-700
         dark:bg-gradient-to-r dark:from-blue-300 dark:to-purple-300"
     >
-      DevFest GDG Aranjuez!
+      DevFest Aranjuez!
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -64,11 +56,26 @@ import Countdown from './Countdown.astro';
     </span>
   </h1>
 
-  <p
-    class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
+  <!-- Date -->
+  <div
+    class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
   >
-    Este 4 de octubre, te invitamos a uno de los mayores eventos
-    de tecnología del año en Aranjuez.
+    <span class="text-lg font-medium">4 de Octubre del 2025</span
+    >
+  </div>
+
+  <!-- Countdown -->
+  <Countdown />
+
+  <p
+    class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto"
+  >
+    Te invitamos a uno de los mayores eventos tech del año,
+    celebrado en nuestra ciudad al sur de Madrid.<br />
+    ¡Desde <span
+      class="text-blue-700 dark:text-blue-300 font-semibold"
+      >GDG Aranjuez</span
+    >, te esperamos para vivirlo juntos!
   </p>
 
   <!-- Buttons div -->
