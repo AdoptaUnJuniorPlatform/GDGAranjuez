@@ -40,7 +40,7 @@
   <div class="flex flex-wrap items-center justify-between">
     <!-- Logo y botón hamburguesa -->
     <div
-      class="flex items-center justify-between w-full xl:w-auto"
+      class="flex items-center justify-between w-full 2xl:w-auto"
     >
       <a
         href="/"
@@ -48,10 +48,10 @@
       >
         DevFest 2025
       </a>
-      <div class="flex items-center ml-auto xl:hidden">
+      <div class="flex items-center ml-auto 2xl:hidden">
         <button
           id="menu-toggle"
-          class="xl:hidden text-gray-700 focus:outline-none"
+          class="2xl:hidden text-gray-700 focus:outline-none"
           aria-label="Abrir menú de navegación"
           aria-expanded="false"
           aria-controls="menu"
@@ -77,70 +77,90 @@
     <ul
       id="menu"
       class="hidden w-full flex-col mt-4 space-y-3 text-lg font-medium text-gray-700
-        xl:flex xl:flex-row xl:flex-nowrap xl:space-y-0 xl:gap-x-6 xl:mt-0 xl:w-fit xl:mx-auto xl:items-center xl:justify-center"
+        2xl:flex 2xl:flex-row 2xl:flex-nowrap 2xl:space-y-0 2xl:gap-x-8 2xl:w-fit 2xl:mx-auto 2xl:items-center 2xl:justify-center"
     >
-      <li
-        ><a
+      <li>
+        <a
+          href="https://www.eventbrite.com/e/devfest-aranjuez-2025-tickets-1415490372809?aff=oddtdtcreator"
+          target="_blank"
+          class="nav-link text-purple-700 font-bold hover:text-blue-700 transition"
+        >
+          ENTRADAS
+        </a>
+      </li>
+      <li>
+        <a
           href="/#"
-          class="nav-link hover:text-blue-700 transition">Home</a
-        ></li
-      >
-      <li
-        ><a
+          class="nav-link hover:text-blue-700 transition"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
           href="/#organizadores"
           class="nav-link hover:text-blue-700 transition"
-          >Organizadores</a
-        ></li
-      >
-      <li
-        ><a
-          href="/#charlas"
-          class="nav-link hover:text-blue-700 transition"
-          >Charlas</a
-        ></li
-      >
-      <li
-        ><a
+        >
+          Organizadores
+        </a>
+      </li>
+      <li>
+        <a
           href="/#agenda"
           class="nav-link hover:text-blue-700 transition"
-          >Agenda</a
-        ></li
-      >
-      <li
-        ><a
+        >
+          Agenda
+        </a>
+      </li>
+      <li>
+        <a
+          href="/#charlas"
+          class="nav-link hover:text-blue-700 transition"
+        >
+          Charlas
+        </a>
+      </li>
+      <li>
+        <a
           href="/#ponentes"
           class="nav-link hover:text-blue-700 transition"
-          >Ponentes</a
-        ></li
-      >
-      <li
-        ><a
+        >
+          Ponentes
+        </a>
+      </li>
+      <li>
+        <a
           href="/#colaboradores"
           class="nav-link hover:text-blue-700 transition"
-          >Colaboradores</a
-        ></li
-      >
-      <li
-        ><a
+        >
+          Colaboradores
+        </a>
+      </li>
+      <li>
+        <a
           href="/#patrocinadores"
           class="nav-link hover:text-blue-700 transition"
-          >Patrocinadores</a
-        ></li
-      >
-      <li
-        ><a
+        >
+          Patrocinadores
+        </a>
+      </li>
+      <li>
+        <a
           href="/blog"
-          class="nav-link hover:text-blue-700 transition">Blog</a
-        ></li
-      >
-      <li
-        ><a
+          class="nav-link hover:text-blue-700 transition"
+        >
+          Blog
+        </a>
+      </li>
+      <li>
+        <a
           href="https://devfest-2024-aranjuez.vercel.app/"
           target="_blank"
           class="nav-link hover:text-blue-700 transition whitespace-nowrap"
-          >Edición 2024</a
-        ></li
-      >
+        >
+          Edición 2024
+        </a>
+      </li>
       <li class="shrink-0">
         <button
           id="theme-toggle"
@@ -156,29 +176,33 @@
       </li>
     </ul>
   </div>
-</nav>
-<!-- script menú hamburguesa -->
-<script is:inline>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
 
-  // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
-  if (toggle && menu) {
-    toggle.addEventListener('click', () => {
-      const isExpanded =
-        toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isExpanded));
-      menu.classList.toggle('hidden');
-    });
+  <!-- script menú hamburguesa -->
+  <script is:inline>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
 
-    // seleccionar enlaces y el botón de modo oscuro
-    const links = menu.querySelectorAll('a, #theme-toggle');
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 1024) {
-          menu.classList.add('hidden');
-        }
+    // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isExpanded =
+          toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute(
+          'aria-expanded',
+          String(!isExpanded)
+        );
+        menu.classList.toggle('hidden');
       });
-    });
-  }
-</script>
+
+      // seleccionar enlaces y el botón de modo oscuro
+      const links = menu.querySelectorAll('a, #theme-toggle');
+      links.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 1920) {
+            menu.classList.add('hidden');
+          }
+        });
+      });
+    }
+  </script>
+</nav>
