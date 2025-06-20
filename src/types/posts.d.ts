@@ -7,6 +7,7 @@ interface Post {
     author: string;
     authorImage: string;
     tags?: string[];
+    isPlaceholder?: boolean;
   };
   body: string;
 }

@@ -6,8 +6,8 @@ import Layout from '@/layouts/Layout.astro';
 
 type Post = CollectionEntry<'posts'>;
 
-const posts = (await getCollection('posts'))
-  .filter((post: Post) => post.data.date)
+const posts: Post[] = (await getCollection('posts'))
+  .filter((post: Post) => post.data.date) // Filter posts without date
   .sort(
     (a: Post, b: Post) =>
       new Date(b.data.date).getTime() -
@@ -45,6 +45,7 @@ const posts = (await getCollection('posts'))
             author={post.data.author}
             authorImage={post.data.authorImage}
             tags={post.data.tags}
+            isPlaceholder={post.data.isPlaceholder}
           />
         ))
       }

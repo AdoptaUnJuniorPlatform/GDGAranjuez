@@ -1,15 +1,11 @@
 ---
-title: 'Novedades en programación'
-excerpt: 'Descubre el lenguaje de programación que lo cambiará todo'
-date: 2025-05-25
-author: 'Marta Pou'
-authorImage: 'https://randomuser.me/api/portraits/women/39.jpg'
-tags:
-  - 'programación'
-  - 'tecnología'
-  - 'desarrollo'
+title: 'Título'
+excerpt: 'Breve resumen del post'
+date: 1900-01-02
+author: 'Autor'
+authorImage: 'https://api.dicebear.com/9.x/identicon/svg?radius=50&seed=autor2'
+tags: ['placeholder']
+isPlaceholder: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Escribe tu post aquí

@@ -8,6 +8,7 @@ const posts = defineCollection({
     author: z.string(),
     authorImage: z.string().url(),
     tags: z.array(z.string()).optional(),
+    isPlaceholder: z.boolean().optional(),
   }),
 });
 
