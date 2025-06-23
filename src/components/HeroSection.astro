@@ -1,68 +1,159 @@
 ---
-import Countdown from "./Countdown.astro"
+import Countdown from './Countdown.astro';
 ---
 
-<section class="text-center mb-16">
-    <div
-      class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
+<section class="text-center mb-10">
+  <!-- GDG logo -->
+  <div class="flex items-center justify-center">
+    <svg
+      class="dark:fill-white fill-black h-25 sm:h-35 md:h-45"
+      viewBox="0 5 32 22"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <span class="text-lg font-medium">4 de Octubre 2025</span
+      <g
+        stroke="none"
+        stroke-width="1"
+        id="surface1"
+        xmlns="http://www.w3.org/2000/svg"
       >
-    </div>
-    <!-- Countdown -->
-    <Countdown />
-    <h1
-      class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
-    >
-      ¡Vuelve el
-      <span
-        class="text-transparent bg-clip-text
+        <path
+          d="m12.90592,18.88502l-8.7224,-5.03581c-0.39107,-0.22605 -0.81821,-0.33346 -1.23954,-0.33346c-0.85842,0 -1.69327,0.44566 -2.1533,1.24256c-0.68583,1.18797 -0.27887,2.70701 0.9091,3.39272l8.7224,5.03581c0.3912,0.22592 0.81821,0.33321 1.23954,0.33321c0.85842,0 1.69327,-0.44554 2.1533,-1.24231c0.68596,-1.18785 0.27887,-2.70689 -0.9091,-3.39272"
+          stroke="null"
+          id="svg_1"></path><path
+          d="m30.30016,13.84921l-8.7224,-5.03606c-0.39107,-0.22579 -0.81821,-0.33308 -1.23954,-0.33308c-0.85842,0 -1.69314,0.44529 -2.1533,1.24218c-0.68583,1.18797 -0.27874,2.70689 0.9091,3.39284l8.7224,5.03593c0.39107,0.22579 0.81821,0.33321 1.23954,0.33321c0.85842,0 1.69314,-0.44529 2.1533,-1.24231c0.68596,-1.18785 0.27887,-2.70676 -0.9091,-3.39272"
+          stroke="null"
+          id="svg_2"></path><path
+          d="m27.47098,18.74936l-4.07086,-2.35048l-4.3061,2.48601c-1.18785,0.68583 -1.59493,2.20499 -0.9091,3.39284c0.46004,0.79677 1.29501,1.24231 2.15343,1.24231c0.42133,0 0.84821,-0.10729 1.23941,-0.33321l7.01148,-4.04791c-0.3917,-0.05875 -0.77194,-0.18974 -1.11826,-0.38956"
+          stroke="null"
+          id="svg_3"></path><path
+          d="m4.52896,13.25087l4.07098,2.35035l4.30598,-2.48613c1.18797,-0.68583 1.59506,-2.20487 0.9091,-3.39284c-0.68583,-1.18785 -2.20474,-1.59506 -3.39284,-0.9091l-7.01123,4.04804c0.39183,0.05888 0.77194,0.18986 1.118,0.38969"
+          stroke="null"
+          id="svg_4"></path></g
+      >
+    </svg>
+  </div>
+
+  <h1
+    class="text-4xl md:text-6xl font-bold font-mono text-gray-900 dark:text-indigo-50 mb-6 leading-tight"
+  >
+    ¡Vuelve el
+    <span
+      class="text-transparent bg-clip-text
         bg-gradient-to-r from-blue-700 to-purple-700
         dark:bg-gradient-to-r dark:from-blue-300 dark:to-purple-300"
+    >
+      DevFest Aranjuez!
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="inline w-14 h-14 dark:fill-white"
       >
-        DevFest Aranjuez!
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="inline w-14 h-14 dark:fill-white"
+        <path
+          d="M18,8.5a2.5,2.5,0,0,1-5,0A2.5,2.5,0,0,1,18,8.5Zm-.006,6.866a11.065,11.065,0,0,1-1.163,4.569A7.634,7.634,0,0,1,10,24H9V18.5A3.517,3.517,0,0,0,5.5,15H0V14A7.634,7.634,0,0,1,4.065,7.169,11.065,11.065,0,0,1,8.634,6.006,15.487,15.487,0,0,1,20.972,0h0A3.009,3.009,0,0,1,24,3,15.507,15.507,0,0,1,17.994,15.366ZM2.084,13H4.346A34.361,34.361,0,0,1,6.955,8.237a8.993,8.993,0,0,0-1.993.72A5.519,5.519,0,0,0,2.084,13Zm13.679,4.045A34.361,34.361,0,0,1,11,19.654v2.262a5.519,5.519,0,0,0,4.043-2.878A8.993,8.993,0,0,0,15.763,17.045ZM22,2.972A1,1,0,0,0,21,2c-5.16.147-8.65,2.124-12.018,6.822a29.92,29.92,0,0,0-2.471,4.271,5.5,5.5,0,0,1,4.4,4.4,29.92,29.92,0,0,0,4.271-2.471C19.876,11.65,21.853,8.16,22,2.972ZM6.122,17.879a3.015,3.015,0,0,1,0,4.242c-.907.906-3.622,1.465-4.748,1.664l-1.406.247.247-1.406c.2-1.126.758-3.841,1.664-4.748A3.073,3.073,0,0,1,6.122,17.879ZM5,20a.993.993,0,0,0-.293-.707,1,1,0,0,0-1.414,0A7.318,7.318,0,0,0,2.5,21.5a7.342,7.342,0,0,0,2.208-.794A.993.993,0,0,0,5,20Z"
         >
-          <path
-            d="M18,8.5a2.5,2.5,0,0,1-5,0A2.5,2.5,0,0,1,18,8.5Zm-.006,6.866a11.065,11.065,0,0,1-1.163,4.569A7.634,7.634,0,0,1,10,24H9V18.5A3.517,3.517,0,0,0,5.5,15H0V14A7.634,7.634,0,0,1,4.065,7.169,11.065,11.065,0,0,1,8.634,6.006,15.487,15.487,0,0,1,20.972,0h0A3.009,3.009,0,0,1,24,3,15.507,15.507,0,0,1,17.994,15.366ZM2.084,13H4.346A34.361,34.361,0,0,1,6.955,8.237a8.993,8.993,0,0,0-1.993.72A5.519,5.519,0,0,0,2.084,13Zm13.679,4.045A34.361,34.361,0,0,1,11,19.654v2.262a5.519,5.519,0,0,0,4.043-2.878A8.993,8.993,0,0,0,15.763,17.045ZM22,2.972A1,1,0,0,0,21,2c-5.16.147-8.65,2.124-12.018,6.822a29.92,29.92,0,0,0-2.471,4.271,5.5,5.5,0,0,1,4.4,4.4,29.92,29.92,0,0,0,4.271-2.471C19.876,11.65,21.853,8.16,22,2.972ZM6.122,17.879a3.015,3.015,0,0,1,0,4.242c-.907.906-3.622,1.465-4.748,1.664l-1.406.247.247-1.406c.2-1.126.758-3.841,1.664-4.748A3.073,3.073,0,0,1,6.122,17.879ZM5,20a.993.993,0,0,0-.293-.707,1,1,0,0,0-1.414,0A7.318,7.318,0,0,0,2.5,21.5a7.342,7.342,0,0,0,2.208-.794A.993.993,0,0,0,5,20Z"
-          >
-          </path>
-        </svg>
-      </span>
-    </h1>
-    <p
-      class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto mb-8"
-    >
-      Este 4 de octubre, te invitamos a uno de los mayores
-      eventos de tecnología del año en Aranjuez.
-    </p>
+        </path>
+      </svg>
+    </span>
+  </h1>
 
-    <!-- CTA Button -->
-    <div
-      class="flex flex-col sm:flex-row gap-4 justify-center"
+  <!-- Date -->
+  <div
+    class="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white px-4 py-2 rounded-full mb-6"
+  >
+    <span class="text-lg font-medium">4 de Octubre del 2025</span
     >
-      <a
-        href="https://gdg.community.dev/gdg-aranjuez/"
-        target="_blank"
-        class="px-8 py-3 bg-gradient-to-r from-blue-800 to-purple-800 text-white font-medium rounded-lg
+  </div>
+
+  <!-- Countdown -->
+  <Countdown />
+
+  <p
+    class="text-xl text-gray-700 dark:text-gray-50 max-w-2xl mx-auto"
+  >
+    Te invitamos a uno de los mayores eventos tech del año,
+    celebrado en nuestra ciudad al sur de Madrid.<br />
+    ¡Desde <span
+      class="text-blue-700 dark:text-blue-300 font-semibold"
+      >GDG Aranjuez</span
+    >, te esperamos para vivirlo juntos!
+  </p>
+
+  <!-- Buttons div -->
+  <div class="flex justify-center flex-wrap mx-8 my-5">
+    <!-- Entradas Button -->
+    <button
+      id="entradas-button"
+      aria-label="Botón para conseguir entradas"
+      class="group text-2xl md:text-3xl text-white font-semibold m-3 px-9 py-3
+        rounded-full bg-gradient-to-r from-blue-800 to-purple-800
         hover:shadow-lg hover:from-purple-800 hover:to-blue-700 dark:bg-gradient-to-r
         dark:hover:from-purple-800 dark:hover:to-blue-800
-        transition-all duration-300"
+        transition-all duration-300 hover:cursor-pointer
+        flex items-center gap-3
+        focus:ring-3 dark:focus:ring-sky-400 focus:ring-offset-4 focus:ring-offset-sky-600 dark:focus:ring-offset-gray-700"
+      onclick="window.open('https://www.eventbrite.com/e/devfest-aranjuez-2025-tickets-1415490372809?aff=oddtdtcreator', '_blank')"
+    >
+      <span>ENTRADAS</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="group-hover:animate-spin w-9 h-9 stroke-white"
+        viewBox="0 0 24 24"
+        fill="none"
       >
-        ¡Quiero participar!
-      </a>
-      <a
-        href="https://devfest-2024-aranjuez.vercel.app/"
-        target="_blank"
-        class="px-8 py-3 border-2 border-blue-600
-        text-gray-700 dark:text-gray-200 font-medium rounded-lg
+        <path
+          d="M16.9949 4H6.99488C3.16488 4 2.09488 4.92 2.00488 8.5C3.93488 8.5 5.49488 10.07 5.49488 12C5.49488 13.93 3.93488 15.49 2.00488 15.5C2.09488 19.08 3.16488 20 6.99488 20H16.9949C20.9949 20 21.9949 19 21.9949 15V9C21.9949 5 20.9949 4 16.9949 4Z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          d="M8.99316 4V7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          d="M8.99316 16.5V20"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+        <path
+          d="M15.025 9.32991L15.645 10.5799C15.705 10.6999 15.825 10.7899 15.955 10.8099L17.335 11.0099C17.675 11.0599 17.815 11.4799 17.565 11.7199L16.565 12.6899C16.465 12.7799 16.425 12.9199 16.445 13.0599L16.685 14.4299C16.745 14.7699 16.385 15.0299 16.085 14.8699L14.855 14.2199C14.735 14.1599 14.585 14.1599 14.465 14.2199L13.235 14.8699C12.925 15.0299 12.575 14.7699 12.635 14.4299L12.875 13.0599C12.895 12.9199 12.855 12.7899 12.755 12.6899L11.765 11.7199C11.515 11.4799 11.655 11.0599 11.995 11.0099L13.375 10.8099C13.515 10.7899 13.625 10.7099 13.685 10.5799L14.295 9.32991C14.435 9.01991 14.875 9.01991 15.025 9.32991Z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"></path>
+      </svg>
+    </button>
+
+    <!-- Call for Papers Button -->
+    <button
+      id="cfp-button"
+      aria-label="Botón para Call for Papers"
+      class="group text-xl md:text-2xl text-gray-700 dark:text-gray-200 m-3 px-6 py-2
+        font-medium rounded-full border-2 border-blue-600
         hover:bg-gray-100 dark:hover:bg-gray-600
-        transition-all duration-300 hover:shadow-lg"
+        transition-all duration-300 hover:shadow-lg hover:cursor-pointer
+        flex items-center gap-3 whitespace-nowrap min-w-max
+        focus:ring-2 dark:focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900"
+      onclick="window.open('https://sessionize.com/devfest-aranjuez-2025/', '_blank')"
+    >
+      <span class="whitespace-nowrap">Call For Papers</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="group-hover:animate-spin w-9 h-9 stroke-gray-900 dark:stroke-white"
+        viewBox="0 0 24 24"
+        fill="none"
       >
-        Ver edición 2024
-      </a>
-    </div>
-  </section>
+        <path
+          d="M16 8V8C16.93 8 17.395 8 17.7765 8.10222C18.8117 8.37962 19.6204 9.18827 19.8978 10.2235C20 10.605 20 11.07 20 12V18C20 19.1046 19.1046 20 18 20V20C16.8954 20 16 19.1046 16 18V7.2C16 6.07989 16 5.51984 15.782 5.09202C15.5903 4.71569 15.2843 4.40973 14.908 4.21799C14.4802 4 13.9201 4 12.8 4H7.2C6.07989 4 5.51984 4 5.09202 4.21799C4.71569 4.40973 4.40973 4.71569 4.21799 5.09202C4 5.51984 4 6.07989 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202 19.782C5.51984 20 6.07989 20 7.2 20H18"
+          stroke-width="2"></path>
+        <path
+          d="M12 8H8V12H12V8Z"
+          stroke-width="2"
+          stroke-linejoin="round"></path>
+        <path
+          d="M8 16H12"
+          stroke-width="2"
+          stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </div>
+</section>
