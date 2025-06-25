@@ -3,8 +3,8 @@ import Socials from './Socials.astro';
 const { nombre, rol, foto, redes } = Astro.props;
 ---
 
-<article
-  class="max-w-55 bg-gray-200 dark:bg-gray-600/50 rounded-2xl
+<div
+  class="max-w-55 bg-slate-300/70 dark:bg-slate-800 rounded-2xl
   p-5 text-center transition-all duration-300 hover:-translate-y-2
   shadow-md hover:shadow-xl w-full"
 >
@@ -19,9 +19,10 @@ const { nombre, rol, foto, redes } = Astro.props;
   >
     {nombre}
   </h3>
-  <p class="text-sm text-gray-700 dark:text-violet-100 mb-4"
+  <p
+    class="text-sm text-gray-700 dark:text-violet-100 mb-4 whitespace-pre-line"
     >{rol}</p
   >
 
   <Socials nombre={nombre} {...redes} />
-</article>
+</div>
