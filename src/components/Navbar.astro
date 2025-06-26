@@ -167,40 +167,6 @@
           </button>
         </li>
       </li>
-<<<<<<< 142-mark-blog-posts-content-as-placeholder
-
-      <!-- script menú hamburguesa -->
-      <script is:inline>
-        const toggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-
-        // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
-        if (toggle && menu) {
-          toggle.addEventListener('click', () => {
-            const isExpanded =
-              toggle.getAttribute('aria-expanded') === 'true';
-            toggle.setAttribute(
-              'aria-expanded',
-              String(!isExpanded)
-            );
-            menu.classList.toggle('hidden');
-          });
-
-          // seleccionar enlaces y el botón de modo oscuro
-          const links = menu.querySelectorAll(
-            'a, #theme-toggle'
-          );
-          links.forEach((link) => {
-            link.addEventListener('click', () => {
-              if (window.innerWidth < 1920) {
-                menu.classList.add('hidden');
-              }
-            });
-          });
-        }
-      </script>
-    </ul>
-=======
     </ul>
 
     <!-- script menú hamburguesa -->
@@ -231,6 +197,5 @@
         });
       }
     </script>
->>>>>>> dev
   </div>
 </nav>
