@@ -20,13 +20,6 @@ const { data, body } = post;
 <Layout title={data.title}>
   <article class="max-w-2xl mx-auto px-6 py-16">
     <header class="mb-12">
-      {
-        data.isPlaceholder && (
-          <div class="mb-6 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded text-sm">
-            ⚠️ Placeholder post
-          </div>
-        )
-      }
       <div class="flex items-center mb-6">
         <img
           src={data.authorImage}
@@ -35,49 +28,7 @@ const { data, body } = post;
           width="48"
           height="48"
         />
-        <div>
-          <p
-            class={`font-medium ${data.isPlaceholder ? 'placeholder-text' : 'text-gray-900 dark:text-white'}`}
-          >
-            {data.author}
-          </p>
-          <p
-            class={`text-sm ${data.isPlaceholder ? 'placeholder-text' : 'text-gray-900 dark:text-gray-300'}`}
-          >
-            {
-              new Date(data.date).toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })
-            }
-          </p>
-        </div>
       </div>
-
-      <h1
-        class={`text-4xl font-bold mb-4 ${data.isPlaceholder ? 'placeholder-text' : 'text-gray-900 dark:text-white'}`}
-      >
-        {data.title}
-      </h1>
-
-      {
-        data.tags && data.tags.length > 0 && (
-          <div class="flex flex-wrap gap-2 mb-6">
-            {data.tags.map((tag: string) => (
-              <span class="text-xs px-3 py-1 bg-purple-100 text-purple-800 rounded-full dark:bg-purple-800 dark:text-purple-100">
-                {tag}
-              </span>
-            ))}
-          </div>
-        )
-      }
     </header>
-
-    <div
-      class={`prose max-w-none ${data.isPlaceholder ? 'placeholder-text' : 'dark:text-gray-200'}`}
-    >
-      {body}
-    </div>
   </article>
 </Layout>

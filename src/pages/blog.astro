@@ -7,7 +7,7 @@ import Layout from '@/layouts/Layout.astro';
 type Post = CollectionEntry<'posts'>;
 
 const posts: Post[] = (await getCollection('posts'))
-  .filter((post: Post) => post.data.date) // Filter posts without date
+  .filter((post: Post) => post.data.date)
   .sort(
     (a: Post, b: Post) =>
       new Date(b.data.date).getTime() -
@@ -16,10 +16,7 @@ const posts: Post[] = (await getCollection('posts'))
 ---
 
 <Layout title="Blog">
-  <section
-    class="py-16 rounded-2xl m-10
-    max-w-4xl mx-auto px-6"
-  >
+  <section class="py-16 rounded-2xl m-10 max-w-4xl mx-auto px-6">
     <div class="text-center mb-12">
       <h1
         class="text-4xl font-bold font-mono text-gray-900 dark:text-gray-200 mb-4"
@@ -34,21 +31,33 @@ const posts: Post[] = (await getCollection('posts'))
       </p>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-8">
-      {
-        posts.map((post: Post) => (
-          <PostCard
-            url={`/blog/${post.slug}`}
-            title={post.data.title}
-            excerpt={post.data.excerpt}
-            date={post.data.date}
-            author={post.data.author}
-            authorImage={post.data.authorImage}
-            tags={post.data.tags}
-            isPlaceholder={post.data.isPlaceholder}
-          />
-        ))
-      }
-    </div>
+    {
+      posts.length > 0 ? (
+        <div class="flex flex-wrap justify-center gap-8">
+          {posts.map((post: Post) => (
+            <PostCard
+              url={`/blog/${post.slug}`}
+              title={post.data.title}
+              excerpt={post.data.excerpt}
+              date={post.data.date}
+              author={post.data.author}
+              authorImage={post.data.authorImage}
+              tags={post.data.tags}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl text-center max-w-2xl mx-auto">
+            <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+              Contenido en camino
+            </h3>
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              Estamos preparando artículos valiosos para ti.
+            </p>
+          </div>
+        </div>
+      )
+    }
   </section>
 </Layout>

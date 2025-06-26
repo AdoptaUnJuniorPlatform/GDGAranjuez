@@ -7,7 +7,6 @@ export interface Props {
   author: string;
   authorImage: string;
   tags?: string[];
-  isPlaceholder?: boolean;
 }
 
 const {
@@ -18,7 +17,6 @@ const {
   author,
   authorImage,
   tags = [],
-  isPlaceholder = true, //by default, posts are placeholders because they are not published yet.
 } = Astro.props;
 
 const formattedDate = new Date(date).toLocaleDateString(
@@ -35,14 +33,6 @@ const formattedDate = new Date(date).toLocaleDateString(
   class="bg-gray-100 dark:bg-gray-900 w-full max-w-sm
   rounded-2xl shadow-md transition-all hover:-translate-y-1 hover:shadow-lg hover:transition-shadow duration-300"
 >
-  {
-    isPlaceholder && (
-      <span class="mb-6 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 rounded text-sm block">
-        ⚠️ Placeholder post
-      </span>
-    )
-  }
-
   <a href={url} class="block p-6">
     <div class="flex items-center mb-4">
       <img
@@ -52,44 +42,6 @@ const formattedDate = new Date(date).toLocaleDateString(
         width="40"
         height="40"
       />
-      <div>
-        <p
-          class={`text-base font-medium ${isPlaceholder ? 'placeholder-text' : 'text-gray-900 dark:text-gray-100'}`}
-        >
-          {author}
-        </p>
-        <p
-          class={`text-sm ${isPlaceholder ? 'placeholder-text' : 'text-gray-700 dark:text-gray-200'}`}
-        >
-          {formattedDate}
-        </p>
-      </div>
     </div>
-
-    <h3
-      class={`text-xl font-bold mb-2 ${isPlaceholder ? 'placeholder-text' : 'text-violet-950 dark:text-violet-100'}`}
-    >
-      {title}
-    </h3>
-    <p
-      class={`mb-4 ${isPlaceholder ? 'placeholder-text' : 'text-gray-600 dark:text-gray-200'}`}
-    >
-      {excerpt}
-    </p>
-
-    {
-      tags.length > 0 && (
-        <div class="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              class="text-sm px-3 py-1 bg-purple-100 text-purple-800 rounded-full
-            dark:bg-purple-800/50 dark:text-purple-50"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      )
-    }
   </a>
 </article>

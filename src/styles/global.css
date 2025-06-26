@@ -1,6 +1,2 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
-/* Placeholder styling */
-.placeholder-text {
-  @apply italic text-gray-500 dark:text-gray-400;
-}
