@@ -143,7 +143,7 @@
         >
           Patrocinadores
         </a>
-      <!-- </li>
+        <!-- </li>
       <li>
         <a
           href="/blog"
@@ -152,49 +152,50 @@
           Blog
         </a>
       </li> -->
-      
-      <li class="shrink-0">
-        <button
-          id="theme-toggle"
-          class="cursor-pointer transition-transform duration-300 hover:scale-110 hover:-rotate-12"
-          aria-label="Cambiar modo claro oscuro"
-        >
-          <img
-            src="/icons/sol.png"
-            alt="Modo claro oscuro"
-            class="inline-block w-6 h-6 ml-2 align-middle object-contain shrink-0"
-          />
-        </button>
+
+        <li class="shrink-0">
+          <button
+            id="theme-toggle"
+            class="cursor-pointer transition-transform duration-300 hover:scale-110 hover:-rotate-12"
+            aria-label="Cambiar modo claro oscuro"
+          >
+            <img
+              src="/icons/sol.png"
+              alt="Modo claro oscuro"
+              class="inline-block w-6 h-6 ml-2 align-middle object-contain shrink-0"
+            />
+          </button>
+        </li>
       </li>
     </ul>
-  </div>
 
-  <!-- script menú hamburguesa -->
-  <script is:inline>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+    <!-- script menú hamburguesa -->
+    <script is:inline>
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
 
-    // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => {
-        const isExpanded =
-          toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute(
-          'aria-expanded',
-          String(!isExpanded)
-        );
-        menu.classList.toggle('hidden');
-      });
-
-      // seleccionar enlaces y el botón de modo oscuro
-      const links = menu.querySelectorAll('a, #theme-toggle');
-      links.forEach((link) => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth < 1920) {
-            menu.classList.add('hidden');
-          }
+      // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          const isExpanded =
+            toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute(
+            'aria-expanded',
+            String(!isExpanded)
+          );
+          menu.classList.toggle('hidden');
         });
-      });
-    }
-  </script>
+
+        // seleccionar enlaces y el botón de modo oscuro
+        const links = menu.querySelectorAll('a, #theme-toggle');
+        links.forEach((link) => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth < 1920) {
+              menu.classList.add('hidden');
+            }
+          });
+        });
+      }
+    </script>
+  </div>
 </nav>
