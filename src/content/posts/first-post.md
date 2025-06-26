@@ -12,4 +12,4 @@ tags:
 
 Organizar un DevFest requiere mucha planificación y dedicación. Aquí os dejamos algunos consejos.
 
-El primer paso és duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+El primer paso és duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt culpa qui officia deserunt mollit anim id est laborum.
