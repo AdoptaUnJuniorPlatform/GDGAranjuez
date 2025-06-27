@@ -20,13 +20,8 @@ const { nombre, cargo, foto, redes } = Astro.props;
   >
     {nombre}
   </h3>
-
-  {
-    /* La clase whitespace-pre-line de Tailwind le dice al navegador que 
-	  los saltos de línea \n se deben interpretar como saltos reales (<br />) */
-  }
   <p
-    class="mb-2 text-gray-900 dark:text-violet-100 whitespace-pre-line"
+    class="text-sm mb-4 text-gray-900 dark:text-violet-100 whitespace-pre-line"
   >
     {cargo}
   </p>
