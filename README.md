@@ -170,12 +170,8 @@ http://localhost:4321
 
 ## 👥 EQUIPO DESARROLLADOR
 
----
-
-## 👥 EQUIPO DESARROLLADOR
-
-| [<img src="https://github.com/RaulGamBalonga.png" width=70><br>Raúl Gambalonga](https://github.com/RaulGamBalonga)<br><sub>Web Engineer</sub> | [<img src="https://github.com/AngieMiv.png" width=70><br>Angie Ibarrola](https://github.com/AngieMiv)<br><sub>Web Engineer</sub> | [<img src="https://github.com/belensuarez477.png" width=70><br>Belén Suárez](https://github.com/belensuarez477)<br><sub>Web Engineer</sub> | [<img src="https://github.com/Aredhel269.png" width=70><br>Glòria Monzó](https://github.com/Aredhel269)<br><sub>Web Contributor</sub> |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/RaulGamBalonga.png" width=70><br>&nbsp;<a href="https://github.com/RaulGamBalonga">Raúl Gambalonga C.</a>&nbsp;&nbsp;<br><sub>Web Engineer</sub> | <img src="https://github.com/AngieMiv.png" width=70><br>&nbsp;<a href="https://github.com/AngieMiv">Angie M. I. Valenzuela</a>&nbsp;<br><sub>Web Engineer</sub> | <img src="https://github.com/belensuarez477.png" width=70><br>&nbsp;&nbsp;&nbsp;<a href="https://github.com/belensuarez477">Belén Suárez</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><sub>Web Engineer</sub> | <img src="https://github.com/Aredhel269.png" width=70><br>&nbsp;&nbsp;<a href="https://github.com/Aredhel269">Glòria Monzó</a>&nbsp;&nbsp;&nbsp;<br><sub>Web Contributor</sub> |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 
 ---
 
