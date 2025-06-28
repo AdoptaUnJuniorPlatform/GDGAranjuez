@@ -170,8 +170,12 @@ http://localhost:4321
 
 ## 👥 EQUIPO DESARROLLADOR
 
-| [<img src="https://github.com/RaulGamBalonga.png" width=70><br>Raúl Gambalonga](https://github.com/RaulGamBalonga) | [<img src="https://github.com/AngieMiv.png" width=70><br>Angie Ibarrola](https://github.com/AngieMiv) | [<img src="https://github.com/Aredhel269.png" width=70><br>Glòria Monzó](https://github.com/Aredhel269) | [<img src="https://github.com/belensuarez477.png" width=70><br>Belén Suarez](https://github.com/belensuarez477) |
-| ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+---
+
+## 👥 EQUIPO DESARROLLADOR
+
+| [<img src="https://github.com/RaulGamBalonga.png" width=70><br>Raúl Gambalonga](https://github.com/RaulGamBalonga)<br><sub>Web Engineer</sub> | [<img src="https://github.com/AngieMiv.png" width=70><br>Angie Ibarrola](https://github.com/AngieMiv)<br><sub>Web Engineer</sub> | [<img src="https://github.com/belensuarez477.png" width=70><br>Belén Suárez](https://github.com/belensuarez477)<br><sub>Web Engineer</sub> | [<img src="https://github.com/Aredhel269.png" width=70><br>Glòria Monzó](https://github.com/Aredhel269)<br><sub>Web Contributor</sub> |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 
 ---
 
