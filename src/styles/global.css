@@ -1,2 +1,13 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+  .nav-underline {
+    @apply relative inline-block transition hover:text-blue-700
+         after:content-[''] after:absolute after:w-0 after:h-[2px]
+         after:left-0 after:-bottom-[2px]
+         after:bg-gradient-to-r after:from-blue-600 after:to-blue-400
+         after:transition-all after:duration-300
+				 hover:after:w-full;
+  }
+}
