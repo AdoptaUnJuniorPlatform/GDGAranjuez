@@ -6,7 +6,7 @@ import PostCard from './PostCard.astro';
 type Post = CollectionEntry<'posts'>;
 
 const posts: Post[] = (await getCollection('posts'))
-  .filter((post: Post) => post.data.date) // Filtrar posts sin fecha
+  .filter((post: Post) => post.data.date) // Filter posts without date
   .sort(
     (a: Post, b: Post) =>
       new Date(b.data.date).getTime() -
@@ -19,14 +19,10 @@ const posts: Post[] = (await getCollection('posts'))
   <div class="max-w-4xl mx-auto px-6">
     <div class="text-center mb-10">
       <h2
-        class="text-4xl font-bold font-mono text-gray-800
-        dark:text-gray-100 mb-5"
+        class="text-4xl font-bold font-mono text-gray-800 dark:text-gray-100 mb-5"
       >
         Últimas entradas al
-        <span
-          class="text-purple-600
-          dark:text-purple-300"
-        >
+        <span class="text-purple-600 dark:text-purple-300">
           blog
         </span>
       </h2>
@@ -38,31 +34,42 @@ const posts: Post[] = (await getCollection('posts'))
       </p>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-8 mb-12">
-      {
-        posts.map((post: Post) => (
-          <PostCard
-            url={`/blog/${post.slug}`}
-            title={post.data.title}
-            excerpt={post.data.excerpt}
-            date={post.data.date}
-            author={post.data.author}
-            authorImage={post.data.authorImage}
-            tags={post.data.tags}
-          />
-        ))
-      }
-    </div>
+    {
+      posts.length > 0 ? (
+        <>
+          <div class="flex flex-wrap justify-center gap-8 mb-12">
+            {posts.map((post: Post) => (
+              <PostCard
+                url={`/blog/${post.slug}`}
+                title={post.data.title}
+                excerpt={post.data.excerpt}
+                date={post.data.date}
+                author={post.data.author}
+                authorImage={post.data.authorImage}
+                tags={post.data.tags}
+              />
+            ))}
+          </div>
 
-    <div class="text-center">
-      <a
-        href="/blog"
-        class="inline-block px-6 py-3 border border-purple-600 dark:border-purple-400
-	    	text-purple-600 dark: dark:text-purple-300 rounded-lg
-	    	hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors"
-      >
-        Ver todos los posts
-      </a>
-    </div>
+          <div class="text-center">
+            <a
+              href="/blog"
+              class="inline-block px-6 py-3 border border-purple-600 dark:border-purple-400
+              text-purple-600 dark:text-purple-300 rounded-lg
+              hover:bg-purple-50 dark:hover:bg-gray-800 transition-colors"
+            >
+              Ver todos los posts
+            </a>
+          </div>
+        </>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-lg italic text-gray-500 dark:text-gray-400">
+            🚀 Estamos preparando contenido interesante. ¡Vuelve
+            pronto!
+          </p>
+        </div>
+      )
+    }
   </div>
 </section>
