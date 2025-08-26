@@ -2,7 +2,7 @@
 import Card from './Card.astro';
 import Section from './Section.astro';
 
-const colaboradores = [
+const desarrolladores = [
   {
     name: 'Angie M. I. V.',
     picture: 'https://github.com/AngieMiv.png',
@@ -42,11 +42,11 @@ const colaboradores = [
 
 <Section id="desarrolladores" title="Desarrolladores">
   {
-    colaboradores.map((colab) => (
+    desarrolladores.map((dev) => (
       <Card
-        name={colab.name}
-        picture={colab.picture}
-        socials={colab.socials}
+        name={dev.name}
+        picture={dev.picture}
+        socials={dev.socials}
         variant="purple"
       />
     ))
