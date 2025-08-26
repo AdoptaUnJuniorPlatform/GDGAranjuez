@@ -1,42 +1,38 @@
 ---
-import Colaborador from './Colaborador.astro';
+import Card from './Card.astro';
+import Section from './Section.astro';
 
 const colaboradores = [
   {
-    nombre: 'Angie M. I. V.',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/AngieMiv.png',
-    redes: {
+    name: 'Angie M. I. V.',
+    picture: 'https://github.com/AngieMiv.png',
+    socials: {
       linkedin: 'https://www.linkedin.com/in/angiemiv/',
       github: 'https://github.com/AngieMiv',
       instagram: 'https://www.instagram.com/angiemiv/',
     },
   },
   {
-    nombre: 'Belén Suarez',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/belensuarez477.png',
-    redes: {
+    name: 'Belén Suarez',
+    picture: 'https://github.com/belensuarez477.png',
+    socials: {
       linkedin:
-      'https://www.linkedin.com/in/belen-suarez-42a4331b5/',
+        'https://www.linkedin.com/in/belen-suarez-42a4331b5/',
       github: 'https://github.com/belensuarez477',
     },
   },
   {
-    nombre: 'Glòria Monzó',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/Aredhel269.png',
-    redes: {
-      linkedin:
-        'https://www.linkedin.com/in/gloriamonzo240879',
+    name: 'Glòria Monzó',
+    picture: 'https://github.com/Aredhel269.png',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/gloriamonzo240879',
       github: 'https://github.com/Aredhel269',
     },
   },
   {
-    nombre: 'Raúl Gambalonga',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/RaulGamBalonga.png',
-    redes: {
+    name: 'Raúl Gambalonga',
+    picture: 'https://github.com/RaulGamBalonga.png',
+    socials: {
       linkedin: 'https://www.linkedin.com/in/raul-gambalonga/',
       github: 'https://github.com/RaulGamBalonga',
     },
@@ -44,24 +40,19 @@ const colaboradores = [
 ];
 ---
 
-<section id="desarrolladores" class="p-10 scroll-mt-24">
-  <h2
-    class="text-4xl dark:text-sky-100 font-bold font-mono
-    text-center mb-8"
-  >
-    Desarrolladores
-  </h2>
-
-  <div class="flex flex-wrap justify-center gap-8">
-    {
-      colaboradores.map((colab) => (
-        <Colaborador
-          nombre={colab.nombre}
-          rol={colab.rol}
-          foto={colab.foto}
-          redes={colab.redes}
-        />
-      ))
-    }
-  </div>
-</section>
+<Section
+  id="desarrolladores"
+  title="Desarrolladores"
+  class="p-10 scroll-mt-24"
+>
+  {
+    colaboradores.map((colab) => (
+      <Card
+        name={colab.name}
+        picture={colab.picture}
+        socials={colab.socials}
+        variant="purple"
+      />
+    ))
+  }
+</Section>

@@ -1,78 +1,67 @@
 ---
-import Organizador from './Organizador.astro';
+import Card from './Card.astro';
+import Section from './Section.astro';
 
 const organizadores = [
-  /* Lista de organizadores con nombre, cargo, foto, y link a redes */
+  /* Lista de organizadores con name, role, picture, y link a socials */
   {
-    nombre: 'Ángeles Vázquez',
-    cargo: 'Eventbrite',
-    foto: '/organizadores/angeles_vazquez_parra.webp',
-    redes: {
+    name: 'Ángeles Vázquez',
+    role: 'Eventbrite',
+    picture: '/organizadores/angeles_vazquez_parra.webp',
+    socials: {
       twitter: 'https://twitter.com/avazpar',
       linkedin:
         'https://www.linkedin.com/in/angeles-vazquez-parra/',
     },
   },
   {
-    nombre: 'Juanje Cilla',
-    cargo: 'Hiberus',
-    foto: '/organizadores/juanje_cilla_ugarte.webp',
-    redes: {
+    name: 'Juanje Cilla',
+    role: 'Hiberus',
+    picture: '/organizadores/juanje_cilla_ugarte.webp',
+    socials: {
       linkedin:
         'https://www.linkedin.com/in/juan-jes%C3%BAs-cilla-ugarte-00a72a107/',
     },
   },
   {
-    nombre: 'Saúl Díaz',
-    cargo: 'Eventbrite',
-    foto: '/organizadores/saul_diaz.webp',
-    redes: {
+    name: 'Saúl Díaz',
+    role: 'Eventbrite',
+    picture: '/organizadores/saul_diaz.webp',
+    socials: {
       twitter:
         'https://x.com/i/flow/login?redirect_after_login=%2FSefford',
       linkedin: 'https://www.linkedin.com/in/sefford/',
     },
   },
   {
-    nombre: 'Patricia Tarazaga',
-    cargo: 'Eventbrite',
-    foto: '/organizadores/patricia_tarazaga.webp',
-    redes: {
+    name: 'Patricia Tarazaga',
+    role: 'Eventbrite',
+    picture: '/organizadores/patricia_tarazaga.webp',
+    socials: {
       linkedin: 'https://www.linkedin.com/in/patricia-tarazaga/',
     },
   },
   {
-    nombre: 'Daniel Brinzei',
-    cargo: 'Zartis',
-    foto: '/organizadores/daniel_brinzei.jpeg',
-    redes: {
+    name: 'Daniel Brinzei',
+    role: 'Zartis',
+    picture: '/organizadores/daniel_brinzei.jpeg',
+    socials: {
       linkedin: 'https://www.linkedin.com/in/daniel-brinzei/',
     },
   },
 ];
 ---
 
-<!-- Sección principal de Organizadores, centrada y responsive, padding vertical -->
-<section id="organizadores" class="p-10 scroll-mt-24">
-  {/* Título principal centrado con margen inferior */}
-  <h2
-    class="text-4xl dark:text-sky-100 font-bold font-mono
-    text-center mb-8"
-  >
-    Organizadores
-  </h2>
-
-  <!-- Contenedor en Flexbox para cada organizador -->
-  <div class="flex flex-wrap justify-center gap-8">
-    {
-      organizadores.map((org) => (
-        // Render de cada tarjeta con sus props
-        <Organizador
-          nombre={org.nombre}
-          cargo={org.cargo}
-          foto={org.foto}
-          redes={org.redes}
-        />
-      ))
-    }
-  </div>
-</section>
+<Section id="organizadores" title="Organizadores">
+  {
+    organizadores.map((org) => (
+      <Card
+        name={org.name}
+        role={org.role}
+        picture={org.picture}
+        socials={org.socials}
+        variant="purple"
+      />
+    ))
+  }
+</Section>

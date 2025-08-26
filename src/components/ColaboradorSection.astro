@@ -1,46 +1,37 @@
 ---
-import Colaborador from './Colaborador.astro';
+import Card from './Card.astro';
+import Section from './Section.astro';
 
 const colaboradores = [
   {
-    nombre: 'Manu Fosela',
-    rol: 'Head of Engineering ',
-    foto: '/colaboradores/manu-fosela.jpg',
-    redes: {
+    name: 'Mánu Fosela',
+    role: 'Head of Engineering at Geniova',
+    picture: '/colaboradores/manu-fosela.jpg',
+    socials: {
       linkedin: ' https://www.linkedin.com/in/manufosela/ ',
-      
     },
   },
   {
-    nombre: 'Jorge Castillo' ,
-    rol: ' Creator of Effective Android ',
-    foto: '/colaboradores/jorge-castillo.jpg',
-    redes: {
+    name: 'Jorge Castillo',
+    role: 'Creator of Effective Android',
+    picture: '/colaboradores/jorge-castillo.jpg',
+    socials: {
       linkedin: 'https://www.linkedin.com/in/jorgecastillopr/',
-    
     },
   },
 ];
 ---
 
-<section id="colaboradores" class="p-10 scroll-mt-24">
-  <h2
-    class="text-4xl dark:text-sky-100 font-bold font-mono
-    text-center mb-8"
-  >
-    Colaboradores
-  </h2>
-
-  <div class="flex flex-wrap justify-center gap-8">
-    {
-      colaboradores.map((colab) => (
-        <Colaborador
-          nombre={colab.nombre}
-          rol={colab.rol}
-          foto={colab.foto}
-          redes={colab.redes}
-        />
-      ))
-    }
-  </div>
-</section>
+<Section id="colaboradores" title="Colaboradores">
+  {
+    colaboradores.map((colab) => (
+      <Card
+        name={colab.name}
+        role={colab.role}
+        picture={colab.picture}
+        socials={colab.socials}
+        variant="slate"
+      />
+    ))
+  }
+</Section>
