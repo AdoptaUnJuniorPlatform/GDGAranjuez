@@ -1,12 +1,6 @@
 ---
-const {
-  linkedin,
-  github,
-  instagram,
-  twitter,
-  facebook,
-  nombre,
-} = Astro.props;
+const { linkedin, github, instagram, twitter, facebook, name } =
+  Astro.props;
 ---
 
 <div class="flex justify-center gap-4 mt-2">
@@ -16,7 +10,7 @@ const {
         href={linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`LinkedIn de ${nombre}`}
+        aria-label={`LinkedIn de ${name}`}
         class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
@@ -36,7 +30,7 @@ const {
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`GitHub de ${nombre}`}
+        aria-label={`GitHub de ${name}`}
         class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
@@ -60,7 +54,7 @@ const {
         href={instagram}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Instagram de ${nombre}`}
+        aria-label={`Instagram de ${name}`}
         class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
@@ -84,7 +78,7 @@ const {
         href={twitter}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Twitter de ${nombre}`}
+        aria-label={`Twitter de ${name}`}
         class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
@@ -105,7 +99,7 @@ const {
         href={facebook}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Facebook de ${nombre}`}
+        aria-label={`Facebook de ${name}`}
         class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
       >
         <div class="w-7 h-7 flex justify-center items-center">
