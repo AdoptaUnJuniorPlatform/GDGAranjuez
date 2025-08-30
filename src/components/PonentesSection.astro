@@ -1,19 +1,7 @@
 ---
 import Card from './Card.astro';
 import Section from './Section.astro';
-
-const ponentes = [
-  {
-    name: 'Ponente pendiente',
-    role: '',
-    picture:
-      'https://api.dicebear.com/9.x/identicon/svg?radius=50&seed=ponente1',
-    socials: {
-      twitter: '',
-      linkedin: '',
-    },
-  },
-];
+import { ponentes } from '@/data/speakers.ts';
 ---
 
 <Section id="ponentes" title="Ponentes">
@@ -23,6 +11,7 @@ const ponentes = [
         name={pon.name}
         role={pon.role}
         picture={pon.picture}
+        socials={pon.socials}
         variant="blue"
       />
     ))
