@@ -1,6 +1,6 @@
 ---
 const sponsors = {
-  Platinum: [
+  Gold: [
     {
       name: 'Ayuntamiento Aranjuez',
       logo: 'patrocinadores/aranjuez-firma_negro-01.webp',
@@ -16,7 +16,7 @@ const sponsors = {
       },
     },
   ],
-  Gold: [
+  Silver: [
     {
       name: 'Adopta Un Junior',
       logo: '/patrocinadores/image-adopta-un-junior.jpg',
@@ -25,8 +25,8 @@ const sponsors = {
       },
     },
   ],
-  Silver: [],
-  Media: [],
+  Bronce: [],
+
 };
 ---
 
@@ -43,45 +43,42 @@ const sponsors = {
     <div class="rounded-2xl">
       <!-- Tarjetas de cada categoría -->
       <div class="space-y-6">
-        {
-          Object.entries(sponsors).map(([category, list]) => (
-            <div class="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-6">
-              <h3 class="text-2xl font-semibold mb-4 capitalize text-black  dark:text-indigo-50 ">
-                {category === 'Media'
-                  ? 'Media Partners'
-                  : category}
-              </h3>
+       {Object.entries(sponsors).map(([category, list]) => (
+  <div class="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-6">
+    <h3 class="text-2xl font-semibold mb-4 capitalize text-black  dark:text-indigo-50 ">
+      {category}
+    </h3>
 
-              {list.length > 0 ? (
-                <div class="flex flex-wrap gap-4 items-center justify-center">
-                  {list.map((sponsor) => (
-                    <div class="w-full max-w-[250px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-6 mx-auto text-center transition-transform hover:scale-105">
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        class="h-20 mx-auto mb-4 object-contain"
-                        loading="lazy"
-                        id={
-                          sponsor.name == 'Ayuntamiento Aranjuez'
-                            ? 'aranjuez-logo'
-                            : undefined
-                        }
-                      />
-                      <h4 class="text-xl font-bold mb-2 dark:text-gray-50">
-                        {sponsor.name}
-                      </h4>
-                      <div class="flex justify-center gap-4 flex-wrap">
-                        {sponsor.links?.website && (
-                          <a
-                            href={sponsor.links.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-black dark:text-gray-100 hover:underline"
-                            aria-label="{`Sitio web de ${sponsor.name}}`"
-                          >
-                            Sitio web
-                          </a>
-                        )}
+    {list.length > 0 ? (
+      <div class={`flex flex-wrap items-center justify-center ${category === 'Gold' ? 'gap-8' : 'gap-4'}`}>
+        {list.map((sponsor) => (
+          <div class="w-[320px] h-[320px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-8 flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
+            <img
+              src={sponsor.logo}
+              alt={sponsor.name}
+              class="h-24 mb-6 object-contain"
+              loading="lazy"
+              id={
+                sponsor.name == 'Ayuntamiento Aranjuez'
+                  ? 'aranjuez-logo'
+                  : undefined
+              }
+            />
+            <h4 class="text-xl font-bold mb-4 dark:text-gray-50 whitespace-nowrap">
+              {sponsor.name}
+            </h4>
+            <div class="flex justify-center gap-4 flex-wrap">
+              {sponsor.links?.website && (
+                <a
+                  href={sponsor.links.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-black dark:text-gray-100 hover:underline"
+                  aria-label={`Sitio web de ${sponsor.name}`}
+                >
+                  Sitio web
+                </a>
+              )}
                       </div>
                     </div>
                   ))}
