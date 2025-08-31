@@ -1,6 +1,6 @@
 ---
 const sponsors = {
-  Gold: [
+  Oro: [
     {
       name: 'Ayuntamiento Aranjuez',
       logo: 'patrocinadores/aranjuez-firma_negro-01.webp',
@@ -16,7 +16,7 @@ const sponsors = {
       },
     },
   ],
-  Silver: [
+  Plata: [
     {
       name: 'Adopta Un Junior',
       logo: '/patrocinadores/image-adopta-un-junior.jpg',
@@ -50,7 +50,7 @@ const sponsors = {
     </h3>
 
     {list.length > 0 ? (
-      <div class={`flex flex-wrap items-center justify-center ${category === 'Gold' ? 'gap-8' : 'gap-4'}`}>
+      <div class={`flex flex-wrap items-center justify-center ${category === 'Oro' ? 'gap-8' : 'gap-4'}`}>
         {list.map((sponsor) => (
           <div class="w-[320px] h-[320px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-8 flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
             <img
