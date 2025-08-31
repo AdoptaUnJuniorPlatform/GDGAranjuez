@@ -1,115 +1,164 @@
 <section
   id="countdown"
-  class="text-center text-mono py-8 bg-blue-600/10 dark:bg-indigo-400/10 rounded-2xl mb-6"
+  class="text-center text-mono py-5 bg-blue-600/10 dark:bg-indigo-400/10 rounded-2xl mb-6"
 >
   <h3
     id="countdown-title"
-    class="text-2xl font-semibold text-gray-500 dark:text-gray-200 mb-2"
+    class="text-xl font-semibold text-gray-500 dark:text-gray-200"
   >
     FALTAN
   </h3>
 
-  <div class="flex justify-center gap-4 mb-5" id="countdown-container">
   <div
-    class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-24 flex flex-col justify-center items-center"
-    id="days-container"
+    class="flex justify-center gap-4 mt-2"
+    id="countdown-container"
   >
-    <div class="text-3xl font-bold text-blue-600 dark:text-purple-300" id="dias">--</div>
-    <div class="text-xs text-gray-500 dark:text-gray-200">Dias</div>
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-20 flex flex-col justify-center items-center"
+      id="days-container"
+    >
+      <div
+        class="text-3xl font-bold text-blue-600 dark:text-purple-300"
+        id="days">--</div
+      >
+      <div class="text-xs text-gray-500 dark:text-gray-200"
+        >DÍAS</div
+      >
+    </div>
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-20 flex flex-col justify-center items-center"
+    >
+      <div
+        class="text-3xl font-bold text-purple-600 dark:text-blue-300"
+        id="hours">--</div
+      >
+      <div class="text-xs text-gray-500 dark:text-gray-200"
+        >HORAS</div
+      >
+    </div>
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-20 flex flex-col justify-center items-center"
+    >
+      <div
+        class="text-3xl font-bold text-blue-600 dark:text-purple-300"
+        id="minutes">--</div
+      >
+      <div class="text-xs text-gray-500 dark:text-gray-200"
+        >MINUTOS</div
+      >
+    </div>
+    <div
+      class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-20 flex flex-col justify-center items-center"
+      id="seconds-container"
+      style="display: none;"
+    >
+      <div
+        class="text-3xl font-bold text-purple-600 dark:text-blue-300"
+        id="seconds">--</div
+      >
+      <div class="text-xs text-gray-500 dark:text-gray-200"
+        >SEGUNDOS</div
+      >
+    </div>
   </div>
-  <div class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-24 flex flex-col justify-center items-center">
+  <script type="module" lang="ts">
+    const eventDate = '2025-10-04';
+    const eventStart = new Date(
+      `${eventDate}T09:00:00+02:00`
+    ).getTime();
+    const eventEnd = new Date(
+      `${eventDate}T19:00:00+02:00`
+    ).getTime();
 
-    <div class="text-3xl font-bold text-purple-600 dark:text-blue-300" id="horas">--</div>
-    <div class="text-xs text-gray-500 dark:text-gray-200">Horas</div>
-  </div>
-  <div class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-24 flex flex-col justify-center items-center">
-    <div class="text-3xl font-bold text-blue-600 dark:text-purple-300" id="minutos">--</div>
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const daysContainer =
+      document.getElementById('days-container');
+    const secondsContainer = document.getElementById(
+      'seconds-container'
+    );
+    const countdownTitle = document.getElementById(
+      'countdown-title'
+    );
+    const countdownContainer = document.getElementById(
+      'countdown-container'
+    );
+    const hoursContainer = hoursEl.parentElement;
+    const minutesContainer = minutesEl.parentElement;
 
-    <div class="text-3xl font-bold text-purple-600 dark:text-blue-300" id="Horas">--</div>
-    <div class="text-xs text-gray-500 dark:text-gray-200">Horas</div>
-  </div>
-  <div class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-24 flex flex-col justify-center items-center">
-    <div class="text-3xl font-bold text-blue-600 dark:text-purple-300" id="Minutos">--</div>
+    const countdown = setInterval(() => {
+      const now = new Date();
+      const nowTime = now.getTime();
 
-    <div class="text-xs text-gray-500 dark:text-gray-200">Minutos</div>
-  </div>
-  <div
-    class="bg-white dark:bg-gray-900/90 p-4 rounded-lg shadow-sm w-24 h-24 flex flex-col justify-center items-center"
-    id="seconds-container"
-    style="display: none;"
-  >
-    <div class="text-3xl font-bold text-purple-600 dark:text-blue-300" id="segundos">--</div>
-    <div class="text-xs text-gray-500 dark:text-gray-200">Segundos</div>
-  </div>
-</div>
-<script type="module" lang="ts">
-  const eventDate = '2025-10-04';
-  const eventStart = new Date(`${eventDate}T09:00:00+02:00`).getTime();
-  const eventEnd = new Date(`${eventDate}T19:00:00+02:00`).getTime();
+      // Fecha actual en formato YYYY-MM-DD
+      const todayStr = now.toISOString().slice(0, 10);
 
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
-  const daysContainer = document.getElementById('days-container');
-  const secondsContainer = document.getElementById('seconds-container');
-  const countdownTitle = document.getElementById('countdown-title');
-  const countdownContainer = document.getElementById('countdown-container');
-  const hoursContainer = hoursEl.parentElement;
-  const minutesContainer = minutesEl.parentElement;
+      if (nowTime < eventStart) {
+        if (todayStr === eventDate) {
+          // Es el día del evento pero antes de las 09:00
+          countdownTitle.innerText =
+            '¡EL EVENTO ES HOY! NO TE LO PIERDAS.';
+          countdownContainer.style.display = 'none';
+        } else {
+          // Antes del evento, días previos
+          countdownTitle.innerText = 'FALTAN';
+          countdownContainer.style.display = 'flex';
+          daysContainer.style.display = 'block';
+          hoursContainer.style.display = 'block';
+          minutesContainer.style.display = 'block';
+          secondsContainer.style.display = 'none';
 
-  const countdown = setInterval(() => {
-    const now = new Date();
-    const nowTime = now.getTime();
+          const distance = eventStart - nowTime;
+          const days = Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+          );
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
 
-    // Fecha actual en formato YYYY-MM-DD
-    const todayStr = now.toISOString().slice(0, 10);
-
-    if (nowTime < eventStart) {
-      if (todayStr === eventDate) {
-        // Es el día del evento pero antes de las 09:00
-        countdownTitle.innerText = "El evento es hoy! No te lo pierdas.";
-        countdownContainer.style.display = 'none';
-      } else {
-        // Antes del evento, días previos
-        countdownTitle.innerText = "Faltan!";
+          daysEl.innerText = days.toString();
+          hoursEl.innerText = hours.toString().padStart(2, '0');
+          minutesEl.innerText = minutes
+            .toString()
+            .padStart(2, '0');
+        }
+      } else if (nowTime >= eventStart && nowTime < eventEnd) {
+        // Durante el evento
+        countdownTitle.innerText = 'EL EVENTO TERMINA EN';
         countdownContainer.style.display = 'flex';
-        daysContainer.style.display = 'block';
+        daysContainer.style.display = 'none';
         hoursContainer.style.display = 'block';
         minutesContainer.style.display = 'block';
-        secondsContainer.style.display = 'none';
+        secondsContainer.style.display = 'block';
 
-        const distance = eventStart - nowTime;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const distance = eventEnd - nowTime;
+        const hours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor(
+          (distance % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor(
+          (distance % (1000 * 60)) / 1000
+        );
 
-        daysEl.innerText = days.toString();
         hoursEl.innerText = hours.toString().padStart(2, '0');
-        minutesEl.innerText = minutes.toString().padStart(2, '0');
+        minutesEl.innerText = minutes
+          .toString()
+          .padStart(2, '0');
+        secondsEl.innerText = seconds
+          .toString()
+          .padStart(2, '0');
+      } else {
+        // Después del evento
+        clearInterval(countdown);
+        countdownTitle.innerText =
+          'EL EVENTO HA FINALIZADO. ¡GRACIAS POR ACOMPAÑARNOS!';
+        countdownContainer.style.display = 'none';
       }
-    } else if (nowTime >= eventStart && nowTime < eventEnd) {
-      // Durante el evento
-      countdownTitle.innerText = "El evento termina en...";
-      countdownContainer.style.display = 'flex';
-      daysContainer.style.display = 'none';
-      hoursContainer.style.display = 'block';
-      minutesContainer.style.display = 'block';
-      secondsContainer.style.display = 'block';
-
-      const distance = eventEnd - nowTime;
-      const hours = Math.floor(distance / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      hoursEl.innerText = hours.toString().padStart(2, '0');
-      minutesEl.innerText = minutes.toString().padStart(2, '0');
-      secondsEl.innerText = seconds.toString().padStart(2, '0');
-    } else {
-      // Después del evento
-      clearInterval(countdown);
-      countdownTitle.innerText = "El evento ha finalizado. ¡Gracias por acompañarnos!.";
-      countdownContainer.style.display = 'none';
-    }
-  }, 1000);
-</script>
+    }, 1000);
+  </script>
+</section>
