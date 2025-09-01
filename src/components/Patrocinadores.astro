@@ -17,7 +17,7 @@ const sponsors = {
     },
     {
       name: 'Next Digital',
-      logo: '/patrocinadores/next-digital.webp/',
+      logo: '/patrocinadores/next-digital.webp',
       links: {
         website: 'https://www.nextdigital.es/',
       },
@@ -61,7 +61,7 @@ const sponsors = {
                   class={`flex flex-wrap items-center justify-center ${category === 'Oro' ? 'gap-8' : 'gap-4'}`}
                 >
                   {list.map((sponsor) => (
-                    <div class="w-[320px] h-[320px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-8 flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
+                    <div class="w-[320px] h-[220px] bg-white/70 dark:bg-blue-100/10 shadow-md rounded-2xl p-8 flex flex-col justify-center items-center text-center transition-transform hover:scale-105">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
