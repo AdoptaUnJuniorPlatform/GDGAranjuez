@@ -1,6 +1,7 @@
 ---
 import Card from './Card.astro';
 import Section from './Section.astro';
+import Socials from'./Socials.astro';
 
 const colaboradores = [
   {
@@ -19,7 +20,25 @@ const colaboradores = [
       linkedin: 'https://www.linkedin.com/in/jorgecastillopr/',
     },
   },
-];
+
+ {
+  name: 'Raúl Fernandez',
+  role: 'El mago',
+  picture: '/colaboradores/elmago.jpg',
+  socials: {
+    instagram: 'https://www.instagram.com/magicraulin?igsh=MW1nNXJydnU2YjM1ZQ%3D%3D&utm_source=qr',
+    website: 'https://www.atrapalo.com/entradas/contagia-tu-magia_e4920148/',
+  },
+},
+    {
+ name: 'Nicolás Moreno',
+ role: 'Sonido',
+ picture: '/colaboradores/nicolas.jpg',
+ socials: {
+         linkedin: 'https://www.linkedin.com/in/nicolás-moreno-gonzalez/',
+    },
+  },
+]
 ---
 
 <Section id="colaboradores" title="Colaboradores">
