@@ -40,25 +40,27 @@ const currentVariant = variants[variant];
 ---
 
 <div
-  class={`max-w-55 ${currentVariant.bg} rounded-2xl
+  class={`flex flex-col justify-between max-w-55 ${currentVariant.bg} rounded-2xl
   p-5 text-center transition-all duration-300 hover:-translate-y-2
   shadow-md hover:shadow-xl w-full`}
 >
-  <img
-    src={picture}
-    alt={`Foto de ${name}`}
-    class="w-34 h-34 mx-auto rounded-full mb-4 object-cover transition-all duration-300 hover:scale-105"
-  />
-  <h3
-    class={`text-lg ${currentVariant.text} font-semibold underline`}
-  >
-    {name}
-  </h3>
-  <p
-    class={`text-sm ${currentVariant.subtext} mb-4 whitespace-pre-line`}
-  >
-    {role}
-  </p>
+  <div>
+    <img
+      src={picture}
+      alt={`Foto de ${name}`}
+      class="w-34 h-34 mx-auto rounded-full mb-4 object-cover transition-all duration-300 hover:scale-105"
+    />
+    <h3
+      class={`text-lg ${currentVariant.text} font-semibold underline`}
+    >
+      {name}
+    </h3>
+    <p
+      class={`text-sm ${currentVariant.subtext} mb-4 whitespace-pre-line`}
+    >
+      {role}
+    </p>
+  </div>
 
   <Socials name={name} {...socials} />
 </div>
