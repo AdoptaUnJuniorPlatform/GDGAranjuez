@@ -1,28 +1,55 @@
 ---
-const { titulo, descripcion, ponente, foto } = Astro.props;
-const altTexto = `Foto de ${ponente}`;
+const { tituloCharla, descripcion, nombrePonente } = Astro.props;
+const idModal = tituloCharla && nombrePonente
+  ? `modal-${tituloCharla.replace(/\s+/g, '-').toLowerCase()}-${nombrePonente.replace(/\s+/g, '-').toLowerCase()}`
+  : 'modal-generico';
+const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
 ---
 
-<article
-  class="max-w bg-sky-200/50 dark:bg-sky-900 rounded-2xl
-  shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
->
-  <img
-    src={foto}
-    alt={altTexto}
-    class="w-34 h-34 rounded-full mx-auto mb-4 object-cover transition-transform duration-300 hover:scale-105"
-  />
-  <h3
-    class="text-xl dark:text-blue-50 font-semibold mb-2 underline"
+<article class="bg-sky-100 dark:bg-sky-800 rounded-2xl shadow-md p-6 text-center transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+  <h3 class="text-xl font-semibold mb-2 underline dark:text-blue-50">{tituloCharla}</h3>
+  <p class="text-sm font-semibold text-gray-900 dark:text-gray-300"> {nombrePonente}</p>
+  <p class="text-sm text-gray-800 dark:text-gray-900 whitespace-pre-line break-words leading-relaxed">{resumen}</p>
+
+  <button
+    class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+    onclick={`abrirModal('${idModal}')`}
   >
-    {titulo}
-  </h3>
-  <p
-    class="text-m text-gray-800 dark:text-gray-200 mb-4 whitespace-pre-line"
-  >
-    {descripcion}
-  </p>
-  <p class="text-m font-medium text-gray-900 dark:text-gray-300">
-    🙋🏻 {ponente}
-  </p>
+    Ver más
+  </button>
+
+  <dialog id={idModal} class="rounded-lg p-6 max-w-lg w-full bg-white dark:bg-gray-900 shadow-xl overflow-y-auto max-h-[80vh]">
+    <form method="dialog">
+      <button class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl" aria-label="Cerrar">
+        &times;
+      </button>
+    </form>
+    <h3 class="text-2xl font-bold mb-2 dark:text-white">{tituloCharla}</h3>
+    <p class="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-line break-words leading-relaxed mb-4">{descripcion}</p>
+    <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{nombrePonente}</p>
+  </dialog>
 </article>
+
+<script is:inline>
+  window.addEventListener('load', () => {
+    window.abrirModal = function(id) {
+      const modal = document.getElementById(id);
+      if (modal && typeof modal.showModal === 'function') {
+        modal.showModal();
+      }
+    };
+
+    document.querySelectorAll('dialog').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        const rect = modal.getBoundingClientRect();
+        const isOutside =
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom;
+
+        if (isOutside) modal.close();
+      });
+    });
+  });
+</script>
