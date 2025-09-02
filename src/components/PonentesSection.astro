@@ -1,40 +1,116 @@
 ---
-import Ponente from './Ponente.astro';
+import Card from './Card.astro';
+import Section from './Section.astro';
+
 const ponentes = [
   {
-    nombre: 'Ponente pendiente',
-    cargo: '',
-    foto: 'https://api.dicebear.com/9.x/identicon/svg?radius=50&seed=ponente1',
-    redes: {
-      twitter: '#',
-      linkedin: '#',
+    name: 'Nacho Fernandez',
+    role: '',
+    picture: '/speakers/nacho-fernandez-diez.png',
+    socials: {
+      twitter: '',
+      linkedin:
+        'https://www.linkedin.com/in/nacho-fernandez-diez-94763974',
+    },
+  },
+  {
+    name: 'Máximo Fernández',
+    role: '',
+    picture: '/speakers/maximo-fernandez-nunez.jpg',
+    socials: {
+      twitter: 'https://twitter.com/Maximo_fn',
+      linkedin: 'http://linkedin.com/in/MaximoFN/',
+      facebook:
+        'https://www.facebook.com/profile.php?id=100085177670661',
+      instagram: 'https://www.instagram.com/maximo__fn/',
+      web: 'https://maximofn.com/blog/',
+      huggingface: 'https://huggingface.co/Maximofn',
+    },
+  },
+  {
+    name: 'Antonio Leiva',
+    role: '',
+    picture: '/speakers/antonio-leiva.jpg',
+    socials: {
+      twitter: 'https://x.com/devexpert_io',
+      linkedin: 'https://www.linkedin.com/in/antonio-devexpert',
+      instagram: 'https://www.instagram.com/devexpert.io/',
+      web: 'https://devexpert.io/',
+    },
+  },
+  {
+    name: 'Moisés Martínez',
+    role: '',
+    picture: '/speakers/moises-martinez.jpg',
+    socials: {
+      twitter: 'https://x.com/moisipm?lang=es',
+      linkedin: 'https://linkedin.com/in/momartinm/',
+    },
+  },
+  {
+    name: 'Sergi Olives',
+    role: '',
+    picture: '/speakers/sergi-olives.jpg',
+    socials: {
+      twitter: 'https://x.com/SrAceituno',
+      linkedin: 'https://linkedin.com/in/sergiolives/',
+      instagram: 'https://www.instagram.com/mraceitun0/',
+    },
+  },
+  {
+    name: 'Estefanía Peromingo',
+    role: '',
+    picture: '/speakers/estefania-peromingo.jpg',
+    socials: {
+      twitter: '',
+      linkedin:
+        'https://www.linkedin.com/in/estefaniaperomingo/',
+    },
+  },
+  {
+    name: 'Irene Ruiz',
+    role: '',
+    picture: '/speakers/irene-ruiz-pozo.jpg',
+    socials: {
+      twitter: '',
+      linkedin: 'https://linkedin.com/in/ireneruizpozo/',
+      instagram: 'https://www.instagram.com/ireneeruizp/',
+    },
+  },
+  {
+    name: 'Pablo Rodríguez-Tembleco',
+    role: '',
+    picture: '/speakers/pablo-rodriguez-tembleco.jpg',
+    socials: {
+      twitter: 'https://x.com/PauThePlayer',
+      linkedin:
+        'https://www.linkedin.com/in/pablo-rodriguez-tembleco/',
+      instagram: 'https://www.instagram.com/pautheplayer/',
+      youtube: 'https://www.youtube.com/@PauThePlayer',
+    },
+  },
+  {
+    name: 'María del Carmen Tajuelo',
+    role: '',
+    picture: '/speakers/maria-del-carmen-tajuelo.jpg',
+    socials: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/carmentajuelo/',
     },
   },
 ];
-
-const estilosPonentes = {
-  sombra: 'shadow-lg hover:shadow-2xl',
-};
 ---
 
-<section id="ponentes" class="p-10 scroll-mt-24">
-  <h2
-    class="text-4xl dark:text-sky-100 font-bold font-mono
-    text-center mb-8"
-  >
-    Ponentes
-  </h2>
-
-  <div class="flex flex-wrap justify-center gap-8">
-    {
-      ponentes.map((pon) => (
-        <Ponente
-          nombre={pon.nombre}
-          cargo={pon.cargo}
-          foto={pon.foto}
-          estilos={estilosPonentes}
-        />
-      ))
-    }
-  </div>
-</section>
+<Section id="ponentes" title="Ponentes">
+  {
+    ponentes.map((pon) => (
+      <Card
+        name={pon.name}
+        role={pon.role}
+        picture={pon.picture}
+        socials={pon.socials}
+        variant="blue"
+      />
+    ))
+  }
+</Section>

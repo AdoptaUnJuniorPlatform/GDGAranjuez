@@ -1,67 +1,56 @@
 ---
-import Colaborador from './Colaborador.astro';
+import Card from './Card.astro';
+import Section from './Section.astro';
+import Socials from'./Socials.astro';
 
 const colaboradores = [
   {
-    nombre: 'Angie M. I. V.',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/AngieMiv.png',
-    redes: {
-      linkedin: 'https://www.linkedin.com/in/angiemiv/',
-      github: 'https://github.com/AngieMiv',
-      instagram: 'https://www.instagram.com/angiemiv/',
+    name: 'Mánu Fosela',
+    role: 'Head of Engineering at Geniova',
+    picture: '/colaboradores/manu-fosela.jpg',
+    socials: {
+      linkedin: ' https://www.linkedin.com/in/manufosela/ ',
     },
   },
   {
-    nombre: 'Belén Suarez',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/belensuarez477.png',
-    redes: {
-      linkedin:
-      'https://www.linkedin.com/in/belen-suarez-42a4331b5/',
-      github: 'https://github.com/belensuarez477',
+    name: 'Jorge Castillo',
+    role: 'Creator of Effective Android',
+    picture: '/colaboradores/jorge-castillo.jpg',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/jorgecastillopr/',
     },
   },
-  {
-    nombre: 'Glòria Monzó',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/Aredhel269.png',
-    redes: {
-      linkedin:
-        'https://www.linkedin.com/in/gloriamonzo240879',
-      github: 'https://github.com/Aredhel269',
+
+ {
+  name: 'Raúl Fernandez',
+  role: 'El mago',
+  picture: '/colaboradores/elmago.jpg',
+  socials: {
+    instagram: 'https://www.instagram.com/magicraulin?igsh=MW1nNXJydnU2YjM1ZQ%3D%3D&utm_source=qr',
+    website: 'https://www.atrapalo.com/entradas/contagia-tu-magia_e4920148/',
+  },
+},
+    {
+ name: 'Nicolás Moreno',
+ role: 'Sonido',
+ picture: '/colaboradores/nicolas.jpg',
+ socials: {
+         linkedin: 'https://www.linkedin.com/in/nicolás-moreno-gonzalez/',
     },
   },
-  {
-    nombre: 'Raúl Gambalonga',
-    rol: 'Web Engineer',
-    foto: 'https://github.com/RaulGamBalonga.png',
-    redes: {
-      linkedin: 'https://www.linkedin.com/in/raul-gambalonga/',
-      github: 'https://github.com/RaulGamBalonga',
-    },
-  },
-];
+]
 ---
 
-<section id="colaboradores" class="p-10 scroll-mt-24">
-  <h2
-    class="text-4xl dark:text-sky-100 font-bold font-mono
-    text-center mb-8"
-  >
-    Colaboradores
-  </h2>
-
-  <div class="flex flex-wrap justify-center gap-8">
-    {
-      colaboradores.map((colab) => (
-        <Colaborador
-          nombre={colab.nombre}
-          rol={colab.rol}
-          foto={colab.foto}
-          redes={colab.redes}
-        />
-      ))
-    }
-  </div>
-</section>
+<Section id="colaboradores" title="Colaboradores">
+  {
+    colaboradores.map((colab) => (
+      <Card
+        name={colab.name}
+        role={colab.role}
+        picture={colab.picture}
+        socials={colab.socials}
+        variant="slate"
+      />
+    ))
+  }
+</Section>
