@@ -1,5 +1,5 @@
 ---
-const { linkedin, github, instagram, twitter, facebook, name } =
+const { linkedin, github, instagram, twitter, facebook, name , website } =
   Astro.props;
 ---
 
@@ -110,4 +110,21 @@ const { linkedin, github, instagram, twitter, facebook, name } =
       </a>
     )
   }
+  {website && (
+  <a
+    href={website}
+    title="Sitio web"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`Sitio web de ${name}`}
+    class="transform transition-transform duration-200 hover:scale-125 focus:outline-2 focus:outline-sky-400 focus:outline-offset-2"
+  >
+    <div class="w-7 h-7 flex justify-center items-center">
+      <!-- Puedes usar un icono SVG de "globo" o "link" aquí -->
+      <svg viewBox="0 0 24 24" class="w-5 h-5 dark:fill-white">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 17.93V20h-2v-.07A8.001 8.001 0 014.07 13H4v-2h.07A8.001 8.001 0 0111 4.07V4h2v.07A8.001 8.001 0 0119.93 11H20v2h-.07A8.001 8.001 0 0113 19.93z"/>
+      </svg>
+    </div>
+  </a>
+)}
 </div>

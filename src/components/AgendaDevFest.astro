@@ -1,75 +1,137 @@
 ---
-// Agenda completamente provisional - todos los datos son placeholders
+import AgendaSection from "./AgendaSection.astro";
+
 const agenda = [
   {
-    hora: '09:00',
-    titulo: 'Apertura',
+    titulo: "Agenda 2025",
+    id: "agenda",
+    agenda: [{
+      hora: '09:00',
+      duracion: '30m',
+      titulo: 'Apertura y registro',
+    },
+    {
+      hora: '09:30',
+      duracion: '30m',
+      titulo: 'Presentación',
+      ponente: '',
+      perfil: '',
+    },
+    {
+      hora: '10:00',
+      duracion: '50m',
+      titulo: 'Conceptualización del sonido como mecánica para narrar historias',
+      ponente: 'Pablo Rodríguez-Tembleco',
+      perfil: '',
+    },
+    {
+      hora: '10:50',
+      duracion: '30m',
+      titulo: 'Psicología del feedback: cómo dar y recibir feedback sin romper el equipo',
+      ponente: 'Estefanía Peromingo',
+      perfil: '',
+    },
+    {
+      hora: '11:20',
+      duracion: '30m',
+      titulo: 'Como conseguir tu primer trabajo en Tech',
+      ponente: 'Sergi Olives ',
+      perfil: '',
+    },
+    {
+      hora: '11:50',
+      duracion: '30m',
+      titulo: 'Desayuno',
+      ponente: '',
+      perfil: '',
+    },
+    {
+      hora: '12:20',
+      duracion: '50m',
+      titulo: 'MCPs con Kotlin: Creando Superpoderes para tu Asistente IA',
+      ponente: 'Antonio Leiva',
+      perfil: '',
+    },
+    {
+      hora: '13:10',
+      duracion: '20m',
+      titulo: 'Magia',
+      ponente: 'Raúl Fernández',
+      perfil: '',
+    },
+    {
+      hora: '13:30',
+      duracion: '30m',
+      titulo: 'Reinventarse hacia el mundo Tech',
+      ponente: 'Maria del Carmen Tajuelo',
+      perfil: '',
+    },
+    {
+      hora: '14:00',
+      duracion: '30m',
+      titulo: 'Agentes Python del Mañana: Descifrando los Enigmas de Planificación, UX y Memoria',
+      ponente: 'Máximo Fernández Núñez',
+      perfil: '',
+    },
+    {
+      hora: '14:30',
+      duracion: '1h 15m',
+      titulo: 'Comida',
+      ponente: '',
+      perfil: '',
+    },
+    {
+      hora: '15:45',
+      duracion: '50m',
+      titulo: 'dose.VR()',
+      ponente: 'Irene Ruiz Pozo',
+      perfil: '',
+    },
+    {
+      hora: '16:35',
+      duracion: '30m',
+      titulo: 'Open Source',
+      ponente: 'Alberto Gutierrez',
+      perfil: '',
+    },
+    {
+      hora: '17:05',
+      duracion: '35m',
+      titulo: 'Mesa redonda',
+      ponente: '',
+      perfil: '',
+    },
+    {
+      hora: '17:40',
+      duracion: '50m',
+      titulo: 'Vision Language Model',
+      ponente: 'Moisés Martínez',
+      perfil: '',
+    },
+    {
+      hora: '18:30',
+      duracion: '30m',
+      titulo: 'Cierre y sorteos',
+    }]
   },
   {
-    hora: 'HH:MM',
-    titulo: 'Actividad por confirmar',
-    ponente: 'Pendiente',
-    perfil: '',
-  },
-  {
-    hora: 'HH:MM',
-    titulo: 'Actividad por confirmar',
-    ponente: 'Pendiente',
-    perfil: '',
-  },
-  {
-    hora: 'HH:MM',
-    titulo: 'Actividad por confirmar',
-    ponente: 'Pendiente',
-    perfil: '',
-  },
-  {
-    hora: '19:00',
-    titulo: 'Cierre',
-  },
-];
+    titulo: "Workshop Seguridad",
+    id: "workshop",
+    agenda: [{
+      hora: '12:20',
+      duracion: '12:20 - 14:30',
+      titulo: 'CTF DevFest Aranjuez',
+      impartido: 'Nacho Fernandez Diez',
+      perfil: '',
+    }]
+  }
+] 
+
+
 ---
 
-<section
-  id="agenda"
-  class="bg-blue-100 text-gray-900
-        dark:bg-slate-800 dark:text-gray-100
-        font-sans rounded-2xl shadow-md p-10 mb-6 mt-12
-        border border-blue-100 dark:border-slate-500
-        max-w-3xl mx-auto scroll-mt-24"
->
-  <h2
-    class="text-3xl font-mono font-bold text-blue-800 dark:text-blue-300 mb-6 text-center"
-  >
-    Agenda 2025
-  </h2>
-  <div
-    class="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg mb-6 text-center"
-  >
-    <p class="text-yellow-800 dark:text-yellow-200">
-      La agenda definitiva será publicada próximamente
-    </p>
-  </div>
-  <ul class="space-y-6">
-    {
-      agenda.map((item) => (
-        <li
-          class="grid grid-cols-[80px_1fr] gap-x-6 items-start text-lg
-                  border-b border-gray-400 dark:border-gray-600 pb-4 last:border-b-0"
-        >
-          <time class="font-mono text-blue-800 dark:text-blue-300 pl-4">
-            {item.hora}
-          </time>
-          <div>
-            <div class="font-semibold">{item.titulo}</div>
-            {item.ponente && (
-              <div class="text-gray-700 dark:text-gray-300 text-base mt-1">
-                Ponente: {item.ponente}
-              </div>
-            )}
-          </div>
-        </li>
-      ))
-    }
-  </ul>
-</section>
+{
+  agenda.map((item: any) => (
+    <AgendaSection {...item} />
+  ))
+}
