@@ -1,28 +1,39 @@
 ---
-const { tituloCharla, descripcion, nombrePonente, resumen } = Astro.props;
-const idModal = `modal-${tituloCharla.replace(/\s+/g, '-')}`;
+const { tituloCharla, descripcion, nombrePonente, resumen, index } = Astro.props;
+const idModal = `modal-${tituloCharla.replace(/\s+/g, '-')}-${index}`;
 ---
 
 <!-- Botón para abrir el modal -->
-<button
-  class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-  onclick={`document.getElementById('${idModal}').showModal()`}
->
-  Ver más
-</button>
+<div class="flex items-center justify-center h-screen">
+  <button
+    class="mt-4 px-4 py-2 bg-blue-850 text-white rounded hover:bg-blue-700 transition"
+    onclick={`document.getElementById('${idModal}').showModal()`}
+  >
+    Ver más
+  </button>
+</div>
 
-<!-- Modal nativo -->
-<dialog id={idModal} class="rounded-lg p-6 max-w-lg w-full bg-white dark:bg-gray-900 shadow-xl">
-  <form method="dialog">
+<dialog
+  id={idModal}
+  class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+         bg-white dark:bg-gray-900 rounded-lg
+         p-6 pt-20
+         max-w-lg w-[90%] sm:w-[500px] shadow-xl"
+>
+
+<!-- Boton cierre -->
+ <form method="dialog">
     <button
-      class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl"
+      class="absolute right-4 top-4 z-10 text-gray-500 hover:text-red-500 text-2xl 
+             p-2 bg-white dark:bg-gray-900 rounded-full shadow"
       aria-label="Cerrar"
     >
       &times;
     </button>
   </form>
-  <h3 class="text-2xl font-bold mb-2 dark:text-white">{tituloCharla}</h3>
+
+  <h3 class="text-2xl font-bold mb-4 dark:text-white">{tituloCharla}</h3>
   <p class="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-line mb-4">{descripcion}</p>
-  <p class="text-sm font-medium text-gray-900 dark:text-gray-100">🙋🏻 {nombrePonente}</p>
-  <p class="text-sm font-medium text-gray-900 dark:text-gray-100" >{resumen}</p>
+  <p class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2"> {nombrePonente}</p>
+  <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{resumen}</p>
 </dialog>
