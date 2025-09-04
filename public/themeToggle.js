@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Función para establecer el icono según tema
   function updateIcon(isDark) {
-    toggleBtn.innerHTML = `<img src="/icons/${isDark ? 'luna' : 'sol'}.png" alt="${isDark ? 'Luna' : 'Sol'}" class="w-6 h-6 inline-block" />`;
+    toggleBtn.innerHTML = `<img src="/icons/${isDark ? 'luna' : 'sol'}.webp" alt="${isDark ? 'Luna' : 'Sol'}" class="w-6 h-6 inline-block" />`;
   }
 
   // Función para cambiar el logo de Aranju
