@@ -1,28 +1,68 @@
 ---
-const { titulo, descripcion, ponente, foto } = Astro.props;
-const altTexto = `Foto de ${ponente}`;
+const { tituloCharla, descripcion, nombrePonente } = Astro.props;
+const idModal = tituloCharla && nombrePonente
+  ? `modal-${tituloCharla.replace(/\s+/g, '-').toLowerCase()}-${nombrePonente.replace(/\s+/g, '-').toLowerCase()}`
+  : 'modal-generico';
+const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
 ---
 
-<article
-  class="max-w bg-sky-200/50 dark:bg-sky-900 rounded-2xl
-  shadow-md p-6 text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
->
-  <img
-    src={foto}
-    alt={altTexto}
-    class="w-34 h-34 rounded-full mx-auto mb-4 object-cover transition-transform duration-300 hover:scale-105"
-  />
-  <h3
-    class="text-xl dark:text-blue-50 font-semibold mb-2 underline"
-  >
-    {titulo}
-  </h3>
-  <p
-    class="text-m text-gray-800 dark:text-gray-200 mb-4 whitespace-pre-line"
-  >
-    {descripcion}
-  </p>
-  <p class="text-m font-medium text-gray-900 dark:text-gray-300">
-    🙋🏻 {ponente}
-  </p>
-</article>
+<section class="flex flex-col items-center gap-6 md:flex-row md:justify-start md:flex-wrap container">
+  <article class="w-full bg-sky-100 dark:bg-sky-800 rounded-2xl shadow-md p-6 text-center transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+    <h3 class="text-xl font-semibold mb-2 underline dark:text-blue-50">{tituloCharla}</h3>
+    <p class="text-sm font-semibold text-gray-900 dark:text-gray-300">{nombrePonente}</p>
+    <p class="text-sm text-gray-800 dark:text-gray-900 whitespace-pre-line break-words leading-relaxed">{resumen}</p>
+
+    <button
+      class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition min-w-[48px] min-h-[48px]"
+      onclick={`abrirModal('${idModal}')`}
+    >
+      Ver más
+    </button>
+
+    <!-- Modal nativo -->
+    <dialog 
+      id={idModal} 
+      class="fixed inset-0 sm:inset-auto sm:top-1/2 sm:left-1/2 
+            w-[95%] sm:w-auto max-w-lg rounded-lg p-6 bg-white dark:bg-gray-900 
+            shadow-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    >
+      <form method="dialog" class="flex flex-row justify-end -mt-4 -mr-4">
+        <button 
+          class="text-gray-500 hover:text-red-500 text-3xl p-4 w-12 h-12 flex items-center justify-center" 
+          aria-label="Cerrar"
+          title="Cerrar"
+        >
+          &times;
+        </button>
+      </form>
+
+      <h3 class="text-1x2 font-bold mb-4 dark:text-white">{tituloCharla}</h3>
+      <p class="text-base mb-4 text-gray-700 dark:text-gray-300 whitespace-pre-line break-words leading-relaxed">{descripcion}</p>
+      <p class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Ponente: {nombrePonente}</p>
+    </dialog>
+
+  </article>
+</section>
+
+<script is:inline>
+  window.addEventListener('load', () => {
+    window.abrirModal = function(id) {
+      const modal = document.getElementById(id);
+      if (modal && typeof modal.showModal === 'function') {
+        modal.showModal();
+      }
+    };
+
+    document.querySelectorAll('dialog').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        const rect = modal.getBoundingClientRect();
+        const isOutside =
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom;
+        if (isOutside) modal.close();
+      });
+    });
+  });
+</script>
