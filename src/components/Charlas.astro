@@ -50,8 +50,17 @@ const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
       const modal = document.getElementById(id);
       if (modal && typeof modal.showModal === 'function') {
         modal.showModal();
+        scrollBehindModal(false);
       }
     };
+
+    function scrollBehindModal(scroll) {
+      if(scroll){
+        document.body.style.overflow = 'auto'
+      } else {
+        document.body.style.overflow = 'hidden';
+      }
+    }
 
     document.querySelectorAll('dialog').forEach(modal => {
       modal.addEventListener('click', (e) => {
@@ -62,6 +71,10 @@ const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
           e.clientY < rect.top ||
           e.clientY > rect.bottom;
         if (isOutside) modal.close();
+      });
+
+      modal.addEventListener("close", () => {
+        scrollBehindModal(true);
       });
     });
   });
