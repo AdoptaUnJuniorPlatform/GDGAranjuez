@@ -30,7 +30,7 @@ El año pasado se realizó el primer evento grande, el [DevFest 2024](https://de
 
 ---
 
-## 🛠 TECH STACK
+## 🛠 Tech Stack
 
 | Área           | Tecnologías                                                                                                                                              |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,16 +41,18 @@ El año pasado se realizó el primer evento grande, el [DevFest 2024](https://de
 
 ---
 
-## 📂 ESTRUCTURA DEL PROYECTO
+## 📂 Estructura del proyecto
 
 ```
 GDGAranjuez/
 ├─ public/               # Archivos públicos y estáticos accesibles por ruta directa
+│  ├─ colaboradores/     # Fotos de los colaboradores
+│  ├─ desarrolladores/   # Iconos de los desarrolladores
 │  ├─ icons/             # Iconos del sitio
 │  ├─ img/               # Imágenes generales
-│  ├─ organizadores/     # Fotos de organizadores
-│  ├─ patrocinadores/    # Logos de patrocinadores
-│  ├─ ponentes/          # Fotos de ponentes
+│  ├─ organizadores/     # Fotos de los organizadores
+│  ├─ patrocinadores/    # Logos de los patrocinadores
+│  ├─ speakers/          # Fotos de los ponentes
 │  ├─ gdg-favicon.jpg    # Favicon personalizado
 │  └─ themeToggle.js     # Script para modo claro/oscuro
 │
@@ -59,6 +61,8 @@ GDGAranjuez/
 │  │  └─ *.astro         # Agenda, Charlas, Navbar, Footer, etc.
 │  │
 │  ├─ content/           # Contenido dinámico (entradas del blog en Markdown)
+│  │  ├─ _template/      # Artículos individuales
+│  │  │  └─ _README.md   # Como crear un nuevo post
 │  │  ├─ posts/          # Artículos individuales
 │  │  └─ config.ts       # Configuración del blog
 │  │
@@ -78,15 +82,16 @@ GDGAranjuez/
 │  │
 │  └─ env.d.ts           # Tipado para variables de entorno
 │
-├─ astro.config.mjs      # Configuración principal de Astro
-├─ tailwind.config.js    # Configuración de Tailwind CSS
-├─ tsconfig.json         # Configuración de TypeScript y paths personalizados
-├─ eslint.config.js      # Configuración de ESLint
+├─ .gitignore            # Archivo para que Git ignore ciertos archivos o directorios
 ├─ .prettierrc           # Configuración de Prettier
-├─ package.json          # Definición de dependencias y scripts del proyecto
-├─ package-lock.json     # Bloqueo de versiones exactas de dependencias
+├─ astro.config.mjs      # Configuración principal de Astro
+├─ eslint.config.js      # Configuración de ESLint
 ├─ LICENSE               # Este proyecto cuenta con licencia conforme a los términos de la licencia MIT
-└─ README.md             # Documentación principal del proyecto
+├─ package-lock.json     # Bloqueo de versiones exactas de dependencias
+├─ package.json          # Definición de dependencias y scripts del proyecto
+├─ tailwind.config.js    # Configuración de Tailwind CSS
+├─  README.md             # Documentación principal del proyecto
+└─ tsconfig.json         # Configuración de TypeScript y paths personalizados
 ```
 
 ---
@@ -109,7 +114,7 @@ GDGAranjuez/
 - **Integración con CMS:** Evaluar opciones de CMS headless para facilitar la edición de contenido sin necesidad de modificar el código.
 - **Internacionalización del código:** Refactorizar nombres de componentes, variables y comentarios para mantener todo en inglés de forma coherente.
 - **Mejoras en SEO:** Ajustes para optimizar posicionamiento y visibilidad en buscadores.
-- **Navegación con subpáginas y mejora de la barra de navegación:** Reemplazar el scroll continuo por rutas dedicadas a cada sección del sitio. Incluir un submenú desplegable en la navbar para una navegación más clara entre secciones.
+- **Navegación con subpáginas y mejora de la barra de navegación:** Reemplazar el scroll continuo por rutas dedicadas a cada sección del sitio. Optimizar el Navbar y agregarle modo oscuro.
 - **Optimización de la experiencia en móvil:** Mejorar la navegación y usabilidad general en dispositivos móviles, especialmente el comportamiento del menú y la estructura visual de las secciones.
 
 ---
@@ -168,19 +173,22 @@ http://localhost:4321
 
 ---
 
-## 👥 EQUIPO DESARROLLADOR
+## 👩‍💻 Desarrolladores
 
-| <img src="https://github.com/RaulGamBalonga.png" width=70><br>&nbsp;<a href="https://github.com/RaulGamBalonga">Raúl Gambalonga</a>&nbsp; | <img src="https://github.com/AngieMiv.png" width=70><br>&nbsp;&nbsp;&nbsp;<a href="https://github.com/AngieMiv">Angie M. I. V.</a>&nbsp;&nbsp;&nbsp; | <img src="https://github.com/Aredhel269.png" width=70><br>&nbsp;&nbsp;&nbsp;<a href="https://github.com/Aredhel269">Glòria Monzó</a>&nbsp;&nbsp;&nbsp;| <img src="https://github.com/belensuarez477.png" width=70><br>&nbsp;&nbsp;&nbsp;<a href="https://github.com/belensuarez477">Belén Suárez</a>&nbsp;&nbsp;&nbsp;&nbsp; | 
+| <img src="https://github.com/RaulGamBalonga.png" width=70><br>&nbsp;&nbsp;<a href="https://github.com/RaulGamBalonga">Raúl Gambalonga</a>&nbsp; | <img src="https://github.com/AngieMiv.png" width=70><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/AngieMiv">Angie M. I. V.</a>&nbsp;&nbsp;&nbsp;&nbsp; | <img src="https://github.com/Aredhel269.png" width=70><br>&nbsp;&nbsp;&nbsp;<a href="https://github.com/Aredhel269">Glòria Monzó</a>&nbsp;&nbsp;&nbsp;| <img src="https://github.com/belensuarez477.png" width=70><br>&nbsp;&nbsp;&nbsp;<a href="https://github.com/belensuarez477">Belén Suárez</a>&nbsp;&nbsp;&nbsp;&nbsp; |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+
+| <img src="https://github.com/jramoncarralero.png" width=70><br>&nbsp;<a href="https://github.com/jramoncarralero">J. Ramón Carralero </a>| <img src="https://github.com/ShadeVI.png" width=70><br><a>&nbsp;</a><a href="https://github.com/ShadeVI">Manuel Tomasino</a> | <img src="https://github.com/sargentogato.png" width=70><br><a href="https://github.com/sargentogato">Marlon Velásquez</a> |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ---
 
-## 🤝 AGRADECIMIENTOS
+## 🤝 Agradecimientos
 
 Queremos agradecer a [GDG Aranjuez](https://gdg.community.dev/gdg-aranjuez/) y al equipo de [Adopta un Junior](https://adoptaunjunior.es) por darnos esta oportunidad y acompañarnos durante todo este camino.
 
 ---
 
-## 📝 LICENCIA
+## 📝 Licencia
 
 Este proyecto está bajo la licencia [MIT](LICENSE).
