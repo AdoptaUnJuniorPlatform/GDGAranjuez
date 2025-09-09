@@ -30,11 +30,36 @@
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+
+    .menu--hidden {
+      opacity: 0;
+      height: 0;
+      transition:
+        opacity 0 ease-in-out,
+        height 200ms ease-in-out;
+    }
+    .menu--visible {
+      opacity: 1;
+      height: 381px;
+      padding-top: 16px;
+      transition:
+        opacity 800ms ease-in-out,
+        height 200ms ease-in-out;
+      z-index: 3;
+    }
+
+    @media (min-width: 1536px) {
+      .menu--hidden {
+        opacity: 1;
+        height: auto;
+        transition: none;
+      }
+    }
   </style>
 </head>
 
 <nav
-  class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl text-base
+  class="sticky top-0 glass-bg shadow-lg rounded-xl text-base
   w-full mx-auto mb-8 px-6 py-4 font-[Orbitron]"
 >
   <div class="flex flex-wrap items-center justify-between">
@@ -76,7 +101,7 @@
     <!-- Menú -->
     <ul
       id="menu"
-      class="hidden w-full flex-col mt-4 space-y-3 text-lg font-medium text-gray-700
+      class="menu--hidden w-full flex-col space-y-3 text-lg font-medium text-gray-700
         2xl:flex 2xl:flex-row 2xl:flex-nowrap 2xl:space-y-0 2xl:gap-x-8 2xl:w-fit 2xl:mx-auto 2xl:items-center 2xl:justify-center"
     >
       <li>
@@ -160,7 +185,7 @@
             aria-label="Cambiar modo claro oscuro"
           >
             <img
-              src="/icons/sol.webp"
+              src="/icons/sol.png"
               alt="Modo claro oscuro"
               class="inline-block w-6 h-6 ml-2 align-middle object-contain shrink-0"
             />
@@ -171,31 +196,46 @@
 
     <!-- script menú hamburguesa -->
     <script is:inline>
-      const toggle = document.getElementById('menu-toggle');
+      const toggleButton =
+        document.getElementById('menu-toggle');
       const menu = document.getElementById('menu');
+      let isExpanded = false;
 
-      // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          const isExpanded =
-            toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute(
+      if (toggleButton && menu) {
+        toggleButton.addEventListener('click', () => {
+          isExpanded =
+            toggleButton.getAttribute('aria-expanded') ===
+            'true';
+
+          toggleButton.setAttribute(
             'aria-expanded',
             String(!isExpanded)
           );
-          menu.classList.toggle('hidden');
-        });
-
-        // seleccionar enlaces y el botón de modo oscuro
-        const links = menu.querySelectorAll('a, #theme-toggle');
-        links.forEach((link) => {
-          link.addEventListener('click', () => {
-            if (window.innerWidth < 1920) {
-              menu.classList.add('hidden');
-            }
-          });
+          // menu.classList.toggle('menu--hidden');
+          showHidemenu(!isExpanded);
         });
       }
+
+      const showHidemenu = (updateMenuState) => {
+        console.log('click', updateMenuState);
+
+        if (updateMenuState) {
+          menu.classList.remove('menu--hidden');
+          menu.classList.add('menu--visible');
+        } else {
+          menu.classList.remove('menu--visible');
+          menu.classList.add('menu--hidden');
+        }
+      };
+
+      //Select links and the dark mode button
+      const links = menu.querySelectorAll('a');
+      links.forEach((link) => {
+        link.addEventListener('click', () => {
+          toggleButton.setAttribute('aria-expanded', 'false');
+          showHidemenu(isExpanded);
+        });
+      });
     </script>
   </div>
 </nav>
