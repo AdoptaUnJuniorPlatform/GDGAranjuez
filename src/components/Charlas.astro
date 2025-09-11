@@ -1,34 +1,87 @@
 ---
-const { tituloCharla, descripcion, nombrePonente } = Astro.props;
-const idModal = tituloCharla && nombrePonente
-  ? `modal-${tituloCharla.replace(/\s+/g, '-').toLowerCase()}-${nombrePonente.replace(/\s+/g, '-').toLowerCase()}`
-  : 'modal-generico';
-const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
+interface Props {
+  tituloCharla: string;
+  descripcion: string;
+  nombrePonente: string;
+  variant?: 'slate' | 'purple' | 'blue';
+}
+
+const {
+  tituloCharla,
+  descripcion,
+  nombrePonente,
+  variant = 'slate',
+} = Astro.props;
+
+const idModal =
+  tituloCharla && nombrePonente
+    ? `modal-${tituloCharla.replace(/\s+/g, '-').toLowerCase()}-${nombrePonente.replace(/\s+/g, '-').toLowerCase()}`
+    : 'modal-generico';
+const resumen = descripcion
+  ? descripcion.slice(0, 150) + '...'
+  : '';
+
+// Definir variantes de color
+const variants = {
+  slate: {
+    bg: 'bg-slate-300/70 dark:bg-slate-800',
+    text: 'text-gray-950 dark:text-violet-50',
+    subtext: 'text-gray-700 dark:text-violet-100',
+  },
+  purple: {
+    bg: 'bg-purple-200/50 dark:bg-purple-400/30',
+    text: 'text-gray-950 dark:text-violet-50',
+    subtext: 'text-gray-900 dark:text-violet-100',
+  },
+  blue: {
+    bg: 'bg-blue-200/70 dark:bg-sky-950',
+    text: 'text-gray-950 dark:text-violet-50',
+    subtext: 'text-gray-900 dark:text-violet-100',
+  },
+};
+
+const currentVariant = variants[variant];
 ---
 
-<section class="flex flex-col items-center gap-6 md:flex-row md:justify-start md:flex-wrap container">
-  <article class="w-full bg-sky-100 dark:bg-sky-800 rounded-2xl shadow-md p-6 text-center transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
-    <h3 class="text-xl font-semibold mb-2 underline dark:text-blue-50">{tituloCharla}</h3>
-    <p class="text-sm font-semibold text-gray-900 dark:text-gray-300">{nombrePonente}</p>
-    <p class="text-sm text-gray-800 dark:text-gray-200 whitespace-pre-line break-words leading-relaxed">{resumen}</p>
+<section
+  class={`flex flex-col items-center gap-6 md:flex-row md:justify-start md:flex-wrap container`}
+>
+  <article
+    class={`w-full rounded-2xl shadow-md p-6 text-center transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl ${currentVariant.bg} border border-blue-100 dark:border-slate-500`}
+  >
+    <h3
+      class={`text-xl font-semibold mb-2 underline ${currentVariant.text}`}
+      >{tituloCharla}</h3
+    >
+    <p class={`text-sm font-semibold ${currentVariant.subtext}`}
+      >{nombrePonente}</p
+    >
+    <p
+      class={`text-sm ${currentVariant.subtext} whitespace-pre-line break-words leading-relaxed`}
+      >{resumen}</p
+    >
 
     <button
-      class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition min-w-[48px] min-h-[48px]"
+      class="mt-4 px-4 py-2 bg-gradient-to-r bg-blue-800/70 hover:bg-blue-800/90 text-white rounded-full transition hover:duration-200 min-w-[150px] min-h-[48px] cursor-pointer"
       onclick={`abrirModal('${idModal}')`}
+      aria-label="Ver más"
     >
       Ver más
     </button>
 
     <!-- Modal nativo -->
-    <dialog 
-      id={idModal} 
-      class="fixed inset-0 sm:inset-auto sm:top-1/2 sm:left-1/2 
-            w-[95%] sm:w-auto max-w-lg rounded-lg p-6 bg-white dark:bg-gray-900 
-            shadow-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    <dialog
+      id={idModal}
+      class="fixed inset-0 sm:inset-auto sm:top-1/2 sm:left-1/2
+            w-[95%] sm:w-auto max-w-lg rounded-lg p-6 bg-white dark:bg-gray-900
+            shadow-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 open:animate-fade-in open-backdrop:animate-fade-in"
     >
-      <form method="dialog" class="flex flex-row justify-end -mt-4 -mr-4">
-        <button 
-          class="text-gray-500 hover:text-red-500 text-3xl p-4 w-12 h-12 flex items-center justify-center" 
+      <form
+        method="dialog"
+        class="flex flex-row justify-end -mt-4 -mr-4"
+      >
+        <button
+          class="text-gray-500 hover:text-red-500 text-3xl p-4 w-12 h-12 flex items-center justify-center cursor-pointer"
           aria-label="Cerrar"
           title="Cerrar"
         >
@@ -36,33 +89,46 @@ const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
         </button>
       </form>
 
-      <h3 class="text-1x2 font-bold mb-4 dark:text-white">{tituloCharla}</h3>
-      <p class="text-base mb-4 text-gray-700 dark:text-gray-300 whitespace-pre-line break-words leading-relaxed">{descripcion}</p>
-      <p class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">Ponente: {nombrePonente}</p>
+      <h3 class="text-1x2 font-bold mb-4 dark:text-white"
+        >{tituloCharla}</h3
+      >
+      <p
+        class="text-base mb-4 text-gray-700 dark:text-gray-300 whitespace-pre-line break-words leading-relaxed"
+        >{descripcion}</p
+      >
+      <p
+        class="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2"
+        >Ponente: {nombrePonente}</p
+      >
     </dialog>
-
   </article>
 </section>
 
 <script is:inline>
   window.addEventListener('load', () => {
-    window.abrirModal = function(id) {
+    window.abrirModal = function (id) {
       const modal = document.getElementById(id);
       if (modal && typeof modal.showModal === 'function') {
         modal.showModal();
+        modal.classList.add('animate-fade-in'); // fuerza la animación
+        modal.addEventListener(
+          'close',
+          () => modal.classList.remove('animate-fade-in'),
+          { once: true }
+        );
         scrollBehindModal(false);
       }
     };
 
     function scrollBehindModal(scroll) {
-      if(scroll){
-        document.body.style.overflow = 'auto'
+      if (scroll) {
+        document.body.style.overflow = 'auto';
       } else {
         document.body.style.overflow = 'hidden';
       }
     }
 
-    document.querySelectorAll('dialog').forEach(modal => {
+    document.querySelectorAll('dialog').forEach((modal) => {
       modal.addEventListener('click', (e) => {
         const rect = modal.getBoundingClientRect();
         const isOutside =
@@ -73,7 +139,7 @@ const resumen = descripcion ? descripcion.slice(0, 150) + '...' : '';
         if (isOutside) modal.close();
       });
 
-      modal.addEventListener("close", () => {
+      modal.addEventListener('close', () => {
         scrollBehindModal(true);
       });
     });
