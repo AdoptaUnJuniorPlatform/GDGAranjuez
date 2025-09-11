@@ -66,7 +66,7 @@
 
 <nav
   id="navbar"
-  class="sticky top-0 shadow-lg rounded-xl text-base flex flex-wrap
+  class="sticky top-0 shadow-lg dark:shadow-violet-600/20 rounded-xl text-base flex flex-wrap
   w-full mx-auto mb-8 px-6 py-4 font-[Orbitron] bg-white dark:bg-[#151936]"
 >
   <div
@@ -247,16 +247,6 @@
       }
     };
 
-    const changeShadowOnLightMode = (eventTriggered) => {
-      if (eventTriggered.target.alt === 'sun') {
-        navbar.classList.remove('shadow-lg');
-        navbar.classList.add('menu-shadow');
-      } else {
-        navbar.classList.add('shadow-lg');
-        navbar.classList.remove('menu-shadow');
-      }
-    };
-
     //Select links
     const links = menu.querySelectorAll('a');
     links.forEach((link) => {
@@ -265,12 +255,6 @@
         showHidemenu(isExpanded);
       });
     });
-
-    //Shadow menu
-    themeToggle.addEventListener(
-      'click',
-      changeShadowOnLightMode
-    );
 
     // Manage windows Resize
     const mediaQuery = window.matchMedia('(min-width: 1536px)');
