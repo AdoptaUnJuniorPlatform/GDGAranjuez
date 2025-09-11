@@ -33,12 +33,13 @@
         height 200ms ease-in-out;
     }
     .menu--visible {
-      box-shadow: 0px 15px 13px 0px rgba(0, 0, 0, 0.4);
-      height: 381px;
+      box-shadow: 0px 15px 13px 0px hsla(0, 0%, 0%, 0.4);
+      height: auto;
       left: -1px;
       opacity: 1;
       padding-left: 25px;
       padding-top: 16px;
+      padding-bottom: 16px;
       position: absolute;
       top: 0;
       transform: translateY(14%);
@@ -48,13 +49,17 @@
         opacity 500ms ease-in-out,
         height 200ms ease-in-out;
     }
-
     @media (min-width: 1536px) {
       .menu--hidden {
         height: auto;
         opacity: 1;
         transition: none;
       }
+    }
+    .menu-shadow {
+      box-shadow:
+        0px 15px 13px 0px hsla(0, 0%, 0%, 0.4),
+        0px 2px 5px 0px hsla(0, 0%, 100%);
     }
   </style>
 </head>
@@ -113,7 +118,7 @@
       <a
         href="https://www.eventbrite.com/e/devfest-2025-tickets-1361371561989?aff=oddtdtcreator"
         target="_blank"
-        class="nav-link text-purple-700 font-bold hover:text-blue-700 transition"
+        class="nav-link text-purple-700 dark:text-fuchsia-500 font-bold hover:text-blue-700 dark:hover:text-[#FABD04] transition"
       >
         ENTRADAS
       </a>
@@ -168,6 +173,14 @@
     </li>
     <li>
       <a
+        href="/#colaboradores"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Devs
+      </a>
+    </li>
+    <li>
+      <a
         href="/#patrocinadores"
         class="nav-link hover:text-blue-700 transition"
       >
@@ -203,7 +216,10 @@
   <script is:inline>
     const navbar = document.getElementById('navbar');
     const toggleButton = document.getElementById('menu-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
     const menu = document.getElementById('menu');
+    const items = document.querySelectorAll('#menu li');
+
     let isExpanded = false;
 
     if (toggleButton && menu) {
@@ -220,16 +236,24 @@
     }
 
     const showHidemenu = (updateMenuState) => {
-      console.log('click', updateMenuState, 'nav', { navbar });
-
       if (updateMenuState) {
         menu.classList.remove('menu--hidden');
-        navbar.classList.remove('shadow-lg');
+        navbar.classList.remove('shadow-box');
         menu.classList.add('menu--visible');
       } else {
         menu.classList.remove('menu--visible');
         menu.classList.add('menu--hidden');
+        navbar.classList.add('shadow-box');
+      }
+    };
+
+    const changeShadowOnLightMode = (eventTriggered) => {
+      if (eventTriggered.target.alt === 'sun') {
+        navbar.classList.remove('shadow-lg');
+        navbar.classList.add('menu-shadow');
+      } else {
         navbar.classList.add('shadow-lg');
+        navbar.classList.remove('menu-shadow');
       }
     };
 
@@ -241,6 +265,12 @@
         showHidemenu(isExpanded);
       });
     });
+
+    //Shadow menu
+    themeToggle.addEventListener(
+      'click',
+      changeShadowOnLightMode
+    );
 
     // Manage windows Resize
     const mediaQuery = window.matchMedia('(min-width: 1536px)');
