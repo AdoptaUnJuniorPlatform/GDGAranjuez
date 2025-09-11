@@ -62,8 +62,9 @@ const currentVariant = variants[variant];
     >
 
     <button
-      class="mt-4 px-4 py-2 bg-gradient-to-r from-blue-700 to-purple-700 text-white rounded-full transition min-w-[150px] min-h-[48px] cursor-pointer"
+      class="mt-4 px-4 py-2 bg-gradient-to-r bg-blue-800/70 hover:bg-blue-800/90 text-white rounded-full transition hover:duration-200 min-w-[150px] min-h-[48px] cursor-pointer"
       onclick={`abrirModal('${idModal}')`}
+      aria-label="Ver más"
     >
       Ver más
     </button>
@@ -73,14 +74,14 @@ const currentVariant = variants[variant];
       id={idModal}
       class="fixed inset-0 sm:inset-auto sm:top-1/2 sm:left-1/2
             w-[95%] sm:w-auto max-w-lg rounded-lg p-6 bg-white dark:bg-gray-900
-            shadow-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            shadow-xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 open:animate-fade-in open-backdrop:animate-fade-in"
     >
       <form
         method="dialog"
         class="flex flex-row justify-end -mt-4 -mr-4"
       >
         <button
-          class="text-gray-500 hover:text-red-500 text-3xl p-4 w-12 h-12 flex items-center justify-center"
+          class="text-gray-500 hover:text-red-500 text-3xl p-4 w-12 h-12 flex items-center justify-center cursor-pointer"
           aria-label="Cerrar"
           title="Cerrar"
         >
@@ -109,6 +110,12 @@ const currentVariant = variants[variant];
       const modal = document.getElementById(id);
       if (modal && typeof modal.showModal === 'function') {
         modal.showModal();
+        modal.classList.add('animate-fade-in'); // fuerza la animación
+        modal.addEventListener(
+          'close',
+          () => modal.classList.remove('animate-fade-in'),
+          { once: true }
+        );
         scrollBehindModal(false);
       }
     };
