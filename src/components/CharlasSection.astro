@@ -1,81 +1,76 @@
 ---
 import Charlas from './Charlas.astro';
+import Section from './Section.astro';
 
 const temas = [
   {
     nombrePonente: 'Pablo Rodríguez Tembleco.',
-    tituloCharla: 'Conceptualización del sonido como mecánica para narrar historias.',
-    descripcion: 'En un campo relativamente nuevo como es la ludomusicología, siempre se están investigando las fórmulas por las cuales el sonido en videojuegos puede convertirse no solo en un complemento a la acción, sino en una mecánica que integre al jugador en un mundo donde él es un agente epistémico y sus oídos son la fuente de su conocimiento. Esta completa integración se consigue gracias al esfuerzo conjunto de programadores, diseñadores de juego, de narrativa y de audio, los cuales son capaces de comprender códigos auditivos y musicales, y transformarlos en sistemas que harán de la experiencia lúdica una realmente inmersiva. A través de ejemplos y pruebas de concepto, veremos cómo podemos liderar la visión de un proyecto con el audio y la música en mente, creando espacios donde se conviertan en parte del gameplay, la narrativa y el gamefeel, o incluso en la razón por la cual nos ponemos a los mandos en primer lugar. Las ejemplificaciones e intervenciones incluyen, además de la traducción y conexión con elementos narrativos, propuestas sobre cómo utilizar elementos físicos para extraer cualidades matemáticas y datos con las que enlazarnos a otras áreas del desarrollo, como variables, inputs, y su integración mecánica, haciendo de las propiedades sonoras un elemento con el que contar a la hora de crear nuevas herramientas interactivas.',
+    tituloCharla:
+      'Conceptualización del sonido como mecánica para narrar historias.',
+    descripcion:
+      'En un campo relativamente nuevo como es la ludomusicología, siempre se están investigando las fórmulas por las cuales el sonido en videojuegos puede convertirse no solo en un complemento a la acción, sino en una mecánica que integre al jugador en un mundo donde él es un agente epistémico y sus oídos son la fuente de su conocimiento. Esta completa integración se consigue gracias al esfuerzo conjunto de programadores, diseñadores de juego, de narrativa y de audio, los cuales son capaces de comprender códigos auditivos y musicales, y transformarlos en sistemas que harán de la experiencia lúdica una realmente inmersiva. A través de ejemplos y pruebas de concepto, veremos cómo podemos liderar la visión de un proyecto con el audio y la música en mente, creando espacios donde se conviertan en parte del gameplay, la narrativa y el gamefeel, o incluso en la razón por la cual nos ponemos a los mandos en primer lugar. Las ejemplificaciones e intervenciones incluyen, además de la traducción y conexión con elementos narrativos, propuestas sobre cómo utilizar elementos físicos para extraer cualidades matemáticas y datos con las que enlazarnos a otras áreas del desarrollo, como variables, inputs, y su integración mecánica, haciendo de las propiedades sonoras un elemento con el que contar a la hora de crear nuevas herramientas interactivas.',
   },
   {
     nombrePonente: 'Estefanía Peromingo.',
-    tituloCharla: 'Psicología del feedback: cómo dar y recibir feedback sin romper el equipo.',
-    descripcion: 'El feedback es parte esencial del desarrollo, pero mal gestionado puede romper dinámicas de equipo y desmotivar. En esta charla descubrirás cómo aplicar principios psicológicos para dar y recibir feedback de forma constructiva, transformar críticas en oportunidades y mejorar la colaboración con diferentes stakeholders.',
+    tituloCharla:
+      'Psicología del feedback: cómo dar y recibir feedback sin romper el equipo.',
+    descripcion:
+      'El feedback es parte esencial del desarrollo, pero mal gestionado puede romper dinámicas de equipo y desmotivar. En esta charla descubrirás cómo aplicar principios psicológicos para dar y recibir feedback de forma constructiva, transformar críticas en oportunidades y mejorar la colaboración con diferentes stakeholders.',
   },
- {
-           
-    nombrePonente: 'Sergi Olives. ',      // aquí va el nombre del ponente
-    tituloCharla: 'Como conseguir tu primer trabajo en Tech.',       // aquí va el título de la charla
-    descripcion: 'Después de más de 50 entrevistas a futures desarrolladores en busca de trabajo, en esta sesión vamos a dar consejos y trucos para poder llegar a las entrevistas de ofertas de trabajo en tecnología y conseguir esa primera oportunidad laboral.',      
-
-},
-{
-           
-    nombrePonente: 'Antonio Leiva.',      // aquí va el nombre del ponente
-    tituloCharla: 'MCPs con Kotlin: Creando Superpoderes para tu Asistente IA.',       // aquí va el título de la charla
-    descripcion: '¿Te imaginas que tu asistente de IA pudiera enviar newsletters o publicar apps en Google Play por ti? Con los MCP servers esto es posible. En esta charla descubrirás cómo Kotlin, siendo uno de los lenguajes oficiales de MCP, te permite crear herramientas poderosas que extienden las capacidades de asistentes como Claude, ChatGPT, Cursor y muchos otros.Exploraremos desde los fundamentos del protocolo MCP hasta casos de uso reales: un servidor que gestiona campañas de email marketing y otro que automatiza deployments en Play Store.Verás código en vivo, demos interactivas y aprenderás a transformar APIs REST complejas en herramientas simples que cualquier asistente IA puede usar. Al final, tendrás el conocimiento para crear tus propios MCP servers y automatizar esas tareas repetitivas que consumen tu tiempo.',      
-
-},
-{          
-    nombrePonente: 'Nacho Fernández Diez.',      // aquí va el nombre del ponente
-    tituloCharla: 'Workshop: CTF DevFest Aranjuez.  ',       // aquí va el título de la charla
-    descripcion: ' TO BE CONFIRMED.',      
-
-},
-{
-           
-    nombrePonente: 'María del Carmen Tajuelo.',      // aquí va el nombre del ponente
-    tituloCharla: ' Reinventarse hacia el mundo Tech.',       // aquí va el título de la charla
-    descripcion: ' TO BE CONFIRMED.',      
-
-},
-{
-           
-    nombrePonente: 'Máximo Fernández Núñez.',      // aquí va el nombre del ponente
-    tituloCharla: 'Agentes Python del Mañana: Descifrando los Enigmas de Planificación, UX y Memoria.',       // aquí va el título de la charla
-    descripcion: 'Los agentes IA, impulsados por LLMs, prometen transformar aplicaciones. Pero, ¿son hoy simples ejecutores o futuros colaboradores inteligentes? Para alcanzar su verdadero potencial, debemos superar barreras críticas. Esta charla se adentra en los 3 enigmas que definirán la próxima generación de agentes: Planificación Avanzada (El Cerebro): Los agentes actuales a menudo tropiezan con tareas complejas. Exploraremos cómo, más allá de las llamadas a funciones básicas, las arquitecturas cognitivas permiten trazar planes robustos, anticipar problemas y razonar con profundidad. ¿Cómo hacerlos "pensar" varios pasos adelante? 2: UX Revolucionaria (El Alma): La interacción con un agente no puede ser una fuente de frustración. Analizaremos cómo trascender el chat tradicional hacia interfaces "human-on-the-loop", UX colaborativas, generativas y accesibles. ¿Cómo diseñar experiencias que enganchen? Memoria Persistente (El Legado): Un agente que olvida lo aprendido está condenado a la ineficiencia. Veremos técnicas para dotarlos de memoria significativa que vaya más allá del historial, permitiendo que aprendan y cada interacción sea más inteligente. Con ejemplos prácticos, no solo comprenderemos la magnitud de estos desafíos, sino que nos llevaremos ideas concretas y una visión clara para contribuir a construir los agentes del mañana: más inteligentes, más intuitivos y verdaderamente capaces. ¿Te unes a la expedición para descifrar el siguiente capítulo de los agentes IA?',      
-
-},
-{
-           
-    nombrePonente: 'Irene Ruiz Pozo.',      // aquí va el nombre del ponente
-    tituloCharla: 'dose.VR();',       // aquí va el título de la charla
-    descripcion: 'La realidad virtual ya se está utilizando para aliviar el dolor de pacientes en quimioterapia.En esta charla descubrirás que las experiencias inmersivas no solo entretienen: transforman.Y verás por qué lo que hacemos como devs puede ir mucho más allá del producto. Con casos reales y estudios que demuestran que, cuando lo inmersivo se diseña con intención, deja de ser un simple escape y ofrece alivio, calma y compañía. Porque cuando la experiencia se convierte en refugio, y la tecnología en cuidado, el propósito se vuelve real. return relief;.',      
-
-},
-{
-           
-    nombrePonente: 'Moisés Martínez.',      // aquí va el nombre del ponente
-    tituloCharla: 'Vision Language Model.',       // aquí va el título de la charla
-    descripcion: 'Los Vision-Language Models (VLMs) son un nuevo tipo de modelos de Inteligencia Artificial que combinan visión por computador y procesamiento del lenguaje natural. En esta charla analizaremos cómo estos modelos son capaces de entender y generar lenguaje natural a partir de imágenes, vídeos y otros datos visuales, permitiendo aplicaciones revolucionarias como asistentes visuales inteligentes, generación de descripciones automáticas y comprensión semántica de escenas.Para ello describiré los principios fundamentales detrás de su arquitectura y como utilizarlos para crear tus propias aplicaciones.',      
-
-},
-
+  {
+    nombrePonente: 'Sergi Olives. ', // aquí va el nombre del ponente
+    tituloCharla: 'Como conseguir tu primer trabajo en Tech.', // aquí va el título de la charla
+    descripcion:
+      'Después de más de 50 entrevistas a futures desarrolladores en busca de trabajo, en esta sesión vamos a dar consejos y trucos para poder llegar a las entrevistas de ofertas de trabajo en tecnología y conseguir esa primera oportunidad laboral.',
+  },
+  {
+    nombrePonente: 'Antonio Leiva.', // aquí va el nombre del ponente
+    tituloCharla:
+      'MCPs con Kotlin: Creando Superpoderes para tu Asistente IA.', // aquí va el título de la charla
+    descripcion:
+      '¿Te imaginas que tu asistente de IA pudiera enviar newsletters o publicar apps en Google Play por ti? Con los MCP servers esto es posible. En esta charla descubrirás cómo Kotlin, siendo uno de los lenguajes oficiales de MCP, te permite crear herramientas poderosas que extienden las capacidades de asistentes como Claude, ChatGPT, Cursor y muchos otros.Exploraremos desde los fundamentos del protocolo MCP hasta casos de uso reales: un servidor que gestiona campañas de email marketing y otro que automatiza deployments en Play Store.Verás código en vivo, demos interactivas y aprenderás a transformar APIs REST complejas en herramientas simples que cualquier asistente IA puede usar. Al final, tendrás el conocimiento para crear tus propios MCP servers y automatizar esas tareas repetitivas que consumen tu tiempo.',
+  },
+  {
+    nombrePonente: 'Nacho Fernández Diez.', // aquí va el nombre del ponente
+    tituloCharla: 'Workshop: CTF DevFest Aranjuez.  ', // aquí va el título de la charla
+    descripcion: ' TO BE CONFIRMED.',
+  },
+  {
+    nombrePonente: 'María del Carmen Tajuelo.', // aquí va el nombre del ponente
+    tituloCharla: ' Reinventarse hacia el mundo Tech.', // aquí va el título de la charla
+    descripcion: ' TO BE CONFIRMED.',
+  },
+  {
+    nombrePonente: 'Máximo Fernández Núñez.', // aquí va el nombre del ponente
+    tituloCharla:
+      'Agentes Python del Mañana: Descifrando los Enigmas de Planificación, UX y Memoria.', // aquí va el título de la charla
+    descripcion:
+      'Los agentes IA, impulsados por LLMs, prometen transformar aplicaciones. Pero, ¿son hoy simples ejecutores o futuros colaboradores inteligentes? Para alcanzar su verdadero potencial, debemos superar barreras críticas. Esta charla se adentra en los 3 enigmas que definirán la próxima generación de agentes: Planificación Avanzada (El Cerebro): Los agentes actuales a menudo tropiezan con tareas complejas. Exploraremos cómo, más allá de las llamadas a funciones básicas, las arquitecturas cognitivas permiten trazar planes robustos, anticipar problemas y razonar con profundidad. ¿Cómo hacerlos "pensar" varios pasos adelante? 2: UX Revolucionaria (El Alma): La interacción con un agente no puede ser una fuente de frustración. Analizaremos cómo trascender el chat tradicional hacia interfaces "human-on-the-loop", UX colaborativas, generativas y accesibles. ¿Cómo diseñar experiencias que enganchen? Memoria Persistente (El Legado): Un agente que olvida lo aprendido está condenado a la ineficiencia. Veremos técnicas para dotarlos de memoria significativa que vaya más allá del historial, permitiendo que aprendan y cada interacción sea más inteligente. Con ejemplos prácticos, no solo comprenderemos la magnitud de estos desafíos, sino que nos llevaremos ideas concretas y una visión clara para contribuir a construir los agentes del mañana: más inteligentes, más intuitivos y verdaderamente capaces. ¿Te unes a la expedición para descifrar el siguiente capítulo de los agentes IA?',
+  },
+  {
+    nombrePonente: 'Irene Ruiz Pozo.', // aquí va el nombre del ponente
+    tituloCharla: 'dose.VR();', // aquí va el título de la charla
+    descripcion:
+      'La realidad virtual ya se está utilizando para aliviar el dolor de pacientes en quimioterapia.En esta charla descubrirás que las experiencias inmersivas no solo entretienen: transforman.Y verás por qué lo que hacemos como devs puede ir mucho más allá del producto. Con casos reales y estudios que demuestran que, cuando lo inmersivo se diseña con intención, deja de ser un simple escape y ofrece alivio, calma y compañía. Porque cuando la experiencia se convierte en refugio, y la tecnología en cuidado, el propósito se vuelve real. return relief;.',
+  },
+  {
+    nombrePonente: 'Moisés Martínez.', // aquí va el nombre del ponente
+    tituloCharla: 'Vision Language Model.', // aquí va el título de la charla
+    descripcion:
+      'Los Vision-Language Models (VLMs) son un nuevo tipo de modelos de Inteligencia Artificial que combinan visión por computador y procesamiento del lenguaje natural. En esta charla analizaremos cómo estos modelos son capaces de entender y generar lenguaje natural a partir de imágenes, vídeos y otros datos visuales, permitiendo aplicaciones revolucionarias como asistentes visuales inteligentes, generación de descripciones automáticas y comprensión semántica de escenas.Para ello describiré los principios fundamentales detrás de su arquitectura y como utilizarlos para crear tus propias aplicaciones.',
+  },
 ];
 ---
 
-<section id="charlas" class="p-10 scroll-mt-24">
-  <h2 class="text-4xl dark:text-sky-100 font-bold font-mono text-center mb-8">Charlas del Evento</h2>
-
-  <div class="flex flex-wrap justify-center gap-8">
-    {
-      temas.map((charla) => (
-        <Charlas
-          tituloCharla={charla.tituloCharla}
-          descripcion={charla.descripcion}
-          nombrePonente={charla.nombrePonente}
-        />
-      ))
-    }
-  </div>
-</section>
+<Section id="charlas" title="Charlas del Evento">
+  {
+    temas.map((charla) => (
+      <Charlas
+        tituloCharla={charla.tituloCharla}
+        descripcion={charla.descripcion}
+        nombrePonente={charla.nombrePonente}
+        variant="blue"
+      />
+    ))
+  }
+</Section>
