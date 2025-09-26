@@ -24,20 +24,54 @@
     .nav-link:hover::after {
       width: 100%;
     }
+    .menu--hidden {
+      height: 0;
+      opacity: 0;
 
-    .glass-bg {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition:
+        opacity 0 ease-in-out,
+        height 200ms ease-in-out;
+    }
+    .menu--visible {
+      box-shadow: 0px 15px 13px 0px hsla(0, 0%, 0%, 0.4);
+      height: auto;
+      left: -1px;
+      opacity: 1;
+      padding-left: 25px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      position: absolute;
+      top: 0;
+      transform: translateY(14%);
+      z-index: 2;
+
+      transition:
+        opacity 500ms ease-in-out,
+        height 200ms ease-in-out;
+    }
+    @media (min-width: 1536px) {
+      .menu--hidden {
+        height: auto;
+        opacity: 1;
+        transition: none;
+      }
+    }
+    .menu-shadow {
+      box-shadow:
+        0px 15px 13px 0px hsla(0, 0%, 0%, 0.4),
+        0px 2px 5px 0px hsla(0, 0%, 100%);
     }
   </style>
 </head>
 
 <nav
-  class="sticky top-0 z-50 glass-bg shadow-lg rounded-xl text-base
-  w-full mx-auto mb-8 px-6 py-4 font-[Orbitron]"
+  id="navbar"
+  class="sticky top-0 z-50 shadow-lg dark:shadow-violet-600/20 rounded-xl text-base flex flex-wrap
+  w-full mx-auto mb-8 px-6 py-4 font-[Orbitron] bg-white dark:bg-[#151936]"
 >
-  <div class="flex flex-wrap items-center justify-between">
+  <div
+    class="relative flex flex-wrap items-center justify-between max-2xl:w-full"
+  >
     <!-- Logo y botón hamburguesa -->
     <div
       class="flex items-center justify-between w-full 2xl:w-auto"
@@ -51,7 +85,7 @@
       <div class="flex items-center ml-auto 2xl:hidden">
         <button
           id="menu-toggle"
-          class="2xl:hidden text-gray-700 focus:outline-none"
+          class="2xl:hidden focus:outline-none dark:text-white"
           aria-label="Abrir menú de navegación"
           aria-expanded="false"
           aria-controls="menu"
@@ -72,78 +106,87 @@
         </button>
       </div>
     </div>
+  </div>
 
-    <!-- Menú -->
-    <ul
-      id="menu"
-      class="hidden w-full flex-col mt-4 space-y-3 text-lg font-medium text-gray-700
+  <!-- Menú -->
+  <ul
+    id="menu"
+    class="menu--hidden flex-col space-y-3 text-lg font-medium text-gray-700 w-lvw dark:text-white bg-white dark:bg-[#151936]
         2xl:flex 2xl:flex-row 2xl:flex-nowrap 2xl:space-y-0 2xl:gap-x-8 2xl:w-fit 2xl:mx-auto 2xl:items-center 2xl:justify-center"
-    >
-      <li>
-        <a
-          href="https://www.eventbrite.com/e/devfest-2025-tickets-1361371561989?aff=oddtdtcreator"
-          target="_blank"
-          class="nav-link text-purple-700 font-bold hover:text-blue-700 transition"
-        >
-          ENTRADAS
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Home
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#organizadores"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Organizadores
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#agenda"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Agenda
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#charlas"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Charlas
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#ponentes"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Ponentes
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#colaboradores"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Colaboradores
-        </a>
-      </li>
-      <li>
-        <a
-          href="/#patrocinadores"
-          class="nav-link hover:text-blue-700 transition"
-        >
-          Patrocinadores
-        </a>
-        <!-- </li>
+  >
+    <li>
+      <a
+        href="https://www.eventbrite.com/e/devfest-2025-tickets-1361371561989?aff=oddtdtcreator"
+        target="_blank"
+        class="nav-link text-purple-700 dark:text-fuchsia-500 font-bold hover:text-blue-700 dark:hover:text-[#FABD04] transition"
+      >
+        ENTRADAS
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#organizadores"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Organizadores
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#agenda"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Agenda
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#charlas"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Charlas
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#ponentes"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Ponentes
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#colaboradores"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Colaboradores
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#desarrolladores"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Devs
+      </a>
+    </li>
+    <li>
+      <a
+        href="/#patrocinadores"
+        class="nav-link hover:text-blue-700 transition"
+      >
+        Patrocinadores
+      </a>
+      <!-- </li>
       <li>
         <a
           href="/blog"
@@ -153,49 +196,84 @@
         </a>
       </li> -->
 
-        <li class="shrink-0">
-          <button
-            id="theme-toggle"
-            class="cursor-pointer transition-transform duration-300 hover:scale-110 hover:-rotate-12"
-            aria-label="Cambiar modo claro oscuro"
-          >
-            <img
-              src="/icons/sol.webp"
-              alt="Modo claro oscuro"
-              class="inline-block w-6 h-6 ml-2 align-middle object-contain shrink-0"
-            />
-          </button>
-        </li>
+      <li class="shrink-0">
+        <button
+          id="theme-toggle"
+          class="cursor-pointer transition-transform duration-300 hover:scale-110 hover:-rotate-12"
+          aria-label="Cambiar modo claro oscuro"
+        >
+          <img
+            src="/icons/sun.svg"
+            alt="Modo claro oscuro"
+            class="inline-block w-6 h-6 ml-2 align-middle object-contain shrink-0"
+          />
+        </button>
       </li>
-    </ul>
+    </li>
+  </ul>
 
-    <!-- script menú hamburguesa -->
-    <script is:inline>
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('menu');
+  <!-- script menú hamburguesa -->
+  <script is:inline>
+    const navbar = document.getElementById('navbar');
+    const toggleButton = document.getElementById('menu-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
+    const menu = document.getElementById('menu');
+    const items = document.querySelectorAll('#menu li');
 
-      // para actualizar menu.classList.toggle('hidden') y atribb aria-expanded
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          const isExpanded =
-            toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute(
-            'aria-expanded',
-            String(!isExpanded)
-          );
-          menu.classList.toggle('hidden');
-        });
+    let isExpanded = false;
 
-        // seleccionar enlaces y el botón de modo oscuro
-        const links = menu.querySelectorAll('a, #theme-toggle');
-        links.forEach((link) => {
-          link.addEventListener('click', () => {
-            if (window.innerWidth < 1920) {
-              menu.classList.add('hidden');
-            }
-          });
-        });
+    if (toggleButton && menu) {
+      toggleButton.addEventListener('click', () => {
+        isExpanded =
+          toggleButton.getAttribute('aria-expanded') === 'true';
+
+        toggleButton.setAttribute(
+          'aria-expanded',
+          String(!isExpanded)
+        );
+        showHidemenu(!isExpanded);
+      });
+    }
+
+    const showHidemenu = (updateMenuState) => {
+      if (updateMenuState) {
+        menu.classList.remove('menu--hidden');
+        navbar.classList.remove('shadow-box');
+        menu.classList.add('menu--visible');
+      } else {
+        menu.classList.remove('menu--visible');
+        menu.classList.add('menu--hidden');
+        navbar.classList.add('shadow-box');
       }
-    </script>
-  </div>
+    };
+
+    //Select links
+    const links = menu.querySelectorAll('a');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        toggleButton.setAttribute('aria-expanded', 'false');
+        showHidemenu(isExpanded);
+      });
+    });
+
+    // Manage windows Resize
+    const mediaQuery = window.matchMedia('(min-width: 1536px)');
+
+    const handleWindowsResize = (e) => {
+      if (e.matches) {
+        // Desktop mode
+        menu.classList.remove('menu--hidden', 'menu--visible');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        isExpanded = false;
+      } else {
+        // Mobile mode
+        menu.classList.remove('menu--visible');
+        menu.classList.add('menu--hidden');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        isExpanded = false;
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleWindowsResize);
+  </script>
 </nav>
