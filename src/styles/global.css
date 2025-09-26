@@ -9,6 +9,10 @@ html {
   outline: none;
 }
 
+:focus-visible {
+  border: 1px solid blue;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
